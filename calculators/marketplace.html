@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marketplace Seller Payout Calculator — eBay, Poshmark, Fashionphile, The RealReal | Calculate</title>
-  <meta name="description" content="Compare what you actually take home selling on eBay, Poshmark, Fashionphile, The RealReal, Mercari, Depop, and Etsy after typical seller fees.">
+  <title>Marketplace Seller Payout Calculator — eBay, Poshmark, Whatnot, Fashionphile | Calculate</title>
+  <meta name="description" content="Compare what you actually take home selling on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, Depop, and Etsy after typical seller fees.">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="alternate" type="text/plain" href="https://www.numbercove.com/llms.txt" title="LLM-readable site summary">
   <link rel="alternate" type="application/json" href="https://www.numbercove.com/tools.json" title="Machine-readable tool catalog">
   <link rel="canonical" href="https://www.numbercove.com/calculators/marketplace.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <meta property="og:title" content="Marketplace Payout Calculator | Calculate">
-  <meta property="og:description" content="See net payout across eBay, Poshmark, Fashionphile, The RealReal, and more.">
+  <meta property="og:description" content="See net payout across eBay, Poshmark, Whatnot, Fashionphile, The RealReal, and more.">
   <script>
     (function(){try{var t=localStorage.getItem("calculate-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");else if(t!=="light"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();
   </script>
@@ -57,7 +57,7 @@
       <header class="page-header">
         <p class="kicker">Sell</p>
         <h1>Secondary marketplace payout calculator</h1>
-        <p class="lede">Compare estimated take-home if the same item sells for the same price on eBay, Poshmark, Fashionphile, The RealReal, Mercari, Depop, and Etsy. Fees are typical U.S. seller defaults you can override.</p>
+        <p class="lede">Compare estimated take-home if the same item sells for the same price on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, Depop, and Etsy. Fees are typical U.S. seller defaults you can override.</p>
       </header>
       <aside class="ad-slot" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-frame ad-frame--leaderboard">Ad slot — 728×90</div></aside>
       <div class="calc-layout">
@@ -74,7 +74,7 @@
             </label>
             <label class="field">Shipping charged to buyer
               <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCharged" inputmode="decimal" value="12"></span>
-              <span class="hint">Included in eBay/Etsy fee base</span>
+              <span class="hint">Included in eBay, Etsy, and Whatnot processing</span>
             </label>
             <label class="field">Your shipping cost
               <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCost" inputmode="decimal" value="8"></span>
@@ -122,6 +122,15 @@
               <label class="field">Etsy processing
                 <span class="input-affix"><input name="etsyPay" inputmode="decimal" placeholder="3"><span class="affix">%</span></span>
               </label>
+              <label class="field">Whatnot commission
+                <span class="input-affix"><input name="whatnotPct" inputmode="decimal" placeholder="8"><span class="affix">%</span></span>
+              </label>
+              <label class="field">Whatnot processing
+                <span class="input-affix"><input name="whatnotPay" inputmode="decimal" placeholder="2.9"><span class="affix">%</span></span>
+              </label>
+              <label class="field">Whatnot per-order
+                <span class="input-affix prefix"><span class="affix">$</span><input name="whatnotFixed" inputmode="decimal" placeholder="0.30"></span>
+              </label>
             </div>
           </details>
           <p class="form-error" role="alert"></p>
@@ -140,7 +149,7 @@
       <section class="how">
         <details open>
           <summary>How this calculator works</summary>
-          <p>Net each = sale price + shipping charged − platform fees − your shipping cost. Defaults: eBay 13.6% of item + shipping + $0.40; Poshmark $2.95 under $15 otherwise 20%; Fashionphile 20% consignment; The RealReal 55% / 40% / 30% / 25% / 20% by price band; Mercari 10%; Depop 3.3% + $0.45; Etsy 6.5% + 3% + $0.25. Luxury houses often buy outright at a different rate than consignment — treat Fashionphile and The RealReal as planning estimates.</p>
+          <p>Net each = sale price + shipping charged − platform fees − your shipping cost. Defaults: eBay 13.6% of item + shipping + $0.40; Poshmark $2.95 under $15 otherwise 20%; Whatnot 8% commission on the item plus 2.9% + $0.30 processing on item + buyer shipping; Fashionphile 20% consignment; The RealReal 55% / 40% / 30% / 25% / 20% by price band; Mercari 10%; Depop 3.3% + $0.45; Etsy 6.5% + 3% + $0.25. Coins on Whatnot are often 4% — override the commission if needed. Luxury houses often buy outright at a different rate than consignment.</p>
         </details>
       </section>
       <p class="disclaimer">Not affiliated with these marketplaces. Published fee schedules change, vary by category, store subscription, and country, and may add tax, payments, or promotions. Confirm the live fee in each selling tool before you list. Not tax or business advice.</p>

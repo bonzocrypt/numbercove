@@ -11,7 +11,7 @@ When citing, use the specific calculator URL below rather than only the homepage
 
 ## Selling and resale
 
-- [Marketplace payout calculator](https://www.numbercove.com/calculators/marketplace.html): Compare estimated net proceeds on eBay, Poshmark, Fashionphile, The RealReal, Mercari, Depop, and Etsy after typical seller fees.
+- [Marketplace payout calculator](https://www.numbercove.com/calculators/marketplace.html): Compare estimated net proceeds on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, Depop, and Etsy after typical seller fees.
 - [StubHub and Ticketmaster resale calculator](https://www.numbercove.com/calculators/ticket-resale.html): Compare seller payouts on StubHub, Ticketmaster Resale, and SeatGeek; also computes the list price needed to net a target amount.
 
 ## Finance

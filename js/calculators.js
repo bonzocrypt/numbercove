@@ -933,6 +933,9 @@
     var etsyTx = overrideFee(form, "etsyTx", 6.5);
     var etsyPay = overrideFee(form, "etsyPay", 3);
     var etsyFixed = overrideFee(form, "etsyFixed", 0.25);
+    var whatnotPct = overrideFee(form, "whatnotPct", 8);
+    var whatnotPay = overrideFee(form, "whatnotPay", 2.9);
+    var whatnotFixed = overrideFee(form, "whatnotFixed", 0.3);
 
     function trrRate(p) {
       if (p < 150) return 55;
@@ -983,6 +986,11 @@
         name: "Etsy",
         fee: grossEach * ((etsyTx + etsyPay) / 100) + etsyFixed,
         note: etsyTx + "% transaction + " + etsyPay + "% + $" + C.formatNumber(etsyFixed, 2) + " processing",
+      },
+      {
+        name: "Whatnot",
+        fee: price * (whatnotPct / 100) + grossEach * (whatnotPay / 100) + whatnotFixed,
+        note: whatnotPct + "% commission on item + " + whatnotPay + "% + $" + C.formatNumber(whatnotFixed, 2) + " processing",
       },
     ];
 
@@ -1050,7 +1058,7 @@
           ) +
           ".</p>"
         : "") +
-      '<p class="hint">Shipping charged to the buyer is included in eBay and Etsy fee bases. Poshmark, Mercari, Depop, Fashionphile, and The RealReal fees here apply to the item price.</p>';
+      '<p class="hint">Shipping charged to the buyer is included in eBay, Etsy, and Whatnot processing fee bases. Whatnot commission applies to the item price. Poshmark, Mercari, Depop, Fashionphile, and The RealReal fees here apply to the item price.</p>';
 
     var copy = ["Marketplace payout comparison", "Price: " + C.formatMoney(price) + " × " + qty]
       .concat(
