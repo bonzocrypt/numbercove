@@ -68,6 +68,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 html,
@@ -85,6 +87,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 
 img,
@@ -135,8 +138,11 @@ p:last-child {
 }
 
 .wrap {
-  width: min(100% - 1.5rem, var(--wrap));
+  width: 100%;
+  max-width: var(--wrap);
   margin-inline: auto;
+  padding-inline: 0.75rem;
+  box-sizing: border-box;
 }
 
 .skip-link {
@@ -170,6 +176,7 @@ p:last-child {
   align-items: center;
   gap: 1rem;
   min-height: var(--header-h);
+  min-width: 0;
 }
 
 .logo {
@@ -300,6 +307,8 @@ p:last-child {
 main {
   flex: 1;
   padding: 1.75rem 0 3.5rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero {
@@ -589,6 +598,8 @@ main {
   display: grid;
   gap: 1rem;
   align-items: start;
+  min-width: 0;
+  max-width: 100%;
 }
 
 @media (min-width: 900px) {
@@ -608,6 +619,8 @@ main {
   border-radius: var(--radius);
   padding: 1.15rem 1.15rem 1.25rem;
   box-shadow: var(--shadow-sm);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .panel h2 {
@@ -618,6 +631,8 @@ main {
 .form-grid {
   display: grid;
   gap: 0.85rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .form-grid.two {
@@ -640,6 +655,8 @@ label.field {
   gap: 0.32rem;
   font-weight: 600;
   font-size: 0.92rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hint {
@@ -659,6 +676,12 @@ label.field {
   min-height: var(--tap);
   padding: 0.45rem 0.75rem;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.field select {
+  text-overflow: ellipsis;
 }
 
 .field textarea {
@@ -679,10 +702,16 @@ label.field {
 .input-affix {
   display: flex;
   align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .input-affix input {
   border-radius: 10px 0 0 10px;
+  min-width: 0;
+  flex: 1 1 auto;
+  width: 100%;
 }
 
 .input-affix .affix {
@@ -713,6 +742,7 @@ label.field {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+  max-width: 100%;
 }
 
 .seg label {
@@ -841,11 +871,13 @@ details.advanced .form-grid {
 
 .result-hero .value {
   font-family: var(--font-mono);
-  font-size: clamp(1.7rem, 4vw, 2.2rem);
+  font-size: clamp(1.35rem, 6vw, 2.2rem);
   font-weight: 600;
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
   margin: 0.15rem 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .result-hero .sub {
@@ -858,6 +890,7 @@ details.advanced .form-grid {
   grid-template-columns: 1fr 1fr;
   gap: 0.65rem;
   margin-bottom: 1rem;
+  min-width: 0;
 }
 
 .stat {
@@ -865,6 +898,7 @@ details.advanced .form-grid {
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 0.7rem 0.8rem;
+  min-width: 0;
 }
 
 .stat .label {
@@ -878,6 +912,8 @@ details.advanced .form-grid {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   font-weight: 500;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .placeholder-result {
@@ -925,9 +961,11 @@ details.advanced .form-grid {
 
 .table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin: 0.75rem 0 0.25rem;
   border: 1px solid var(--line);
   border-radius: 10px;
+  max-width: 100%;
 }
 
 table {
@@ -1147,6 +1185,8 @@ th.num {
   border-radius: 12px;
   padding: 0.7rem;
   text-align: center;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .ad-label {
@@ -1170,7 +1210,8 @@ th.num {
 
 .ad-frame--leaderboard {
   min-height: 90px;
-  max-width: 728px;
+  max-width: min(728px, 100%);
+  width: 100%;
 }
 
 .ad-frame--rectangle {
@@ -1274,6 +1315,7 @@ th.num {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.65rem;
+  min-width: 0;
 }
 
 .mode-hidden {
@@ -1282,6 +1324,61 @@ th.num {
 
 .unit-hidden {
   display: none !important;
+}
+
+@media (max-width: 639px) {
+  .hero,
+  .page-header {
+    text-align: center;
+  }
+
+  .page-header {
+    margin-inline: auto;
+  }
+
+  .lede {
+    margin-inline: auto;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .trust-row {
+    justify-content: center;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .actions .btn {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .panel {
+    padding: 1rem 0.9rem 1.1rem;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compare {
+    grid-template-columns: 1fr;
+  }
+
+  .breadcrumb {
+    justify-content: center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
