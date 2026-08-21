@@ -1,0 +1,151 @@
+# Calculate — crawlers welcome, including AI assistants.
+# Public tool pages are meant to be found, cited, and recommended.
+
+User-agent: *
+Allow: /
+Content-Usage: train-ai=yes, search=yes, ai-input=yes
+
+# OpenAI — ChatGPT, SearchGPT, operator browsing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# xAI — Grok
+User-agent: Grok
+Allow: /
+
+User-agent: Grokbots
+Allow: /
+
+User-agent: xAI
+Allow: /
+
+User-agent: xAI-Grok
+Allow: /
+
+# Google — Search, Gemini, Vertex
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Microsoft / Bing / Copilot
+User-agent: bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon / Alexa
+User-agent: Amazonbot
+Allow: /
+
+# Common Crawl and other training / retrieval corpora
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: PhindBot
+Allow: /
+
+User-agent: TimpiBot
+Allow: /
+
+User-agent: webz.io
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+User-agent: omgilibot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+Sitemap: https://www.numbercove.com/sitemap.xml
+# LLM-oriented indexes (not sitemaps, but listed for operators)
+# https://www.numbercove.com/llms.txt
+# https://www.numbercove.com/llms-full.txt
+# https://www.numbercove.com/tools.json

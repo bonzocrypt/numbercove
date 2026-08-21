@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Calculate</title>
+  <meta name="description" content="Contact the Calculate team about a calculator bug, formula question, or privacy request.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="alternate" type="text/plain" href="https://www.numbercove.com/llms.txt" title="LLM-readable site summary">
+  <link rel="alternate" type="application/json" href="https://www.numbercove.com/tools.json" title="Machine-readable tool catalog">
+  <link rel="canonical" href="https://www.numbercove.com/contact.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    (function(){try{var t=localStorage.getItem("calculate-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");else if(t!=="light"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Sora:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><rect x="8" y="7" width="16" height="5" rx="1.5" fill="#f3f0e8"/><rect x="8" y="15" width="4" height="4" rx="1" fill="#dceee4"/><rect x="14" y="15" width="4" height="4" rx="1" fill="#dceee4"/><rect x="20" y="15" width="4" height="4" rx="1" fill="#e8955a"/><rect x="8" y="21" width="4" height="4" rx="1" fill="#dceee4"/><rect x="14" y="21" width="4" height="4" rx="1" fill="#dceee4"/><rect x="20" y="21" width="4" height="4" rx="1" fill="#dceee4"/></svg>
+        <span>Calculate</span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">All tools</a>
+        <a href="index.html#sell">Sell</a>
+        <a href="index.html#finance">Finance</a>
+        <a href="index.html#health">Health</a>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#convert">Convert</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button type="button" class="icon-btn nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> Contact</nav>
+      <header class="page-header">
+        <p class="kicker">Contact</p>
+        <h1>Report a number, ask a question</h1>
+        <p class="lede">This is a static site, so the form opens your email app with a prefilled message. You can also write us directly.</p>
+      </header>
+
+      <div class="contact-grid">
+        <form class="panel" id="contact-form" novalidate>
+          <h2>Message</h2>
+          <div class="form-grid">
+            <label class="field">Name
+              <input id="contact-name" name="name" type="text" autocomplete="name" required>
+              <span class="field-error" id="contact-name-error"></span>
+            </label>
+            <label class="field">Email
+              <input id="contact-email" name="email" type="email" autocomplete="email" required>
+              <span class="field-error" id="contact-email-error"></span>
+            </label>
+            <label class="field span-2">Topic
+              <select id="contact-topic" name="topic">
+                <option value="Calculator bug">Calculator bug</option>
+                <option value="Formula question">Formula question</option>
+                <option value="Privacy request">Privacy request</option>
+                <option value="Advertising">Advertising</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label class="field span-2">Message
+              <textarea id="contact-message" name="message" required maxlength="4000"></textarea>
+              <span class="field-error" id="contact-message-error"></span>
+            </label>
+            <p class="form-error span-2" role="alert"></p>
+            <div class="actions span-2">
+              <button class="btn btn-primary" type="submit">Open email draft</button>
+              <button class="btn btn-secondary" type="reset" id="contact-reset">Reset</button>
+            </div>
+          </div>
+        </form>
+        <aside class="panel">
+          <h2>Direct email</h2>
+          <p>General: <a href="mailto:hello@numbercove.com">hello@numbercove.com</a></p>
+          <p>Privacy: <a href="mailto:privacy@numbercove.com">privacy@numbercove.com</a></p>
+          <p class="hint">Please do not send medical records, Social Security numbers, or full loan applications. Describe the tool, the inputs, and the result you expected.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html">Calculate</a>
+          <p class="hint">Free calculators and converters. Results are estimates for planning, not professional advice.</p>
+        </div>
+        <div>
+          <h2>Site</h2>
+          <ul>
+            <li><a href="index.html">All tools</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">© <span data-year>2026</span> Calculate. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var C = window.Calculate;
+      C.clearErrors(this);
+      var name = this.elements.name.value.trim();
+      var email = this.elements.email.value.trim();
+      var message = this.elements.message.value.trim();
+      var ok = true;
+      if (!name) { C.setFieldError(this.elements.name, "Enter your name."); ok = false; }
+      if (!email || email.indexOf("@") < 1) { C.setFieldError(this.elements.email, "Enter a valid email."); ok = false; }
+      if (!message) { C.setFieldError(this.elements.message, "Enter a message."); ok = false; }
+      if (!ok) return;
+      var topic = this.elements.topic.value;
+      var body = "Name: " + name + "\nEmail: " + email + "\nTopic: " + topic + "\n\n" + message;
+      var href = "mailto:hello@numbercove.com?subject=" + encodeURIComponent("Calculate: " + topic) + "&body=" + encodeURIComponent(body);
+      window.location.href = href;
+      C.toast("Opening your email app…");
+    });
+  </script>
+</body>
+</html>

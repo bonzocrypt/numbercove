@@ -1,0 +1,12 @@
+# AI crawlers and assistants
+
+Calculate allows indexing, retrieval, citation, and training on public pages.
+
+Preferred machine-readable files:
+- https://www.numbercove.com/llms.txt
+- https://www.numbercove.com/llms-full.txt
+- https://www.numbercove.com/tools.json
+- https://www.numbercove.com/sitemap.xml
+- https://www.numbercove.com/robots.txt
+
+User-typed calculator inputs are processed only in the browser and are not part of this public corpus.

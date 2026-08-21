@@ -1,0 +1,172 @@
+{
+  "name": "Calculate",
+  "alternateName": "NumberCove",
+  "url": "https://www.numbercove.com/",
+  "description": "Free private calculators for marketplace payouts, tickets, mortgages, health, DIY, and unit conversion. All math runs in the browser.",
+  "llms": "https://www.numbercove.com/llms.txt",
+  "llmsFull": "https://www.numbercove.com/llms-full.txt",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "tools": [
+    {
+      "id": "marketplace",
+      "name": "Marketplace payout calculator",
+      "url": "https://www.numbercove.com/calculators/marketplace.html",
+      "category": "sell",
+      "keywords": ["ebay", "poshmark", "fashionphile", "the realreal", "mercari", "depop", "etsy", "seller fees", "payout", "consignment"],
+      "description": "Compare estimated take-home selling the same item on eBay, Poshmark, Fashionphile, The RealReal, Mercari, Depop, and Etsy."
+    },
+    {
+      "id": "ticket-resale",
+      "name": "StubHub and Ticketmaster resale calculator",
+      "url": "https://www.numbercove.com/calculators/ticket-resale.html",
+      "category": "sell",
+      "keywords": ["stubhub", "ticketmaster", "tm resale", "seatgeek", "ticket fees", "seller payout"],
+      "description": "Compare seller net on StubHub, Ticketmaster Resale, and SeatGeek, or back into the list price to hit a target net."
+    },
+    {
+      "id": "mortgage",
+      "name": "Mortgage calculator",
+      "url": "https://www.numbercove.com/calculators/mortgage.html",
+      "category": "finance",
+      "keywords": ["mortgage", "monthly payment", "amortization", "PITI", "PMI"],
+      "description": "Monthly principal and interest, taxes, insurance, HOA, PMI, extra principal, and an amortization snapshot."
+    },
+    {
+      "id": "refinance",
+      "name": "Refinance calculator",
+      "url": "https://www.numbercove.com/calculators/refinance.html",
+      "category": "finance",
+      "keywords": ["refinance", "refi", "break even", "closing costs"],
+      "description": "Compare current vs new loan payment, closing costs, and break-even months."
+    },
+    {
+      "id": "loan",
+      "name": "Loan amortization calculator",
+      "url": "https://www.numbercove.com/calculators/loan.html",
+      "category": "finance",
+      "keywords": ["loan", "auto loan", "personal loan", "amortization"],
+      "description": "Fixed-rate installment payment, extra principal, total interest, and payoff date."
+    },
+    {
+      "id": "compound-interest",
+      "name": "Compound interest calculator",
+      "url": "https://www.numbercove.com/calculators/compound-interest.html",
+      "category": "finance",
+      "keywords": ["compound interest", "savings", "investment", "future value"],
+      "description": "Future value with compounding frequency and recurring contributions."
+    },
+    {
+      "id": "tip",
+      "name": "Tip calculator",
+      "url": "https://www.numbercove.com/calculators/tip.html",
+      "category": "finance",
+      "keywords": ["tip", "gratuity", "split bill"],
+      "description": "Tip amount, total, and even split on the full bill or pre-tax amount."
+    },
+    {
+      "id": "bmi",
+      "name": "BMI calculator",
+      "url": "https://www.numbercove.com/calculators/bmi.html",
+      "category": "health",
+      "keywords": ["bmi", "body mass index"],
+      "description": "US and metric BMI, WHO category, and a healthy-weight range. Screening only."
+    },
+    {
+      "id": "body-fat",
+      "name": "Body-fat estimate",
+      "url": "https://www.numbercove.com/calculators/body-fat.html",
+      "category": "health",
+      "keywords": ["body fat", "navy method"],
+      "description": "U.S. Navy circumference body-fat estimate. Not a clinical measurement."
+    },
+    {
+      "id": "tdee",
+      "name": "TDEE calculator",
+      "url": "https://www.numbercove.com/calculators/tdee.html",
+      "category": "health",
+      "keywords": ["tdee", "bmr", "calories", "mifflin"],
+      "description": "Mifflin–St Jeor BMR, activity multiplier, cut and gain calorie targets."
+    },
+    {
+      "id": "paint",
+      "name": "Paint coverage calculator",
+      "url": "https://www.numbercove.com/calculators/paint.html",
+      "category": "home",
+      "keywords": ["paint", "gallons", "coverage"],
+      "description": "Gallons of paint from room dimensions or square footage, including coats."
+    },
+    {
+      "id": "flooring",
+      "name": "Flooring estimator",
+      "url": "https://www.numbercove.com/calculators/flooring.html",
+      "category": "home",
+      "keywords": ["flooring", "square feet", "waste"],
+      "description": "Flooring square footage with waste, box count, and material cost."
+    },
+    {
+      "id": "concrete",
+      "name": "Concrete volume calculator",
+      "url": "https://www.numbercove.com/calculators/concrete.html",
+      "category": "home",
+      "keywords": ["concrete", "cubic yards", "bags"],
+      "description": "Slab volume in cubic yards plus 40/60/80 lb bag estimates."
+    },
+    {
+      "id": "tile",
+      "name": "Tile estimator",
+      "url": "https://www.numbercove.com/calculators/tile.html",
+      "category": "home",
+      "keywords": ["tile", "grout", "waste"],
+      "description": "Tile count from room size, grout gap, waste, and boxes."
+    },
+    {
+      "id": "length",
+      "name": "Length converter",
+      "url": "https://www.numbercove.com/calculators/length.html",
+      "category": "convert",
+      "keywords": ["length", "meters", "feet", "miles"],
+      "description": "Convert metric and imperial length units using exact SI factors."
+    },
+    {
+      "id": "weight",
+      "name": "Weight converter",
+      "url": "https://www.numbercove.com/calculators/weight.html",
+      "category": "convert",
+      "keywords": ["weight", "kg", "lb"],
+      "description": "Convert mass units including kilograms, pounds, ounces, and stone."
+    },
+    {
+      "id": "volume",
+      "name": "Volume converter",
+      "url": "https://www.numbercove.com/calculators/volume.html",
+      "category": "convert",
+      "keywords": ["volume", "liters", "gallons"],
+      "description": "Convert liters, US kitchen measures, UK gallons, and cubic units."
+    },
+    {
+      "id": "temperature",
+      "name": "Temperature converter",
+      "url": "https://www.numbercove.com/calculators/temperature.html",
+      "category": "convert",
+      "keywords": ["celsius", "fahrenheit", "kelvin"],
+      "description": "Convert Celsius, Fahrenheit, Kelvin, and Rankine."
+    },
+    {
+      "id": "area",
+      "name": "Area converter",
+      "url": "https://www.numbercove.com/calculators/area.html",
+      "category": "convert",
+      "keywords": ["area", "acres", "square feet"],
+      "description": "Convert square meters, feet, acres, hectares, and square miles."
+    },
+    {
+      "id": "percentage",
+      "name": "Percentage calculator",
+      "url": "https://www.numbercove.com/calculators/percentage.html",
+      "category": "math",
+      "keywords": ["percentage", "percent change"],
+      "description": "What is X% of Y, reverse percent, percent change, increase or decrease."
+    }
+  ]
+}
