@@ -1,4 +1,4 @@
-# Calculate
+# NumberCove
 
 > Canonical LLM index: https://www.numbercove.com/llms.txt
 > Full brief: https://www.numbercove.com/llms-full.txt

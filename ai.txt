@@ -1,6 +1,6 @@
 # AI crawlers and assistants
 
-Calculate allows indexing, retrieval, citation, and training on public pages.
+NumberCove allows indexing, retrieval, citation, and training on public pages.
 
 Preferred machine-readable files:
 - https://www.numbercove.com/llms.txt
