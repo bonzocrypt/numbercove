@@ -162,6 +162,14 @@
         el.classList.toggle("unit-hidden", !show);
       });
     }
+    var itemEl = form.querySelector("[name='itemType']");
+    if (itemEl) {
+      var item = itemEl.value || "clothing";
+      C.$$("[data-item]", form).forEach(function (el) {
+        var allow = el.getAttribute("data-item") || "";
+        el.classList.toggle("mode-hidden", allow.split(/\s+/).indexOf(item) === -1);
+      });
+    }
     var mode = form.querySelector("[name='mode']:checked") || form.elements.mode;
     if (mode && mode.value) {
       C.$$("[data-mode]").forEach(function (el) {
@@ -908,6 +916,172 @@
     return Number.isFinite(n) && n >= 0 ? n : fallback;
   }
 
+  function feeOverride(form, name) {
+    var el = C.getControl ? C.getControl(form, name) : form.querySelector('[name="' + name + '"]');
+    if (!el || !String(el.value).trim()) return null;
+    var n = C.parseNumber(el.value);
+    return Number.isFinite(n) && n >= 0 ? n : null;
+  }
+
+  function selectValue(form, name, fallback) {
+    var el = C.getControl ? C.getControl(form, name) : form.querySelector('[name="' + name + '"]');
+    var v = el && String(el.value).trim();
+    return v || fallback;
+  }
+
+  function trrBasePayout(price, category) {
+    if (category === "handbags") {
+      if (price >= 7500) return 80;
+      if (price >= 5000) return 75;
+      if (price >= 1500) return 70;
+      if (price >= 750) return 65;
+      if (price >= 300) return 60;
+      if (price >= 200) return 55;
+      if (price >= 150) return 45;
+      if (price >= 100) return 30;
+      return 20;
+    }
+    if (category === "jewelry") {
+      if (price >= 750) return 70;
+      if (price >= 300) return 65;
+      if (price >= 200) return 55;
+      if (price >= 150) return 45;
+      if (price >= 100) return 30;
+      return 20;
+    }
+    if (category === "watches") {
+      if (price >= 7500) return 85;
+      if (price >= 5000) return 80;
+      if (price >= 2000) return 75;
+      if (price >= 500) return 70;
+      if (price >= 300) return 60;
+      if (price >= 200) return 55;
+      if (price >= 150) return 45;
+      if (price >= 100) return 30;
+      return 20;
+    }
+    if (category === "sneakers") {
+      if (price >= 1500) return 85;
+      if (price >= 500) return 75;
+      if (price >= 300) return 65;
+      if (price >= 200) return 55;
+      if (price >= 150) return 45;
+      if (price >= 100) return 30;
+      return 20;
+    }
+    if (price >= 5000) return 70;
+    if (price >= 750) return 65;
+    if (price >= 300) return 60;
+    if (price >= 200) return 55;
+    if (price >= 150) return 45;
+    if (price >= 100) return 30;
+    return 20;
+  }
+
+  function trrLoyaltyBonus(status) {
+    if (status === "influencer") return 1;
+    if (status === "tastemaker") return 2;
+    if (status === "vip") return 5;
+    return 0;
+  }
+
+  var ITEM_LABELS = {
+    clothing: "clothing, shoes & accessories",
+    handbags: "handbags",
+    jewelry: "branded fine jewelry",
+    watches: "watches",
+    sneakers: "men's sneakers & collectibles",
+    coins: "coins & money",
+    cards: "trading cards & TCG",
+    other: "other merchandise",
+  };
+
+  function itemTypeLabel(type) {
+    return ITEM_LABELS[type] || ITEM_LABELS.clothing;
+  }
+
+  function isLuxuryItem(type) {
+    return type === "clothing" || type === "handbags" || type === "jewelry" || type === "watches" || type === "sneakers";
+  }
+
+  function ebaySchedule(gross, itemType) {
+    var perOrder = gross <= 10 ? 0.3 : 0.4;
+    function mostCategories() {
+      var variable = gross <= 7500 ? gross * 0.136 : 7500 * 0.136 + (gross - 7500) * 0.0235;
+      return {
+        variable: variable,
+        fixed: perOrder,
+        pctLabel: "13.6%",
+        note: "13.6% of item + shipping" + (gross > 7500 ? " (2.35% above $7,500)" : ""),
+      };
+    }
+    if (itemType === "sneakers") {
+      if (gross >= 150) {
+        return {
+          variable: gross * 0.08,
+          fixed: 0,
+          pctLabel: "8%",
+          note: "8% athletic shoes $150+ (no per-order fee)",
+        };
+      }
+      var under = mostCategories();
+      under.note = "13.6% athletic shoes under $150";
+      return under;
+    }
+    if (itemType === "handbags") {
+      var bagPct = gross > 2000 ? 9 : 15;
+      return {
+        variable: gross * (bagPct / 100),
+        fixed: perOrder,
+        pctLabel: bagPct + "%",
+        note: bagPct + "% women's handbags (15% at $2,000 or less, 9% above)",
+      };
+    }
+    if (itemType === "jewelry") {
+      var jewPct = gross > 5000 ? 9 : 15;
+      return {
+        variable: gross * (jewPct / 100),
+        fixed: perOrder,
+        pctLabel: jewPct + "%",
+        note: jewPct + "% jewelry (15% at $5,000 or less, 9% above)",
+      };
+    }
+    if (itemType === "watches") {
+      var watchVar;
+      if (gross <= 1000) watchVar = gross * 0.15;
+      else if (gross <= 7500) watchVar = 1000 * 0.15 + (gross - 1000) * 0.065;
+      else watchVar = 1000 * 0.15 + 6500 * 0.065 + (gross - 7500) * 0.03;
+      return {
+        variable: watchVar,
+        fixed: perOrder,
+        pctLabel: "tiered",
+        note: "15% to $1,000, 6.5% to $7,500, then 3%",
+      };
+    }
+    if (itemType === "coins" || itemType === "cards") {
+      var collectPct = 13.25;
+      var collectVar =
+        gross <= 7500 ? gross * (collectPct / 100) : 7500 * (collectPct / 100) + (gross - 7500) * 0.0235;
+      return {
+        variable: collectVar,
+        fixed: perOrder,
+        pctLabel: "13.25%",
+        note: "13.25% " + (itemType === "coins" ? "coins" : "trading cards") + " to $7,500, then 2.35%",
+      };
+    }
+    return mostCategories();
+  }
+
+  function whatnotCommission(price, itemType) {
+    if (itemType === "coins") {
+      return { fee: Math.min(price, 1500) * 0.04, note: "4% Coins & Money on first $1,500 (0% above)" };
+    }
+    if (itemType === "cards") {
+      return { fee: Math.min(price, 1500) * 0.08, note: "8% TCG/sports/comics on first $1,500 (0% above)" };
+    }
+    return { fee: price * 0.08, note: "8% commission on item" };
+  }
+
   function marketplace(form) {
     var price = C.requireFinite(form, "salePrice", "Sale price", { gt: 0 });
     var qty = C.requireFinite(form, "quantity", "Quantity", { min: 1, max: 9999 });
@@ -923,76 +1097,111 @@
     }
 
     var grossEach = price + shipCharge;
-    var ebayPct = overrideFee(form, "ebayPct", 13.6);
-    var ebayFixed = overrideFee(form, "ebayFixed", 0.4);
+    var itemType = selectValue(form, "itemType", "clothing");
+    var luxury = isLuxuryItem(itemType);
+    var ebayPctOverride = feeOverride(form, "ebayPct");
+    var ebayFixedOverride = feeOverride(form, "ebayFixed");
     var poshPct = overrideFee(form, "poshPct", 20);
     var mercariPct = overrideFee(form, "mercariPct", 10);
     var depopPct = overrideFee(form, "depopPct", 3.3);
     var depopFixed = overrideFee(form, "depopFixed", 0.45);
-    var fpPct = overrideFee(form, "fashionphilePct", 20);
-    var etsyTx = overrideFee(form, "etsyTx", 6.5);
-    var etsyPay = overrideFee(form, "etsyPay", 3);
-    var etsyFixed = overrideFee(form, "etsyFixed", 0.25);
-    var whatnotPct = overrideFee(form, "whatnotPct", 8);
+    var fpOverride = feeOverride(form, "fashionphilePct");
+    var whatnotPctOverride = feeOverride(form, "whatnotPct");
     var whatnotPay = overrideFee(form, "whatnotPay", 2.9);
     var whatnotFixed = overrideFee(form, "whatnotFixed", 0.3);
+    var trrStatus = selectValue(form, "trrStatus", "trendsetter");
+    var trrPctOverride = feeOverride(form, "trrPct");
 
-    function trrRate(p) {
-      if (p < 150) return 55;
-      if (p < 500) return 40;
-      if (p < 1500) return 30;
-      if (p < 3000) return 25;
-      return 20;
-    }
-    var trrPct = overrideFee(form, "trrPct", trrRate(price));
+    var ebay = ebaySchedule(grossEach, itemType);
+    var ebayPct = ebayPctOverride != null ? ebayPctOverride : null;
+    var ebayVar = ebayPctOverride != null ? grossEach * (ebayPct / 100) : ebay.variable;
+    var ebayFixed = ebayFixedOverride != null ? ebayFixedOverride : ebay.fixed;
+    var ebayNote =
+      (ebayPctOverride != null ? ebayPct + "% of item + shipping" : ebay.note) +
+      " + $" +
+      C.formatNumber(ebayFixed, 2) +
+      (promo ? " + " + promo + "% promoted" : "");
 
     function poshFee(p) {
       if (p < 15) return 2.95;
       return p * (poshPct / 100);
     }
 
+    var wn = whatnotCommission(price, itemType);
+    var wnFee = (whatnotPctOverride != null ? price * (whatnotPctOverride / 100) : wn.fee) + grossEach * (whatnotPay / 100) + whatnotFixed;
+    var wnNote =
+      (whatnotPctOverride != null ? whatnotPctOverride + "% commission on item" : wn.note) +
+      " + " +
+      whatnotPay +
+      "% + $" +
+      C.formatNumber(whatnotFixed, 2) +
+      " processing";
+
     var rows = [
       {
         name: "eBay",
-        fee: grossEach * (ebayPct / 100) + ebayFixed + grossEach * (promo / 100),
-        note: ebayPct + "% of item + shipping + $" + C.formatNumber(ebayFixed, 2) + (promo ? " + " + promo + "% promoted" : ""),
+        fee: ebayVar + ebayFixed + grossEach * (promo / 100),
+        note: ebayNote,
       },
       {
         name: "Poshmark",
         fee: poshFee(price),
         note: price < 15 ? "$2.95 flat under $15" : poshPct + "% at $15+",
       },
-      {
-        name: "Fashionphile",
-        fee: price * (fpPct / 100),
-        note: fpPct + "% consignment (typical luxury; buyout offers differ)",
-      },
-      {
-        name: "The RealReal",
-        fee: price * (trrPct / 100),
-        note: trrPct + "% consignment tier for this price",
-      },
+    ];
+
+    if (luxury) {
+      var fpFee;
+      var fpNote;
+      if (fpOverride != null) {
+        fpFee = price * (fpOverride / 100);
+        fpNote = fpOverride + "% consignment (override; buyout offers differ)";
+      } else if (price <= 3000) {
+        fpFee = price * 0.3;
+        fpNote = "30% consignment on the first $3,000 (buyout offers differ)";
+      } else {
+        fpFee = 3000 * 0.3 + (price - 3000) * 0.15;
+        fpNote = "30% on first $3,000 + 15% above (buyout offers differ)";
+      }
+      rows.push({ name: "Fashionphile", fee: fpFee, note: fpNote });
+
+      var trrFee;
+      var trrNote;
+      if (trrPctOverride != null) {
+        trrFee = price * (trrPctOverride / 100);
+        trrNote = trrPctOverride + "% consignment (override)";
+      } else {
+        var trrPayout = trrBasePayout(price, itemType);
+        if (price >= 200) trrPayout += trrLoyaltyBonus(trrStatus);
+        trrFee = price * ((100 - trrPayout) / 100);
+        var trrStatusLabel = {
+          trendsetter: "Trendsetter",
+          influencer: "Influencer +1%",
+          tastemaker: "Tastemaker +2%",
+          vip: "VIP +5%",
+        }[trrStatus] || "Trendsetter";
+        trrNote = trrPayout + "% payout · " + trrStatusLabel + " · " + itemTypeLabel(itemType);
+      }
+      rows.push({ name: "The RealReal", fee: trrFee, note: trrNote });
+    }
+
+    rows.push(
       {
         name: "Mercari",
-        fee: price * (mercariPct / 100),
-        note: mercariPct + "% selling fee",
+        fee: grossEach * (mercariPct / 100),
+        note: mercariPct + "% of item + buyer shipping",
       },
       {
         name: "Depop",
-        fee: price * (depopPct / 100) + depopFixed,
-        note: depopPct + "% + $" + C.formatNumber(depopFixed, 2) + " (typical U.S. processing)",
-      },
-      {
-        name: "Etsy",
-        fee: grossEach * ((etsyTx + etsyPay) / 100) + etsyFixed,
-        note: etsyTx + "% transaction + " + etsyPay + "% + $" + C.formatNumber(etsyFixed, 2) + " processing",
+        fee: grossEach * (depopPct / 100) + depopFixed,
+        note: depopPct + "% + $" + C.formatNumber(depopFixed, 2) + " processing on item + shipping (U.S.)",
       },
       {
         name: "Whatnot",
-        fee: price * (whatnotPct / 100) + grossEach * (whatnotPay / 100) + whatnotFixed,
-        note: whatnotPct + "% commission on item + " + whatnotPay + "% + $" + C.formatNumber(whatnotFixed, 2) + " processing",
-      },
-    ];
+        fee: wnFee,
+        note: wnNote,
+      }
+    );
 
     rows.forEach(function (r) {
       r.payoutEach = price + shipCharge - r.fee - shipCost;
@@ -1015,7 +1224,7 @@
         if (i === 0) mark = ' <span class="badge badge-ok">Best net</span>';
         else if (i === rows.length - 1) mark = ' <span class="badge badge-danger">Highest fees</span>';
         return [
-          escapeHtml(r.name) + mark,
+          escapeHtml(r.name) + mark + (r.note ? '<div class="hint">' + escapeHtml(r.note) + "</div>" : ""),
           C.formatMoney(r.fee),
           C.formatMoney(r.payoutEach),
           C.formatMoney(r.payout),
@@ -1034,6 +1243,7 @@
         escapeHtml(best.name) + " · " + C.formatMoney(best.payoutEach) + " each after typical fees"
       ) +
       stats([
+        ["Item", itemTypeLabel(itemType)],
         ["Sale (each)", C.formatMoney(price)],
         ["Quantity", String(qty)],
         ["Gross (each)", C.formatMoney(grossEach)],
@@ -1058,12 +1268,16 @@
           ) +
           ".</p>"
         : "") +
-      '<p class="hint">Shipping charged to the buyer is included in eBay, Etsy, and Whatnot processing fee bases. Whatnot commission applies to the item price. Poshmark, Mercari, Depop, Fashionphile, and The RealReal fees here apply to the item price.</p>';
+      '<p class="hint">Fees follow the item type you selected. Shipping charged to the buyer is included in eBay, Mercari, Depop, and Whatnot processing fee bases. Whatnot commission applies to the item price. Poshmark, Fashionphile, and The RealReal fees here apply to the item price. The RealReal loyalty bonus applies to items $200+. Fashionphile and The RealReal appear for luxury categories only.</p>';
 
-    var copy = ["Marketplace payout comparison", "Price: " + C.formatMoney(price) + " × " + qty]
+    var copy = [
+      "Marketplace payout comparison",
+      "Item: " + itemTypeLabel(itemType),
+      "Price: " + C.formatMoney(price) + " × " + qty,
+    ]
       .concat(
         rows.map(function (r) {
-          return r.name + ": net " + C.formatMoney(r.payout) + " (fees " + C.formatMoney(r.fee * qty) + ")";
+          return r.name + ": net " + C.formatMoney(r.payout) + " (fees " + C.formatMoney(r.fee * qty) + (r.note ? "; " + r.note : "") + ")";
         })
       )
       .join("\n");
@@ -1219,7 +1433,7 @@
     if (!fn) return;
 
     form.addEventListener("change", function (e) {
-      if (e.target && (e.target.name === "unit" || e.target.name === "mode" || e.target.name === "sex")) {
+      if (e.target && (e.target.name === "unit" || e.target.name === "mode" || e.target.name === "sex" || e.target.name === "itemType")) {
         syncToggles(form);
       }
     });

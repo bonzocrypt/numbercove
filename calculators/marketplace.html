@@ -13,7 +13,7 @@
   <meta name="application-name" content="NumberCove">
   <meta name="apple-mobile-web-app-title" content="NumberCove">
   <title>Marketplace Seller Payout Calculator — eBay, Poshmark, Whatnot, Fashionphile | NumberCove</title>
-  <meta name="description" content="Compare what you actually take home selling on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, Depop, and Etsy after typical seller fees.">
+  <meta name="description" content="Compare what you actually take home selling on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, and Depop after typical seller fees.">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="alternate" type="text/plain" href="https://www.numbercove.com/llms.txt" title="LLM-readable site summary">
   <link rel="alternate" type="application/json" href="https://www.numbercove.com/tools.json" title="Machine-readable tool catalog">
@@ -70,13 +70,35 @@
       <header class="page-header">
         <p class="kicker">Sell</p>
         <h1>Secondary marketplace payout calculator</h1>
-        <p class="lede">Compare estimated take-home if the same item sells for the same price on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, Depop, and Etsy. Fees are typical U.S. seller defaults you can override.</p>
+        <p class="lede">Choose what you are selling, then compare estimated take-home on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, and Depop. Each platform uses the fee chart for that item type. The RealReal also applies your loyalty status (Trendsetter through VIP).</p>
       </header>
       <aside class="ad-slot" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-frame ad-frame--leaderboard">Ad slot — 728×90</div></aside>
       <div class="calc-layout">
         <form class="panel" data-calc="marketplace" id="calc-form" novalidate>
           <h2>Sale</h2>
           <div class="form-grid two">
+            <label class="field">What are you selling?
+              <select name="itemType">
+                <option value="clothing" selected>Clothing, shoes &amp; accessories</option>
+                <option value="handbags">Handbags</option>
+                <option value="jewelry">Branded fine jewelry</option>
+                <option value="watches">Watches</option>
+                <option value="sneakers">Men's sneakers &amp; collectibles</option>
+                <option value="coins">Coins &amp; money</option>
+                <option value="cards">Trading cards &amp; TCG</option>
+                <option value="other">Other merchandise</option>
+              </select>
+              <span class="hint">Sets eBay, The RealReal, Whatnot, and Fashionphile rate charts</span>
+            </label>
+            <label class="field" data-item="clothing handbags jewelry watches sneakers">The RealReal status
+              <select name="trrStatus">
+                <option value="trendsetter" selected>Trendsetter (under $1,499)</option>
+                <option value="influencer">Influencer +1% ($1,500–$4,999)</option>
+                <option value="tastemaker">Tastemaker +2% ($5,000–$9,999)</option>
+                <option value="vip">VIP +5% ($10k+ net sales)</option>
+              </select>
+              <span class="hint">Loyalty bonus applies to items $200+</span>
+            </label>
             <label class="field">Sale price (each)
               <span class="input-affix prefix"><span class="affix">$</span><input name="salePrice" inputmode="decimal" value="250" required></span>
               <span class="field-error"></span>
@@ -87,7 +109,7 @@
             </label>
             <label class="field">Shipping charged to buyer
               <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCharged" inputmode="decimal" value="12"></span>
-              <span class="hint">Included in eBay, Etsy, and Whatnot processing</span>
+              <span class="hint">Included in eBay, Mercari, Depop, and Whatnot processing</span>
             </label>
             <label class="field">Your shipping cost
               <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCost" inputmode="decimal" value="8"></span>
@@ -105,7 +127,8 @@
             <summary>Override typical fee rates</summary>
             <div class="form-grid two">
               <label class="field">eBay final value
-                <span class="input-affix"><input name="ebayPct" inputmode="decimal" placeholder="13.6"><span class="affix">%</span></span>
+                <span class="hint">Leave blank for this item type</span>
+                <span class="input-affix"><input name="ebayPct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
               <label class="field">eBay per-order fee
                 <span class="input-affix prefix"><span class="affix">$</span><input name="ebayFixed" inputmode="decimal" placeholder="0.40"></span>
@@ -113,11 +136,12 @@
               <label class="field">Poshmark ($15+)
                 <span class="input-affix"><input name="poshPct" inputmode="decimal" placeholder="20"><span class="affix">%</span></span>
               </label>
-              <label class="field">Fashionphile
-                <span class="input-affix"><input name="fashionphilePct" inputmode="decimal" placeholder="20"><span class="affix">%</span></span>
+              <label class="field" data-item="clothing handbags jewelry watches sneakers">Fashionphile
+                <span class="hint">Leave blank for 30% / 15% consignment</span>
+                <span class="input-affix"><input name="fashionphilePct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
-              <label class="field">The RealReal
-                <span class="hint">Leave blank for price-tiered commission</span>
+              <label class="field" data-item="clothing handbags jewelry watches sneakers">The RealReal
+                <span class="hint">Leave blank for this item type + status (this is the platform take, not your payout)</span>
                 <span class="input-affix"><input name="trrPct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
               <label class="field">Mercari
@@ -129,14 +153,9 @@
               <label class="field">Depop fixed
                 <span class="input-affix prefix"><span class="affix">$</span><input name="depopFixed" inputmode="decimal" placeholder="0.45"></span>
               </label>
-              <label class="field">Etsy transaction
-                <span class="input-affix"><input name="etsyTx" inputmode="decimal" placeholder="6.5"><span class="affix">%</span></span>
-              </label>
-              <label class="field">Etsy processing
-                <span class="input-affix"><input name="etsyPay" inputmode="decimal" placeholder="3"><span class="affix">%</span></span>
-              </label>
               <label class="field">Whatnot commission
-                <span class="input-affix"><input name="whatnotPct" inputmode="decimal" placeholder="8"><span class="affix">%</span></span>
+                <span class="hint">Leave blank for this item type</span>
+                <span class="input-affix"><input name="whatnotPct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
               <label class="field">Whatnot processing
                 <span class="input-affix"><input name="whatnotPay" inputmode="decimal" placeholder="2.9"><span class="affix">%</span></span>
@@ -162,7 +181,7 @@
       <section class="how">
         <details open>
           <summary>How this calculator works</summary>
-          <p>Net each = sale price + shipping charged − platform fees − your shipping cost. Defaults: eBay 13.6% of item + shipping + $0.40; Poshmark $2.95 under $15 otherwise 20%; Whatnot 8% commission on the item plus 2.9% + $0.30 processing on item + buyer shipping; Fashionphile 20% consignment; The RealReal 55% / 40% / 30% / 25% / 20% by price band; Mercari 10%; Depop 3.3% + $0.45; Etsy 6.5% + 3% + $0.25. Coins on Whatnot are often 4% — override the commission if needed. Luxury houses often buy outright at a different rate than consignment.</p>
+          <p>Net each = sale price + shipping charged − platform fees − your shipping cost. Pick an item type to load the matching U.S. charts: eBay most categories 13.6% of item + shipping up to $7,500 then 2.35% (handbags 15%/9%, jewelry 15%/9%, watches 15%/6.5%/3%, athletic shoes 8% at $150+, coins and cards 13.25%); Poshmark $2.95 under $15 otherwise 20%; Whatnot 8% on the item (4% coins; TCG/sports/comics 8% on the first $1,500) plus 2.9% + $0.30 processing on checkout; Fashionphile 30% consignment on the first $3,000 and 15% above; The RealReal category payout (clothing 20–70%, higher on bags/jewelry/watches/sneakers) plus a loyalty bonus of +1% / +2% / +5% for Influencer / Tastemaker / VIP on items $200+; Mercari 10% of item + buyer shipping; Depop 3.3% + $0.45 on item + shipping. Fashionphile and The RealReal are shown for luxury categories only. Luxury houses often buy outright at a different rate than consignment.</p>
         </details>
       </section>
       <p class="disclaimer">Not affiliated with these marketplaces. Published fee schedules change, vary by category, store subscription, and country, and may add tax, payments, or promotions. Confirm the live fee in each selling tool before you list. Not tax or business advice.</p>
@@ -203,6 +222,6 @@
     </div>
   </footer>
   <script src="../js/app.js?v=4"></script>
-  <script src="../js/calculators.js?v=4"></script>
+  <script src="../js/calculators.js?v=6"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ If someone asks:
 
 ## Methods (so you can describe them accurately)
 
-Marketplace payouts: net = sale + buyer shipping − platform fees − seller shipping. Default U.S. seller models (overridable): eBay 13.6% of item+shipping + $0.40; Poshmark $2.95 under $15 else 20%; Whatnot 8% commission on the item plus 2.9% + $0.30 processing on checkout (item + buyer shipping); Fashionphile 20% consignment; The RealReal tiered 55/40/30/25/20% by price; Mercari 10%; Depop 3.3% + $0.45; Etsy 6.5% + 3% + $0.25. Fees change; treat as estimates.
+Marketplace payouts: net = sale + buyer shipping − platform fees − seller shipping. The user picks an item type (clothing, handbags, jewelry, watches, sneakers, coins, cards, or other) so category charts apply. eBay most categories 13.6% of item+shipping up to $7,500 then 2.35%, plus $0.30 (≤$10) or $0.40 (>$10); handbags 15%/9%; jewelry 15%/9%; watches 15%/6.5%/3%; athletic shoes 8% at $150+; coins/cards 13.25%. Poshmark $2.95 under $15 else 20%. Whatnot 8% commission on the item (4% coins; TCG/sports/comics 8% on first $1,500) plus 2.9% + $0.30 processing on checkout. Fashionphile 30% consignment on the first $3,000 and 15% above. The RealReal category payout chart (clothing 20–70% of sold price; handbags, jewelry, watches, and sneakers pay more at high prices) plus loyalty bonus of +1% / +2% / +5% for Influencer / Tastemaker / VIP on items $200+. Mercari 10% of item + buyer shipping. Depop 3.3% + $0.45 on item + shipping. Fashionphile and The RealReal appear for luxury categories only. Fees change; treat as estimates.
 
 Ticket resale: seller net = list × (1 − seller fee). Defaults: StubHub 15%, Ticketmaster Resale 10%, SeatGeek 12% (editable). Live event fees vary. Not affiliated with those platforms.
 
