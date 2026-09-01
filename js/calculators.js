@@ -162,12 +162,15 @@
         el.classList.toggle("unit-hidden", !show);
       });
     }
-    var itemEl = form.querySelector("[name='itemType']");
-    if (itemEl) {
-      var item = itemEl.value || "clothing";
-      C.$$("[data-item]", form).forEach(function (el) {
-        var allow = el.getAttribute("data-item") || "";
-        el.classList.toggle("mode-hidden", allow.split(/\s+/).indexOf(item) === -1);
+    var item = ((form.querySelector("[name='itemType']") || {}).value || "").trim();
+    var platform = ((form.querySelector("[name='platform']") || {}).value || "all").trim();
+    if (item || form.querySelector("[name='platform']")) {
+      C.$$("[data-item], [data-platform]", form).forEach(function (el) {
+        var itemAllow = el.getAttribute("data-item");
+        var platformAllow = el.getAttribute("data-platform");
+        var itemOk = !itemAllow || itemAllow.split(/\s+/).indexOf(item) !== -1;
+        var platformOk = !platformAllow || platformAllow.split(/\s+/).indexOf(platform) !== -1;
+        el.classList.toggle("mode-hidden", !itemOk || !platformOk);
       });
     }
     var mode = form.querySelector("[name='mode']:checked") || form.elements.mode;
@@ -1090,7 +1093,11 @@
     var shipCharge = C.parseNumber((C.getControl(form, "shippingCharged") || {}).value) || 0;
     var shipCost = C.parseNumber((C.getControl(form, "shippingCost") || {}).value) || 0;
     var itemCost = C.parseNumber((C.getControl(form, "itemCost") || {}).value) || 0;
-    var promo = C.parseNumber((C.getControl(form, "ebayPromo") || {}).value) || 0;
+    var platform = selectValue(form, "platform", "all");
+    var promo = 0;
+    if (platform === "ebay") {
+      promo = C.parseNumber((C.getControl(form, "ebayPromo") || {}).value) || 0;
+    }
     if (shipCharge < 0 || shipCost < 0 || itemCost < 0) {
       C.showFormError(form, "Shipping and cost cannot be negative.");
       return null;
@@ -1103,14 +1110,26 @@
     var ebayFixedOverride = feeOverride(form, "ebayFixed");
     var poshPct = overrideFee(form, "poshPct", 20);
     var mercariPct = overrideFee(form, "mercariPct", 10);
-    var depopPct = overrideFee(form, "depopPct", 3.3);
-    var depopFixed = overrideFee(form, "depopFixed", 0.45);
     var fpOverride = feeOverride(form, "fashionphilePct");
     var whatnotPctOverride = feeOverride(form, "whatnotPct");
     var whatnotPay = overrideFee(form, "whatnotPay", 2.9);
     var whatnotFixed = overrideFee(form, "whatnotFixed", 0.3);
-    var trrStatus = selectValue(form, "trrStatus", "trendsetter");
+    var trrStatus = platform === "trr" ? selectValue(form, "trrStatus", "trendsetter") : "trendsetter";
+    var trrStatusName = { trendsetter: "Trendsetter", influencer: "Influencer", tastemaker: "Tastemaker", vip: "VIP" }[
+      trrStatus
+    ] || "Trendsetter";
     var trrPctOverride = feeOverride(form, "trrPct");
+
+    if ((platform === "trr" || platform === "fashionphile") && !luxury) {
+      var venue = platform === "trr" ? "The RealReal" : "Fashionphile";
+      return {
+        html:
+          '<p class="placeholder-result">' +
+          escapeHtml(venue) +
+          " is for luxury clothing, bags, jewelry, watches, and sneakers. Choose one of those item types.</p>",
+        copy: "",
+      };
+    }
 
     var ebay = ebaySchedule(grossEach, itemType);
     var ebayPct = ebayPctOverride != null ? ebayPctOverride : null;
@@ -1139,11 +1158,13 @@
 
     var rows = [
       {
+        id: "ebay",
         name: "eBay",
         fee: ebayVar + ebayFixed + grossEach * (promo / 100),
         note: ebayNote,
       },
       {
+        id: "poshmark",
         name: "Poshmark",
         fee: poshFee(price),
         note: price < 15 ? "$2.95 flat under $15" : poshPct + "% at $15+",
@@ -1163,51 +1184,63 @@
         fpFee = 3000 * 0.3 + (price - 3000) * 0.15;
         fpNote = "30% on first $3,000 + 15% above (buyout offers differ)";
       }
-      rows.push({ name: "Fashionphile", fee: fpFee, note: fpNote });
+      rows.push({ id: "fashionphile", name: "Fashionphile", fee: fpFee, note: fpNote });
 
       var trrFee;
       var trrNote;
+      var trrKeep;
       if (trrPctOverride != null) {
         trrFee = price * (trrPctOverride / 100);
-        trrNote = trrPctOverride + "% consignment (override)";
+        trrKeep = 100 - trrPctOverride;
+        trrNote = "You keep " + trrKeep + "% of the sold price (override)";
       } else {
         var trrPayout = trrBasePayout(price, itemType);
         if (price >= 200) trrPayout += trrLoyaltyBonus(trrStatus);
         trrFee = price * ((100 - trrPayout) / 100);
-        var trrStatusLabel = {
-          trendsetter: "Trendsetter",
-          influencer: "Influencer +1%",
-          tastemaker: "Tastemaker +2%",
-          vip: "VIP +5%",
-        }[trrStatus] || "Trendsetter";
-        trrNote = trrPayout + "% payout · " + trrStatusLabel + " · " + itemTypeLabel(itemType);
+        trrKeep = trrPayout;
+        trrNote = "You keep " + trrPayout + "% of the sold price as " + trrStatusName + " on " + itemTypeLabel(itemType);
       }
-      rows.push({ name: "The RealReal", fee: trrFee, note: trrNote });
+      rows.push({ id: "trr", name: "The RealReal", fee: trrFee, note: trrNote, keepRate: trrKeep });
     }
 
     rows.push(
       {
+        id: "mercari",
         name: "Mercari",
         fee: grossEach * (mercariPct / 100),
         note: mercariPct + "% of item + buyer shipping",
       },
       {
-        name: "Depop",
-        fee: grossEach * (depopPct / 100) + depopFixed,
-        note: depopPct + "% + $" + C.formatNumber(depopFixed, 2) + " processing on item + shipping (U.S.)",
-      },
-      {
+        id: "whatnot",
         name: "Whatnot",
         fee: wnFee,
         note: wnNote,
       }
     );
 
+    if (platform !== "all") {
+      rows = rows.filter(function (r) {
+        return r.id === platform;
+      });
+    }
+
+    if (!rows.length) {
+      return {
+        html: '<p class="placeholder-result">No payout estimate for this platform and item type.</p>',
+        copy: "",
+      };
+    }
+
     rows.forEach(function (r) {
       r.payoutEach = price + shipCharge - r.fee - shipCost;
       r.payout = r.payoutEach * qty;
       r.profit = (r.payoutEach - itemCost) * qty;
-      r.keep = grossEach > 0 ? (r.payoutEach / grossEach) * 100 : 0;
+      r.keep =
+        r.keepRate != null
+          ? r.keepRate
+          : grossEach > 0
+            ? ((grossEach - r.fee) / grossEach) * 100
+            : 0;
     });
     rows.sort(function (a, b) {
       return b.payout - a.payout;
@@ -1242,13 +1275,15 @@
         C.formatMoney(best.payout),
         escapeHtml(best.name) + " · " + C.formatMoney(best.payoutEach) + " each after typical fees"
       ) +
-      stats([
-        ["Item", itemTypeLabel(itemType)],
-        ["Sale (each)", C.formatMoney(price)],
-        ["Quantity", String(qty)],
-        ["Gross (each)", C.formatMoney(grossEach)],
-        ["Your shipping cost (each)", C.formatMoney(shipCost)],
-      ]) +
+      stats(
+        [
+          ["Item", itemTypeLabel(itemType)],
+          ["Sale (each)", C.formatMoney(price)],
+          ["Quantity", String(qty)],
+          ["Gross (each)", C.formatMoney(grossEach)],
+          ["Your shipping cost (each)", C.formatMoney(shipCost)],
+        ].concat(platform === "trr" ? [["The RealReal status", trrStatusName]] : [])
+      ) +
       rankLegend() +
       table +
       (itemCost
@@ -1268,11 +1303,16 @@
           ) +
           ".</p>"
         : "") +
-      '<p class="hint">Fees follow the item type you selected. Shipping charged to the buyer is included in eBay, Mercari, Depop, and Whatnot processing fee bases. Whatnot commission applies to the item price. Poshmark, Fashionphile, and The RealReal fees here apply to the item price. The RealReal loyalty bonus applies to items $200+. Fashionphile and The RealReal appear for luxury categories only.</p>';
+      '<p class="hint">Fees follow the item type you selected. Shipping charged to the buyer is included in eBay, Mercari, and Whatnot processing fee bases. Whatnot commission applies to the item price. Poshmark, Fashionphile, and The RealReal fees apply to the item price. The RealReal “You keep” figure is the official share of the sold price for your status — VIP keeps more than Trendsetter on items $200+ (for example 60% vs 55% on a $250 bag). Fashionphile and The RealReal appear for luxury categories only.' +
+      (platform === "all" && luxury
+        ? " All-platforms view uses The RealReal Trendsetter rates; choose The RealReal to apply VIP or another status."
+        : "") +
+      "</p>";
 
     var copy = [
       "Marketplace payout comparison",
       "Item: " + itemTypeLabel(itemType),
+      "Platforms: " + (platform === "all" ? "all" : best.name),
       "Price: " + C.formatMoney(price) + " × " + qty,
     ]
       .concat(
@@ -1433,7 +1473,7 @@
     if (!fn) return;
 
     form.addEventListener("change", function (e) {
-      if (e.target && (e.target.name === "unit" || e.target.name === "mode" || e.target.name === "sex" || e.target.name === "itemType")) {
+      if (e.target && (e.target.name === "unit" || e.target.name === "mode" || e.target.name === "sex" || e.target.name === "itemType" || e.target.name === "platform")) {
         syncToggles(form);
       }
     });

@@ -13,8 +13,8 @@
       "name": "Marketplace payout calculator",
       "url": "https://www.numbercove.com/calculators/marketplace.html",
       "category": "sell",
-      "keywords": ["ebay", "poshmark", "whatnot", "fashionphile", "the realreal", "mercari", "depop", "seller fees", "payout", "consignment", "vip"],
-      "description": "Compare estimated take-home selling the same item on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, and Depop. Choose clothing, handbags, jewelry, watches, sneakers, coins, or cards to load matching fee charts."
+      "keywords": ["ebay", "poshmark", "whatnot", "fashionphile", "the realreal", "mercari", "seller fees", "payout", "consignment", "vip"],
+      "description": "Compare estimated take-home selling the same item on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, and Mercari. Choose clothing, handbags, jewelry, watches, sneakers, coins, or cards to load matching fee charts."
     },
     {
       "id": "ticket-resale",

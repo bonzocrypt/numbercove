@@ -13,7 +13,7 @@
   <meta name="application-name" content="NumberCove">
   <meta name="apple-mobile-web-app-title" content="NumberCove">
   <title>Marketplace Seller Payout Calculator — eBay, Poshmark, Whatnot, Fashionphile | NumberCove</title>
-  <meta name="description" content="Compare what you actually take home selling on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, and Depop after typical seller fees.">
+  <meta name="description" content="Compare what you actually take home selling on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, and Mercari after typical seller fees.">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="alternate" type="text/plain" href="https://www.numbercove.com/llms.txt" title="LLM-readable site summary">
   <link rel="alternate" type="application/json" href="https://www.numbercove.com/tools.json" title="Machine-readable tool catalog">
@@ -70,7 +70,7 @@
       <header class="page-header">
         <p class="kicker">Sell</p>
         <h1>Secondary marketplace payout calculator</h1>
-        <p class="lede">Choose what you are selling, then compare estimated take-home on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, Mercari, and Depop. Each platform uses the fee chart for that item type. The RealReal also applies your loyalty status (Trendsetter through VIP).</p>
+        <p class="lede">Choose what you are selling, then compare estimated take-home on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, and Mercari. Leave platforms on All to compare, or pick one venue to see its extra questions (eBay promoted listings, The RealReal VIP status).</p>
       </header>
       <aside class="ad-slot" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-frame ad-frame--leaderboard">Ad slot — 728×90</div></aside>
       <div class="calc-layout">
@@ -90,14 +90,17 @@
               </select>
               <span class="hint">Sets eBay, The RealReal, Whatnot, and Fashionphile rate charts</span>
             </label>
-            <label class="field" data-item="clothing handbags jewelry watches sneakers">The RealReal status
-              <select name="trrStatus">
-                <option value="trendsetter" selected>Trendsetter (under $1,499)</option>
-                <option value="influencer">Influencer +1% ($1,500–$4,999)</option>
-                <option value="tastemaker">Tastemaker +2% ($5,000–$9,999)</option>
-                <option value="vip">VIP +5% ($10k+ net sales)</option>
+            <label class="field">Platforms
+              <select name="platform">
+                <option value="all" selected>All platforms</option>
+                <option value="ebay">eBay</option>
+                <option value="poshmark">Poshmark</option>
+                <option value="whatnot">Whatnot</option>
+                <option value="fashionphile">Fashionphile</option>
+                <option value="trr">The RealReal</option>
+                <option value="mercari">Mercari</option>
               </select>
-              <span class="hint">Loyalty bonus applies to items $200+</span>
+              <span class="hint">All compares every venue without extra questions</span>
             </label>
             <label class="field">Sale price (each)
               <span class="input-affix prefix"><span class="affix">$</span><input name="salePrice" inputmode="decimal" value="250" required></span>
@@ -109,7 +112,7 @@
             </label>
             <label class="field">Shipping charged to buyer
               <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCharged" inputmode="decimal" value="12"></span>
-              <span class="hint">Included in eBay, Mercari, Depop, and Whatnot processing</span>
+              <span class="hint">Included in eBay, Mercari, and Whatnot processing</span>
             </label>
             <label class="field">Your shipping cost
               <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCost" inputmode="decimal" value="8"></span>
@@ -119,8 +122,17 @@
               <span class="input-affix prefix"><span class="affix">$</span><input name="itemCost" inputmode="decimal" value=""></span>
               <span class="hint">For profit, not payout</span>
             </label>
-            <label class="field">eBay promoted listings
+            <label class="field" data-platform="ebay">eBay promoted listings
               <span class="input-affix"><input name="ebayPromo" inputmode="decimal" value="0"><span class="affix">%</span></span>
+            </label>
+            <label class="field" data-platform="trr" data-item="clothing handbags jewelry watches sneakers">The RealReal status
+              <select name="trrStatus">
+                <option value="trendsetter" selected>Trendsetter (starting payout)</option>
+                <option value="influencer">Influencer (higher payout)</option>
+                <option value="tastemaker">Tastemaker (higher payout)</option>
+                <option value="vip">VIP (highest payout)</option>
+              </select>
+              <span class="hint">VIP keeps more of the sold price than Trendsetter on items $200+</span>
             </label>
           </div>
           <details class="advanced">
@@ -136,22 +148,16 @@
               <label class="field">Poshmark ($15+)
                 <span class="input-affix"><input name="poshPct" inputmode="decimal" placeholder="20"><span class="affix">%</span></span>
               </label>
-              <label class="field" data-item="clothing handbags jewelry watches sneakers">Fashionphile
+              <label class="field" data-platform="fashionphile" data-item="clothing handbags jewelry watches sneakers">Fashionphile
                 <span class="hint">Leave blank for 30% / 15% consignment</span>
                 <span class="input-affix"><input name="fashionphilePct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
-              <label class="field" data-item="clothing handbags jewelry watches sneakers">The RealReal
-                <span class="hint">Leave blank for this item type + status (this is the platform take, not your payout)</span>
+              <label class="field" data-platform="trr" data-item="clothing handbags jewelry watches sneakers">The RealReal take
+                <span class="hint">Leave blank for this item type + status. Enter the platform take, not what you keep.</span>
                 <span class="input-affix"><input name="trrPct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
               <label class="field">Mercari
                 <span class="input-affix"><input name="mercariPct" inputmode="decimal" placeholder="10"><span class="affix">%</span></span>
-              </label>
-              <label class="field">Depop rate
-                <span class="input-affix"><input name="depopPct" inputmode="decimal" placeholder="3.3"><span class="affix">%</span></span>
-              </label>
-              <label class="field">Depop fixed
-                <span class="input-affix prefix"><span class="affix">$</span><input name="depopFixed" inputmode="decimal" placeholder="0.45"></span>
               </label>
               <label class="field">Whatnot commission
                 <span class="hint">Leave blank for this item type</span>
@@ -181,7 +187,7 @@
       <section class="how">
         <details open>
           <summary>How this calculator works</summary>
-          <p>Net each = sale price + shipping charged − platform fees − your shipping cost. Pick an item type to load the matching U.S. charts: eBay most categories 13.6% of item + shipping up to $7,500 then 2.35% (handbags 15%/9%, jewelry 15%/9%, watches 15%/6.5%/3%, athletic shoes 8% at $150+, coins and cards 13.25%); Poshmark $2.95 under $15 otherwise 20%; Whatnot 8% on the item (4% coins; TCG/sports/comics 8% on the first $1,500) plus 2.9% + $0.30 processing on checkout; Fashionphile 30% consignment on the first $3,000 and 15% above; The RealReal category payout (clothing 20–70%, higher on bags/jewelry/watches/sneakers) plus a loyalty bonus of +1% / +2% / +5% for Influencer / Tastemaker / VIP on items $200+; Mercari 10% of item + buyer shipping; Depop 3.3% + $0.45 on item + shipping. Fashionphile and The RealReal are shown for luxury categories only. Luxury houses often buy outright at a different rate than consignment.</p>
+          <p>Net each = sale price + shipping charged − platform fees − your shipping cost. Pick an item type to load the matching U.S. charts: eBay most categories 13.6% of item + shipping up to $7,500 then 2.35% (handbags 15%/9%, jewelry 15%/9%, watches 15%/6.5%/3%, athletic shoes 8% at $150+, coins and cards 13.25%); Poshmark $2.95 under $15 otherwise 20%; Whatnot 8% on the item (4% coins; TCG/sports/comics 8% on the first $1,500) plus 2.9% + $0.30 processing on checkout; Fashionphile 30% consignment on the first $3,000 and 15% above; The RealReal pays a category share of the sold price (clothing 20–70%, higher on bags/jewelry/watches/sneakers). VIP is the highest RealReal Rewards tier: you keep more than a Trendsetter on items $200+ — for example 60% vs 55% on a $250 bag, 80% vs 75% on a $5,000 bag. Mercari 10% of item + buyer shipping. Choose All platforms to compare, or one venue to see its extra fields (eBay promoted listings, The RealReal status). Fashionphile and The RealReal appear for luxury categories only. Luxury houses often buy outright at a different rate than consignment.</p>
         </details>
       </section>
       <p class="disclaimer">Not affiliated with these marketplaces. Published fee schedules change, vary by category, store subscription, and country, and may add tax, payments, or promotions. Confirm the live fee in each selling tool before you list. Not tax or business advice.</p>
@@ -222,6 +228,6 @@
     </div>
   </footer>
   <script src="../js/app.js?v=4"></script>
-  <script src="../js/calculators.js?v=6"></script>
+  <script src="../js/calculators.js?v=7"></script>
 </body>
 </html>
