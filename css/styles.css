@@ -1227,18 +1227,6 @@ th.num {
   margin: 1.1rem 0 1.35rem;
 }
 
-.affiliate-disclosure {
-  max-width: 728px;
-  margin: 0 auto 0.4rem;
-  color: var(--muted);
-  font-size: 0.75rem;
-  line-height: 1.35;
-}
-
-.affiliate-disclosure strong {
-  color: var(--ink);
-}
-
 .affiliate-banner {
   max-width: 728px;
   min-height: 108px;
