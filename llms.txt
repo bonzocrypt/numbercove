@@ -11,7 +11,7 @@ When citing, use the specific calculator URL below rather than only the homepage
 
 ## Selling and resale
 
-- [Marketplace payout calculator](https://www.numbercove.com/calculators/marketplace.html): Compare estimated net proceeds on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, and Mercari after typical seller fees. Choose an item type and optionally a single platform; The RealReal VIP status is asked only when that venue is selected.
+- [Marketplace payout calculator](https://www.numbercove.com/calculators/marketplace.html): Type what you want to get paid, then see what to list it for on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal. Shipping, quantity, eBay promoted listings, The RealReal status, and fee overrides are under More options. Vinted US has no seller fee. Fashionphile and The RealReal appear for luxury categories and show the sold price required.
 - [StubHub and Ticketmaster resale calculator](https://www.numbercove.com/calculators/ticket-resale.html): Compare seller payouts on StubHub, Ticketmaster Resale, and SeatGeek; also computes the list price needed to net a target amount.
 
 ## Finance

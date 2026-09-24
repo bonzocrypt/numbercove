@@ -12,15 +12,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="application-name" content="NumberCove">
   <meta name="apple-mobile-web-app-title" content="NumberCove">
-  <title>Marketplace Seller Payout Calculator — eBay, Poshmark, Whatnot, Fashionphile | NumberCove</title>
-  <meta name="description" content="Compare what you actually take home selling on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, and Mercari after typical seller fees.">
+  <title>Marketplace Seller Payout Calculator — eBay, Poshmark, Vinted, Whatnot | NumberCove</title>
+  <meta name="description" content="Enter what you want after fees and see the list price on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal.">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="alternate" type="text/plain" href="https://www.numbercove.com/llms.txt" title="LLM-readable site summary">
   <link rel="alternate" type="application/json" href="https://www.numbercove.com/tools.json" title="Machine-readable tool catalog">
   <link rel="canonical" href="https://www.numbercove.com/calculators/marketplace.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <meta property="og:title" content="Marketplace Payout Calculator | NumberCove">
-  <meta property="og:description" content="See net payout across eBay, Poshmark, Whatnot, Fashionphile, The RealReal, and more.">
+  <meta property="og:description" content="See the list price that pays you a target amount on eBay, Poshmark, Vinted, Whatnot, Fashionphile, The RealReal, and Mercari.">
   <script>
     (function(){try{var t=localStorage.getItem("calculate-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");else if(t!=="light"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();
   </script>
@@ -70,7 +70,7 @@
       <header class="page-header">
         <p class="kicker">Sell</p>
         <h1>Secondary marketplace payout calculator</h1>
-        <p class="lede">Choose what you are selling, then compare estimated take-home on eBay, Poshmark, Whatnot, Fashionphile, The RealReal, and Mercari. Leave platforms on All to compare, or pick one venue to see its extra questions (eBay promoted listings, The RealReal VIP status).</p>
+        <p class="lede">Type what you want to get paid. See what to list it for on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal.</p>
       </header>
       <aside class="affiliate-recommendation affiliate-recommendation--leaderboard" aria-labelledby="crosslist-recommendation-title">
         <a class="affiliate-banner affiliate-banner--crosslist" href="https://crosslist.com/?via=dan-346bbe" target="_blank" rel="sponsored noopener noreferrer">
@@ -90,9 +90,9 @@
       </aside>
       <div class="calc-layout">
         <form class="panel" data-calc="marketplace" id="calc-form" novalidate>
-          <h2>Sale</h2>
+          <h2>Get paid</h2>
           <div class="form-grid two">
-            <label class="field">What are you selling?
+            <label class="field span-2">What are you selling?
               <select name="itemType">
                 <option value="clothing" selected>Clothing, shoes &amp; accessories</option>
                 <option value="handbags">Handbags</option>
@@ -103,85 +103,91 @@
                 <option value="cards">Trading cards &amp; TCG</option>
                 <option value="other">Other merchandise</option>
               </select>
-              <span class="hint">Sets eBay, The RealReal, Whatnot, and Fashionphile rate charts</span>
             </label>
-            <label class="field">Platforms
-              <select name="platform">
-                <option value="all" selected>All platforms</option>
-                <option value="ebay">eBay</option>
-                <option value="poshmark">Poshmark</option>
-                <option value="whatnot">Whatnot</option>
-                <option value="fashionphile">Fashionphile</option>
-                <option value="trr">The RealReal</option>
-                <option value="mercari">Mercari</option>
-              </select>
-              <span class="hint">All compares every venue without extra questions</span>
-            </label>
-            <label class="field">Sale price (each)
-              <span class="input-affix prefix"><span class="affix">$</span><input name="salePrice" inputmode="decimal" value="250" required></span>
+            <label class="field span-2">I want to get paid
+              <span class="input-affix prefix"><span class="affix">$</span><input name="netWant" inputmode="decimal" value="200"></span>
+              <span class="hint">After fees. The results are what to list it for.</span>
               <span class="field-error"></span>
-            </label>
-            <label class="field">Quantity
-              <input name="quantity" inputmode="numeric" value="1" required>
-              <span class="field-error"></span>
-            </label>
-            <label class="field">Shipping charged to buyer
-              <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCharged" inputmode="decimal" value="12"></span>
-              <span class="hint">Included in eBay, Mercari, and Whatnot processing</span>
-            </label>
-            <label class="field">Your shipping cost
-              <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCost" inputmode="decimal" value="8"></span>
-              <span class="hint">Use 0 if the buyer or platform covers it</span>
-            </label>
-            <label class="field">Your item cost (optional)
-              <span class="input-affix prefix"><span class="affix">$</span><input name="itemCost" inputmode="decimal" value=""></span>
-              <span class="hint">For profit, not payout</span>
-            </label>
-            <label class="field" data-platform="ebay">eBay promoted listings
-              <span class="input-affix"><input name="ebayPromo" inputmode="decimal" value="0"><span class="affix">%</span></span>
-            </label>
-            <label class="field" data-platform="trr" data-item="clothing handbags jewelry watches sneakers">The RealReal status
-              <select name="trrStatus">
-                <option value="trendsetter" selected>Trendsetter (starting payout)</option>
-                <option value="influencer">Influencer (higher payout)</option>
-                <option value="tastemaker">Tastemaker (higher payout)</option>
-                <option value="vip">VIP (highest payout)</option>
-              </select>
-              <span class="hint">VIP keeps more of the sold price than Trendsetter on items $200+</span>
             </label>
           </div>
           <details class="advanced">
-            <summary>Override typical fee rates</summary>
+            <summary>More options</summary>
+            <p class="hint">Shipping, quantity, The RealReal status, and fee adjustments.</p>
             <div class="form-grid two">
-              <label class="field">eBay final value
+              <label class="field">Quantity
+                <input name="quantity" inputmode="numeric" value="1">
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Platforms
+                <select name="platform">
+                  <option value="all" selected>All platforms</option>
+                  <option value="ebay">eBay</option>
+                  <option value="poshmark">Poshmark</option>
+                  <option value="vinted">Vinted</option>
+                  <option value="whatnot">Whatnot</option>
+                  <option value="fashionphile">Fashionphile</option>
+                  <option value="trr">The RealReal</option>
+                  <option value="mercari">Mercari</option>
+                </select>
+                <span class="hint">All compares every venue for this category</span>
+              </label>
+              <label class="field">Shipping charged to buyer
+                <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCharged" inputmode="decimal" value="" placeholder="0"></span>
+                <span class="hint">Counted in eBay, Mercari, and Whatnot fees. Treated as money you receive, except on Vinted.</span>
+              </label>
+              <label class="field">Postage you pay
+                <span class="input-affix prefix"><span class="affix">$</span><input name="shippingCost" inputmode="decimal" value="" placeholder="0"></span>
+                <span class="hint">List prices go up so you still get paid your amount.</span>
+              </label>
+              <label class="field">Your item cost (optional)
+                <span class="input-affix prefix"><span class="affix">$</span><input name="itemCost" inputmode="decimal" value=""></span>
+                <span class="hint">For profit, not the payout</span>
+              </label>
+              <label class="field" data-platform="all ebay">eBay promoted listings
+                <span class="input-affix"><input name="ebayPromo" inputmode="decimal" value="0"><span class="affix">%</span></span>
+              </label>
+              <label class="field" data-platform="all trr" data-item="clothing handbags jewelry watches sneakers">The RealReal status
+                <select name="trrStatus">
+                  <option value="trendsetter" selected>Trendsetter (starting payout)</option>
+                  <option value="influencer">Influencer (higher payout)</option>
+                  <option value="tastemaker">Tastemaker (higher payout)</option>
+                  <option value="vip">VIP (highest payout)</option>
+                </select>
+                <span class="hint">Applied whenever The RealReal is in the results. VIP keeps more on items $200+.</span>
+              </label>
+              <label class="field" data-platform="all ebay">eBay final value
                 <span class="hint">Leave blank for this item type</span>
                 <span class="input-affix"><input name="ebayPct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
-              <label class="field">eBay per-order fee
+              <label class="field" data-platform="all ebay">eBay per-order fee
                 <span class="input-affix prefix"><span class="affix">$</span><input name="ebayFixed" inputmode="decimal" placeholder="0.40"></span>
               </label>
-              <label class="field">Poshmark ($15+)
+              <label class="field" data-platform="all poshmark">Poshmark ($15+)
                 <span class="input-affix"><input name="poshPct" inputmode="decimal" placeholder="20"><span class="affix">%</span></span>
               </label>
-              <label class="field" data-platform="fashionphile" data-item="clothing handbags jewelry watches sneakers">Fashionphile
+              <label class="field" data-platform="all vinted">Vinted seller fee
+                <span class="hint">Leave blank for no seller fee</span>
+                <span class="input-affix"><input name="vintedPct" inputmode="decimal" placeholder="0"><span class="affix">%</span></span>
+              </label>
+              <label class="field" data-platform="all fashionphile" data-item="clothing handbags jewelry watches sneakers">Fashionphile
                 <span class="hint">Leave blank for 30% / 15% consignment</span>
                 <span class="input-affix"><input name="fashionphilePct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
-              <label class="field" data-platform="trr" data-item="clothing handbags jewelry watches sneakers">The RealReal take
-                <span class="hint">Leave blank for this item type + status. Enter the platform take, not what you keep.</span>
+              <label class="field" data-platform="all trr" data-item="clothing handbags jewelry watches sneakers">The RealReal take
+                <span class="hint">Leave blank for this item type and status. Enter the platform take, not what you keep.</span>
                 <span class="input-affix"><input name="trrPct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
-              <label class="field">Mercari
+              <label class="field" data-platform="all mercari">Mercari
                 <span class="input-affix"><input name="mercariPct" inputmode="decimal" placeholder="10"><span class="affix">%</span></span>
               </label>
-              <label class="field">Whatnot commission
+              <label class="field" data-platform="all whatnot">Whatnot commission
                 <span class="hint">Leave blank for this item type</span>
                 <span class="input-affix"><input name="whatnotPct" inputmode="decimal" placeholder="auto"><span class="affix">%</span></span>
               </label>
-              <label class="field">Whatnot processing
+              <label class="field" data-platform="all whatnot">Whatnot processing
                 <span class="input-affix"><input name="whatnotPay" inputmode="decimal" placeholder="2.9"><span class="affix">%</span></span>
               </label>
-              <label class="field">Whatnot per-order
+              <label class="field" data-platform="all whatnot">Whatnot per-order
                 <span class="input-affix prefix"><span class="affix">$</span><input name="whatnotFixed" inputmode="decimal" placeholder="0.30"></span>
               </label>
             </div>
@@ -194,14 +200,15 @@
           </div>
         </form>
         <section class="panel results-panel" aria-live="polite">
-          <h2>Results</h2>
+          <h2>What to list it for</h2>
           <div id="results"><p class="placeholder-result">Enter values to see results.</p></div>
         </section>
       </div>
       <section class="how">
         <details>
           <summary>How this calculator works</summary>
-          <p>Net each = sale price + shipping charged − platform fees − your shipping cost. Pick an item type to load the matching U.S. charts: eBay most categories 13.6% of item + shipping up to $7,500 then 2.35% (handbags 15%/9%, jewelry 15%/9%, watches 15%/6.5%/3%, athletic shoes 8% at $150+, coins and cards 13.25%); Poshmark $2.95 under $15 otherwise 20%; Whatnot 8% on the item (4% coins; TCG/sports/comics 8% on the first $1,500) plus 2.9% + $0.30 processing on checkout; Fashionphile 30% consignment on the first $3,000 and 15% above; The RealReal pays a category share of the sold price (clothing 20–70%, higher on bags/jewelry/watches/sneakers). VIP is the highest RealReal Rewards tier: you keep more than a Trendsetter on items $200+ — for example 60% vs 55% on a $250 bag, 80% vs 75% on a $5,000 bag. Mercari 10% of item + buyer shipping. Choose All platforms to compare, or one venue to see its extra fields (eBay promoted listings, The RealReal status). Fashionphile and The RealReal appear for luxury categories only. Luxury houses often buy outright at a different rate than consignment.</p>
+          <p>Enter what you want to get paid. Each row is the list price that leaves you at least that amount after the platform fee and any postage you enter under More options. Vinted US charges sellers no fee, so with no postage of your own the list price matches your amount. The buyer pays a Vinted fee, usually 5% + $0.70, plus shipping. Fashionphile and The RealReal show the price the item needs to sell for. Optional Vinted Item Bumps are not included.</p>
+          <p>Other U.S. charts: eBay most categories 13.6% of item + shipping up to $7,500 then 2.35%, plus $0.30 on orders of $10 or less and $0.40 above (handbags 15% at $2,000 or less and 9% above, jewelry 15% at $5,000 or less and 9% above, watches 15% to $1,000 then 6.5% to $7,500 then 3%, athletic shoes 8% at $150+ with no per-order fee, coins and cards 13.25%). Poshmark is $2.95 under $15 and 20% at $15+. Whatnot is 8% on the item (4% for coins, 8% on the first $1,500 for cards) plus 2.9% + $0.30. Mercari is 10% of item + buyer shipping. Fashionphile is 30% on the first $3,000 and 15% above. The RealReal pays a category share of the sold price. Set your status under Additional details. Trendsetter is the default, and VIP keeps more on items $200+. Fashionphile and The RealReal are included for clothing, handbags, jewelry, watches, and sneakers. Vinted is included for every category. Luxury houses often buy outright at a different rate than consignment.</p>
         </details>
       </section>
       <p class="disclaimer">Not affiliated with these marketplaces. Published fee schedules change, vary by category, store subscription, and country, and may add tax, payments, or promotions. Confirm the live fee in each selling tool before you list. Not tax or business advice.</p>
@@ -242,6 +249,6 @@
     </div>
   </footer>
   <script src="../js/app.js?v=4"></script>
-  <script src="../js/calculators.js?v=7"></script>
+  <script src="../js/calculators.js?v=9"></script>
 </body>
 </html>
