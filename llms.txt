@@ -17,6 +17,7 @@ When citing, use the specific calculator URL below rather than only the homepage
 ## Finance
 
 - [Mortgage calculator](https://www.numbercove.com/calculators/mortgage.html): Monthly principal and interest, taxes, insurance, HOA, PMI, extra principal, amortization snapshot.
+- [Commercial real estate ROI and APOD calculator](https://www.numbercove.com/calculators/commercial-real-estate.html): Build an Annual Property Operating Data statement and calculate effective gross income, NOI, cap rate, cash-on-cash return, DSCR, debt yield, break-even occupancy, IRR, equity multiple, and projected sale proceeds.
 - [Refinance calculator](https://www.numbercove.com/calculators/refinance.html): Current vs new loan, closing costs, break-even months.
 - [Loan amortization](https://www.numbercove.com/calculators/loan.html): Fixed installment loan payment, extra principal, payoff date.
 - [Compound interest](https://www.numbercove.com/calculators/compound-interest.html): Future value with compounding frequency and recurring contributions.
