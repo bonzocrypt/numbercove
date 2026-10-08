@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KVP79DLD');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="application-name" content="NumberCove">
+  <meta name="apple-mobile-web-app-title" content="NumberCove">
+  <title>Commercial Real Estate ROI &amp; APOD Calculator | NumberCove</title>
+  <meta name="description" content="Build an APOD and calculate NOI, cap rate, cash-on-cash return, DSCR, debt yield, break-even occupancy, IRR, equity multiple, and sale proceeds for a commercial property.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="alternate" type="text/plain" href="https://www.numbercove.com/llms.txt" title="LLM-readable site summary">
+  <link rel="alternate" type="application/json" href="https://www.numbercove.com/tools.json" title="Machine-readable tool catalog">
+  <link rel="canonical" href="https://www.numbercove.com/calculators/commercial-real-estate.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Commercial Real Estate ROI &amp; APOD Calculator | NumberCove">
+  <meta property="og:description" content="Underwrite income, expenses, financing, and exit assumptions for an investment property.">
+  <script>
+    (function(){try{var t=localStorage.getItem("calculate-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");else if(t!=="light"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Sora:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=6">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","isAccessibleForFree":true,"url":"https://www.numbercove.com/calculators/mortgage.html","name":"Commercial Real Estate ROI and APOD Calculator","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVP79DLD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="../index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><rect x="8" y="7" width="16" height="5" rx="1.5" fill="#f3f0e8"/><rect x="8" y="15" width="4" height="4" rx="1" fill="#dceee4"/><rect x="14" y="15" width="4" height="4" rx="1" fill="#dceee4"/><rect x="20" y="15" width="4" height="4" rx="1" fill="#e8955a"/><rect x="8" y="21" width="4" height="4" rx="1" fill="#dceee4"/><rect x="14" y="21" width="4" height="4" rx="1" fill="#dceee4"/><rect x="20" y="21" width="4" height="4" rx="1" fill="#dceee4"/></svg>
+        <span>NumberCove</span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="../index.html">All tools</a>
+        <a href="../index.html#sell">Sell</a>
+        <a href="../index.html#finance">Finance</a>
+        <a href="../index.html#health">Health</a>
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#convert">Convert</a>
+        <a href="../about.html">About</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button type="button" class="icon-btn nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../index.html#finance">Finance</a> <span aria-hidden="true">/</span> Commercial real estate</nav>
+      <header class="page-header">
+        <p class="kicker">Finance</p>
+        <h1>Commercial real estate ROI &amp; APOD calculator</h1>
+        <p class="lede">Build an Annual Property Operating Data statement, calculate net operating income, and test the purchase, financing, and exit assumptions that drive an investment property's return.</p>
+      </header>
+      <aside class="ad-slot" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-frame ad-frame--leaderboard">Ad slot — 728×90</div></aside>
+      <div class="calc-layout">
+        <form class="panel" data-calc="commercial-real-estate" id="calc-form" novalidate>
+          <h2>Annual property operating data</h2>
+          <p class="hint">Use stabilized, supportable figures—not only the seller's pro forma. Income fields below are monthly; expenses are annual.</p>
+          <h3>Income</h3>
+          <div class="form-grid two">
+            <label class="field">Scheduled base rent / month
+              <span class="input-affix prefix"><span class="affix">$</span><input name="monthlyRent" inputmode="decimal" value="30000" required></span>
+              <span class="field-error"></span>
+            </label>
+            <label class="field">Other income / month
+              <span class="hint">Parking, reimbursements, laundry, signage, storage</span>
+              <span class="input-affix prefix"><span class="affix">$</span><input name="monthlyOtherIncome" inputmode="decimal" value="1500" required></span>
+              <span class="field-error"></span>
+            </label>
+            <label class="field">Vacancy &amp; credit loss
+              <span class="input-affix"><input name="vacancyRate" inputmode="decimal" value="5" required><span class="affix">%</span></span>
+              <span class="field-error"></span>
+            </label>
+          </div>
+
+          <details class="advanced" open>
+            <summary>Annual operating expenses</summary>
+            <p class="hint">NOI excludes debt service, depreciation, income taxes, and capital expenditures.</p>
+            <div class="form-grid two">
+              <label class="field">Property taxes
+                <span class="input-affix prefix"><span class="affix">$</span><input name="propertyTax" inputmode="decimal" value="36000" required></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Property insurance
+                <span class="input-affix prefix"><span class="affix">$</span><input name="insurance" inputmode="decimal" value="12000" required></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Owner-paid utilities
+                <span class="input-affix prefix"><span class="affix">$</span><input name="utilities" inputmode="decimal" value="18000" required></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Repairs &amp; maintenance
+                <span class="input-affix prefix"><span class="affix">$</span><input name="repairs" inputmode="decimal" value="24000" required></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Management fee
+                <span class="hint">Calculated from effective gross income</span>
+                <span class="input-affix"><input name="managementRate" inputmode="decimal" value="5" required><span class="affix">%</span></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Administrative &amp; professional
+                <span class="input-affix prefix"><span class="affix">$</span><input name="admin" inputmode="decimal" value="6000" required></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Other operating expenses
+                <span class="input-affix prefix"><span class="affix">$</span><input name="otherExpenses" inputmode="decimal" value="4000" required></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Capital reserve / year
+                <span class="hint">Shown below NOI for roofs, paving, HVAC, tenant improvements</span>
+                <span class="input-affix prefix"><span class="affix">$</span><input name="capexReserve" inputmode="decimal" value="12000" required></span>
+                <span class="field-error"></span>
+              </label>
+            </div>
+          </details>
+
+          <details class="advanced" open>
+            <summary>Purchase &amp; financing</summary>
+            <div class="form-grid two">
+              <label class="field">Purchase price
+                <span class="input-affix prefix"><span class="affix">$</span><input name="purchasePrice" inputmode="decimal" value="3000000" required></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Down payment
+                <span class="input-affix"><input name="downPaymentRate" inputmode="decimal" value="30" required><span class="affix">%</span></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Interest rate
+                <span class="input-affix"><input name="interestRate" inputmode="decimal" value="6.75" required><span class="affix">%</span></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Amortization period
+                <span class="input-affix"><input name="amortYears" inputmode="numeric" value="25" required><span class="affix">years</span></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Loan term / maturity
+                <span class="hint">The remaining balance is normally due or refinanced at maturity</span>
+                <span class="input-affix"><input name="loanTermYears" inputmode="numeric" value="10" required><span class="affix">years</span></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Closing &amp; loan costs
+                <span class="input-affix prefix"><span class="affix">$</span><input name="closingCosts" inputmode="decimal" value="60000" required></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Initial repairs / improvements
+                <span class="input-affix prefix"><span class="affix">$</span><input name="initialCapex" inputmode="decimal" value="100000" required></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Target acquisition cap rate
+                <span class="input-affix"><input name="targetCapRate" inputmode="decimal" value="7" required><span class="affix">%</span></span>
+                <span class="field-error"></span>
+              </label>
+            </div>
+          </details>
+
+          <details class="advanced">
+            <summary>Hold &amp; resale assumptions</summary>
+            <div class="form-grid two">
+              <label class="field">Holding period
+                <span class="input-affix"><input name="holdYears" inputmode="numeric" value="5" required><span class="affix">years</span></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Annual NOI growth
+                <span class="input-affix"><input name="noiGrowthRate" inputmode="decimal" value="3" required><span class="affix">%</span></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Exit cap rate
+                <span class="hint">A higher exit cap rate lowers the projected sale price</span>
+                <span class="input-affix"><input name="exitCapRate" inputmode="decimal" value="7.5" required><span class="affix">%</span></span>
+                <span class="field-error"></span>
+              </label>
+              <label class="field">Selling costs
+                <span class="input-affix"><input name="sellingCostRate" inputmode="decimal" value="2" required><span class="affix">%</span></span>
+                <span class="field-error"></span>
+              </label>
+            </div>
+          </details>
+
+          <p class="form-error" role="alert"></p>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Evaluate property</button>
+            <button class="btn btn-secondary" type="button" id="reset-calc">Reset</button>
+            <button class="btn btn-ghost" type="button" id="copy-results">Copy results</button>
+          </div>
+        </form>
+        <section class="panel results-panel" aria-live="polite">
+          <h2>Investment snapshot</h2>
+          <div id="results"><p class="placeholder-result">Enter values to evaluate the property.</p></div>
+        </section>
+      </div>
+
+      <aside class="ad-slot" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-frame ad-frame--rectangle">Ad slot — 300×250</div></aside>
+
+      <section class="how">
+        <details>
+          <summary>How the APOD and return calculations work</summary>
+          <p><strong>Effective gross income</strong> is scheduled rent plus other income, less vacancy and credit loss. <strong>NOI</strong> is effective gross income minus ordinary operating expenses. It excludes financing, depreciation, income taxes, and capital expenditures. <strong>Cap rate</strong> is NOI ÷ purchase price. <strong>Cash-on-cash return</strong> is first-year pre-tax cash flow ÷ initial cash invested. <strong>DSCR</strong> is NOI ÷ annual debt service. <strong>Debt yield</strong> is NOI ÷ loan amount.</p>
+          <p>The hold projection grows NOI annually, keeps scheduled debt service constant, values the sale using the next year's NOI and the exit cap rate, deducts selling costs and the remaining loan balance, and estimates annual IRR and equity multiple. It does not model taxes, depreciation, refinancing, lease rollover costs, or irregular capital projects.</p>
+          <p>Method references: the OCC's <a href="https://www.occ.treas.gov/publications-and-resources/publications/comptrollers-handbook/files/commercial-real-estate-lending/pub-ch-commercial-real-estate.pdf" rel="noopener noreferrer">Commercial Real Estate Lending handbook</a> for DSCR and debt yield, and the federal banking agencies' <a href="https://www.fdic.gov/sites/default/files/2024-03/fil22036a.pdf" rel="noopener noreferrer">real-estate appraisal guidance</a> for direct capitalization and terminal cap rates.</p>
+        </details>
+      </section>
+
+      <section class="how">
+        <details>
+          <summary>Commercial property due-diligence checklist</summary>
+          <ul>
+            <li>Reconcile the rent roll, every lease, concessions, arrears, expirations, options, reimbursements, and security deposits.</li>
+            <li>Compare trailing 12-month statements and tax returns with the seller's pro forma; normalize one-time and deferred expenses.</li>
+            <li>Test market rent, vacancy, absorption, tenant credit, rollover concentration, and the cost and downtime to replace tenants.</li>
+            <li>Price immediate and long-term capital work: roof, structure, paving, elevators, HVAC, fire/life-safety, ADA access, and tenant improvements.</li>
+            <li>Verify zoning, permitted use, title, survey, easements, environmental condition, flood risk, code compliance, and required licenses.</li>
+            <li>Obtain property-tax reassessment estimates, insurance quotes, utility history, service contracts, and local operating requirements.</li>
+            <li>Review lender DSCR and debt-yield tests, amortization, maturity/balloon risk, recourse, reserves, covenants, and prepayment penalties.</li>
+            <li>Stress-test lower rent, higher vacancy and expenses, capital calls, interest rates, and a higher exit cap rate.</li>
+          </ul>
+        </details>
+      </section>
+
+      <p class="disclaimer">Planning estimate only—not an appraisal, lender commitment, investment recommendation, tax analysis, or substitute for legal, accounting, engineering, environmental, insurance, and commercial real-estate advice. Verify all leases, expenses, physical conditions, financing terms, and local requirements before purchasing.</p>
+      <nav class="related" aria-label="Related calculators">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="mortgage.html">Mortgage calculator</a></li>
+          <li><a href="loan.html">Loan amortization</a></li>
+          <li><a href="compound-interest.html">Compound interest</a></li>
+          <li><a href="percentage.html">Percentage calculator</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="../index.html">NumberCove</a>
+          <p class="hint">Free calculators and converters. Results are estimates for planning, not professional advice.</p>
+        </div>
+        <div>
+          <h2>Site</h2>
+          <ul>
+            <li><a href="../index.html">All tools</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">© <span data-year>2026</span> NumberCove. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../js/app.js?v=4"></script>
+  <script src="../js/commercial-real-estate.js?v=1"></script>
+</body>
+</html>
