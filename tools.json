@@ -13,7 +13,20 @@
       "name": "Marketplace payout calculator",
       "url": "https://www.numbercove.com/calculators/marketplace.html",
       "category": "sell",
-      "keywords": ["ebay", "poshmark", "vinted", "whatnot", "fashionphile", "the realreal", "mercari", "seller fees", "payout", "consignment", "vip", "list price"],
+      "keywords": [
+        "ebay",
+        "poshmark",
+        "vinted",
+        "whatnot",
+        "fashionphile",
+        "the realreal",
+        "mercari",
+        "seller fees",
+        "payout",
+        "consignment",
+        "vip",
+        "list price"
+      ],
       "description": "Type what you want to get paid, then see what to list it for on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal. Choose clothing, handbags, jewelry, watches, sneakers, coins, or cards to load matching fee charts."
     },
     {
@@ -21,7 +34,14 @@
       "name": "StubHub and Ticketmaster resale calculator",
       "url": "https://www.numbercove.com/calculators/ticket-resale.html",
       "category": "sell",
-      "keywords": ["stubhub", "ticketmaster", "tm resale", "seatgeek", "ticket fees", "seller payout"],
+      "keywords": [
+        "stubhub",
+        "ticketmaster",
+        "tm resale",
+        "seatgeek",
+        "ticket fees",
+        "seller payout"
+      ],
       "description": "Compare seller net on StubHub, Ticketmaster Resale, and SeatGeek, or back into the list price to hit a target net."
     },
     {
@@ -29,15 +49,46 @@
       "name": "Mortgage calculator",
       "url": "https://www.numbercove.com/calculators/mortgage.html",
       "category": "finance",
-      "keywords": ["mortgage", "monthly payment", "amortization", "PITI", "PMI"],
+      "keywords": [
+        "mortgage",
+        "monthly payment",
+        "amortization",
+        "PITI",
+        "PMI"
+      ],
       "description": "Monthly principal and interest, taxes, insurance, HOA, PMI, extra principal, and an amortization snapshot."
+    },
+    {
+      "id": "commercial-real-estate",
+      "name": "Commercial real estate ROI and APOD calculator",
+      "url": "https://www.numbercove.com/calculators/commercial-real-estate.html",
+      "category": "finance",
+      "keywords": [
+        "commercial real estate",
+        "investment property",
+        "APOD",
+        "NOI",
+        "cap rate",
+        "cash-on-cash return",
+        "DSCR",
+        "debt yield",
+        "break-even occupancy",
+        "IRR",
+        "equity multiple"
+      ],
+      "description": "Build an Annual Property Operating Data statement and evaluate NOI, cap rate, cash-on-cash return, lender coverage, financing, and a hold-and-resale projection."
     },
     {
       "id": "refinance",
       "name": "Refinance calculator",
       "url": "https://www.numbercove.com/calculators/refinance.html",
       "category": "finance",
-      "keywords": ["refinance", "refi", "break even", "closing costs"],
+      "keywords": [
+        "refinance",
+        "refi",
+        "break even",
+        "closing costs"
+      ],
       "description": "Compare current vs new loan payment, closing costs, and break-even months."
     },
     {
@@ -45,7 +96,12 @@
       "name": "Loan amortization calculator",
       "url": "https://www.numbercove.com/calculators/loan.html",
       "category": "finance",
-      "keywords": ["loan", "auto loan", "personal loan", "amortization"],
+      "keywords": [
+        "loan",
+        "auto loan",
+        "personal loan",
+        "amortization"
+      ],
       "description": "Fixed-rate installment payment, extra principal, total interest, and payoff date."
     },
     {
@@ -53,7 +109,12 @@
       "name": "Compound interest calculator",
       "url": "https://www.numbercove.com/calculators/compound-interest.html",
       "category": "finance",
-      "keywords": ["compound interest", "savings", "investment", "future value"],
+      "keywords": [
+        "compound interest",
+        "savings",
+        "investment",
+        "future value"
+      ],
       "description": "Future value with compounding frequency and recurring contributions."
     },
     {
@@ -61,7 +122,11 @@
       "name": "Tip calculator",
       "url": "https://www.numbercove.com/calculators/tip.html",
       "category": "finance",
-      "keywords": ["tip", "gratuity", "split bill"],
+      "keywords": [
+        "tip",
+        "gratuity",
+        "split bill"
+      ],
       "description": "Tip amount, total, and even split on the full bill or pre-tax amount."
     },
     {
@@ -69,7 +134,10 @@
       "name": "BMI calculator",
       "url": "https://www.numbercove.com/calculators/bmi.html",
       "category": "health",
-      "keywords": ["bmi", "body mass index"],
+      "keywords": [
+        "bmi",
+        "body mass index"
+      ],
       "description": "US and metric BMI, WHO category, and a healthy-weight range. Screening only."
     },
     {
@@ -77,7 +145,10 @@
       "name": "Body-fat estimate",
       "url": "https://www.numbercove.com/calculators/body-fat.html",
       "category": "health",
-      "keywords": ["body fat", "navy method"],
+      "keywords": [
+        "body fat",
+        "navy method"
+      ],
       "description": "U.S. Navy circumference body-fat estimate. Not a clinical measurement."
     },
     {
@@ -85,7 +156,12 @@
       "name": "TDEE calculator",
       "url": "https://www.numbercove.com/calculators/tdee.html",
       "category": "health",
-      "keywords": ["tdee", "bmr", "calories", "mifflin"],
+      "keywords": [
+        "tdee",
+        "bmr",
+        "calories",
+        "mifflin"
+      ],
       "description": "Mifflin–St Jeor BMR, activity multiplier, cut and gain calorie targets."
     },
     {
@@ -93,7 +169,11 @@
       "name": "Paint coverage calculator",
       "url": "https://www.numbercove.com/calculators/paint.html",
       "category": "home",
-      "keywords": ["paint", "gallons", "coverage"],
+      "keywords": [
+        "paint",
+        "gallons",
+        "coverage"
+      ],
       "description": "Gallons of paint from room dimensions or square footage, including coats."
     },
     {
@@ -101,7 +181,11 @@
       "name": "Flooring estimator",
       "url": "https://www.numbercove.com/calculators/flooring.html",
       "category": "home",
-      "keywords": ["flooring", "square feet", "waste"],
+      "keywords": [
+        "flooring",
+        "square feet",
+        "waste"
+      ],
       "description": "Flooring square footage with waste, box count, and material cost."
     },
     {
@@ -109,7 +193,11 @@
       "name": "Concrete volume calculator",
       "url": "https://www.numbercove.com/calculators/concrete.html",
       "category": "home",
-      "keywords": ["concrete", "cubic yards", "bags"],
+      "keywords": [
+        "concrete",
+        "cubic yards",
+        "bags"
+      ],
       "description": "Slab volume in cubic yards plus 40/60/80 lb bag estimates."
     },
     {
@@ -117,7 +205,11 @@
       "name": "Tile estimator",
       "url": "https://www.numbercove.com/calculators/tile.html",
       "category": "home",
-      "keywords": ["tile", "grout", "waste"],
+      "keywords": [
+        "tile",
+        "grout",
+        "waste"
+      ],
       "description": "Tile count from room size, grout gap, waste, and boxes."
     },
     {
@@ -125,7 +217,12 @@
       "name": "Length converter",
       "url": "https://www.numbercove.com/calculators/length.html",
       "category": "convert",
-      "keywords": ["length", "meters", "feet", "miles"],
+      "keywords": [
+        "length",
+        "meters",
+        "feet",
+        "miles"
+      ],
       "description": "Convert metric and imperial length units using exact SI factors."
     },
     {
@@ -133,7 +230,11 @@
       "name": "Weight converter",
       "url": "https://www.numbercove.com/calculators/weight.html",
       "category": "convert",
-      "keywords": ["weight", "kg", "lb"],
+      "keywords": [
+        "weight",
+        "kg",
+        "lb"
+      ],
       "description": "Convert mass units including kilograms, pounds, ounces, and stone."
     },
     {
@@ -141,7 +242,11 @@
       "name": "Volume converter",
       "url": "https://www.numbercove.com/calculators/volume.html",
       "category": "convert",
-      "keywords": ["volume", "liters", "gallons"],
+      "keywords": [
+        "volume",
+        "liters",
+        "gallons"
+      ],
       "description": "Convert liters, US kitchen measures, UK gallons, and cubic units."
     },
     {
@@ -149,7 +254,11 @@
       "name": "Temperature converter",
       "url": "https://www.numbercove.com/calculators/temperature.html",
       "category": "convert",
-      "keywords": ["celsius", "fahrenheit", "kelvin"],
+      "keywords": [
+        "celsius",
+        "fahrenheit",
+        "kelvin"
+      ],
       "description": "Convert Celsius, Fahrenheit, Kelvin, and Rankine."
     },
     {
@@ -157,7 +266,11 @@
       "name": "Area converter",
       "url": "https://www.numbercove.com/calculators/area.html",
       "category": "convert",
-      "keywords": ["area", "acres", "square feet"],
+      "keywords": [
+        "area",
+        "acres",
+        "square feet"
+      ],
       "description": "Convert square meters, feet, acres, hectares, and square miles."
     },
     {
@@ -165,7 +278,10 @@
       "name": "Percentage calculator",
       "url": "https://www.numbercove.com/calculators/percentage.html",
       "category": "math",
-      "keywords": ["percentage", "percent change"],
+      "keywords": [
+        "percentage",
+        "percent change"
+      ],
       "description": "What is X% of Y, reverse percent, percent change, increase or decrease."
     }
   ]
