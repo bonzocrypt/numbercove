@@ -13,14 +13,14 @@
   <meta name="application-name" content="NumberCove">
   <meta name="apple-mobile-web-app-title" content="NumberCove">
   <title>Marketplace Seller Payout Calculator — eBay, Poshmark, Vinted, Whatnot | NumberCove</title>
-  <meta name="description" content="Enter what you want after fees and see the list price on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal.">
+  <meta name="description" content="Enter your listing price to compare what you keep after fees, or calculate what to list for a target payout on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal.">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="alternate" type="text/plain" href="https://www.numbercove.com/llms.txt" title="LLM-readable site summary">
   <link rel="alternate" type="application/json" href="https://www.numbercove.com/tools.json" title="Machine-readable tool catalog">
   <link rel="canonical" href="https://www.numbercove.com/calculators/marketplace.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <meta property="og:title" content="Marketplace Payout Calculator | NumberCove">
-  <meta property="og:description" content="See the list price that pays you a target amount on eBay, Poshmark, Vinted, Whatnot, Fashionphile, The RealReal, and Mercari.">
+  <meta property="og:description" content="Compare what you keep from a listing price, or calculate what to list for a target payout across major resale marketplaces.">
   <script>
     (function(){try{var t=localStorage.getItem("calculate-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");else if(t!=="light"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();
   </script>
@@ -70,7 +70,7 @@
       <header class="page-header">
         <p class="kicker">Sell</p>
         <h1>Secondary marketplace payout calculator</h1>
-        <p class="lede">Type what you want to get paid. See what to list it for on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal.</p>
+        <p class="lede">Enter your listing price to compare what you will get after fees on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal. Or calculate what to list for a target payout.</p>
       </header>
       <aside class="affiliate-recommendation affiliate-recommendation--leaderboard" aria-labelledby="crosslist-recommendation-title">
         <a class="affiliate-banner affiliate-banner--crosslist" href="https://crosslist.com/?via=dan-346bbe" target="_blank" rel="sponsored noopener noreferrer">
@@ -90,7 +90,7 @@
       </aside>
       <div class="calc-layout">
         <form class="panel" data-calc="marketplace" id="calc-form" novalidate>
-          <h2>Get paid</h2>
+          <h2>Marketplace payout</h2>
           <div class="form-grid two">
             <label class="field span-2">What are you selling?
               <select name="itemType">
@@ -104,9 +104,21 @@
                 <option value="other">Other merchandise</option>
               </select>
             </label>
-            <label class="field span-2">I want to get paid
+            <fieldset class="span-2" style="border:0;padding:0;margin:0">
+              <legend class="hint" style="font-weight:700;color:inherit">What are you entering?</legend>
+              <div class="seg">
+                <label><input type="radio" name="mode" value="list" checked> This is my listing price</label>
+                <label><input type="radio" name="mode" value="net"> This is what I want to make</label>
+              </div>
+            </fieldset>
+            <label class="field span-2" data-mode="list">Listing price (each)
+              <span class="input-affix prefix"><span class="affix">$</span><input name="salePrice" inputmode="decimal" value="250"></span>
+              <span class="hint">The results show what you will get after estimated fees.</span>
+              <span class="field-error"></span>
+            </label>
+            <label class="field span-2 mode-hidden" data-mode="net">I want to make (each)
               <span class="input-affix prefix"><span class="affix">$</span><input name="netWant" inputmode="decimal" value="200"></span>
-              <span class="hint">After fees. The results are what to list it for.</span>
+              <span class="hint">After fees. The results show what you need to list it for.</span>
               <span class="field-error"></span>
             </label>
           </div>
@@ -200,14 +212,14 @@
           </div>
         </form>
         <section class="panel results-panel" aria-live="polite">
-          <h2>What to list it for</h2>
+          <h2 id="marketplace-results-heading">What you will get</h2>
           <div id="results"><p class="placeholder-result">Enter values to see results.</p></div>
         </section>
       </div>
       <section class="how">
         <details>
           <summary>How this calculator works</summary>
-          <p>Enter what you want to get paid. Each row is the list price that leaves you at least that amount after the platform fee and any postage you enter under More options. Vinted US charges sellers no fee, so with no postage of your own the list price matches your amount. The buyer pays a Vinted fee, usually 5% + $0.70, plus shipping. Fashionphile and The RealReal show the price the item needs to sell for. Optional Vinted Item Bumps are not included.</p>
+          <p>By default, enter your listing price and each row shows what you will get after estimated platform fees and any postage you enter under More options. Choose “This is what I want to make” to work backward: each row then shows the listing price that leaves you at least your target amount. Vinted US charges sellers no fee, so with no postage of your own its payout matches your listing price. The buyer pays a Vinted fee, usually 5% + $0.70, plus shipping. Fashionphile and The RealReal show the price the item needs to sell for. Optional Vinted Item Bumps are not included.</p>
           <p>Other U.S. charts: eBay most categories 13.6% of item + shipping up to $7,500 then 2.35%, plus $0.30 on orders of $10 or less and $0.40 above (handbags 15% at $2,000 or less and 9% above, jewelry 15% at $5,000 or less and 9% above, watches 15% to $1,000 then 6.5% to $7,500 then 3%, athletic shoes 8% at $150+ with no per-order fee, coins and cards 13.25%). Poshmark is $2.95 under $15 and 20% at $15+. Whatnot is 8% on the item (4% for coins, 8% on the first $1,500 for cards) plus 2.9% + $0.30. Mercari is 10% of item + buyer shipping. Fashionphile is 30% on the first $3,000 and 15% above. The RealReal pays a category share of the sold price. Set your status under More options. Trendsetter is the default, and VIP keeps more on items $200+. Fashionphile and The RealReal are included for clothing, handbags, jewelry, watches, and sneakers. Vinted is included for every category. Luxury houses often buy outright at a different rate than consignment.</p>
         </details>
       </section>
@@ -249,6 +261,6 @@
     </div>
   </footer>
   <script src="../js/app.js?v=4"></script>
-  <script src="../js/calculators.js?v=9"></script>
+  <script src="../js/calculators.js?v=10"></script>
 </body>
 </html>

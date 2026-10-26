@@ -27,7 +27,7 @@
         "vip",
         "list price"
       ],
-      "description": "Type what you want to get paid, then see what to list it for on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal. Choose clothing, handbags, jewelry, watches, sneakers, coins, or cards to load matching fee charts."
+      "description": "Enter a listing price to compare what you keep after fees on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal, or enter what you want to make to calculate what to list it for. Choose clothing, handbags, jewelry, watches, sneakers, coins, or cards to load matching fee charts."
     },
     {
       "id": "ticket-resale",

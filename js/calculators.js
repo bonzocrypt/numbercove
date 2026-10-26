@@ -1102,14 +1102,16 @@
   }
 
   function marketplace(form) {
-    var mode = (form.querySelector("[name='mode']:checked") || {}).value || "net";
+    var mode = (form.querySelector("[name='mode']:checked") || {}).value || "list";
+    var resultsHeading = document.getElementById("marketplace-results-heading");
+    if (resultsHeading) resultsHeading.textContent = mode === "net" ? "What to list it for" : "What you will get";
     var qty = C.requireFinite(form, "quantity", "Quantity", { min: 1, max: 9999 });
     if (qty == null) return null;
     qty = Math.floor(qty);
     var price = null;
     var target = null;
     if (mode === "list") {
-      price = C.requireFinite(form, "salePrice", "Sale price", { gt: 0 });
+      price = C.requireFinite(form, "salePrice", "Listing price", { gt: 0 });
       if (price == null) return null;
     } else {
       mode = "net";
@@ -1547,7 +1549,7 @@
       : escapeHtml(best.name) + " · " + C.formatMoney(best.net) + " each after typical fees";
     var statRows = [
       ["Category", itemTypeLabel(itemType)],
-      [mode === "net" ? "You want to get paid" : "Sale (each)", C.formatMoney(mode === "net" ? target : price)],
+      [mode === "net" ? "You want to make" : "Listing price (each)", C.formatMoney(mode === "net" ? target : price)],
     ];
     if (qty > 1) statRows.push(["Quantity", String(qty)]);
     if (shipCost > 0) statRows.push(["Postage you pay", C.formatMoney(shipCost)]);
