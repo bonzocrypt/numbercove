@@ -1400,9 +1400,17 @@ th.num {
   gap: 1rem;
 }
 
+.contact-grid--single {
+  max-width: 760px;
+}
+
 @media (min-width: 800px) {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-grid--single {
+    grid-template-columns: 1fr;
   }
 }
 
