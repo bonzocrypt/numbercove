@@ -50,7 +50,7 @@ After the site is live, submit `https://www.numbercove.com/sitemap.xml` in Googl
 
 The site does not display empty advertising placeholders. If an ad network is enabled later, add its units only where an ad will actually be served and keep each unit clearly labeled as an advertisement.
 
-The Google AdSense site-verification loader is installed in every page head, and the root `ads.txt` authorizes the NumberCove publisher account. No manual ad units are present while the site is awaiting approval.
+The Google AdSense loader is limited to substantive calculator pages that may be monetized after approval. The navigation-focused homepage uses the verification-only AdSense meta tag, and About, Contact, Privacy, and Terms do not load ad code. The root `ads.txt` authorizes the NumberCove publisher account. No manual ad units are present while the site is awaiting approval.
 
 The [Privacy Policy](privacy.html) and [Terms](terms.html) cover the current affiliate promotion and possible future display advertising.
 
