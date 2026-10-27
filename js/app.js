@@ -94,6 +94,13 @@
     var cards = $$("[data-tool]");
     var empty = $("#search-empty");
 
+    try {
+      var initialQuery = new URLSearchParams(window.location.search).get("q");
+      if (initialQuery) input.value = initialQuery;
+    } catch (_error) {
+      // The search box still works when URLSearchParams is unavailable.
+    }
+
     function filter() {
       var q = input.value.trim().toLowerCase();
       var shown = 0;
@@ -115,6 +122,7 @@
     }
 
     input.addEventListener("input", filter);
+    filter();
   }
 
   function toast(message) {
