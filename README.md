@@ -48,9 +48,9 @@ After the site is live, submit `https://www.numbercove.com/sitemap.xml` in Googl
 
 ## Ads
 
-Every tool page and the homepage include labeled empty ad slots (`728×90`, `300×250`, in-article). They are not fake ads. When you are approved for a network (for example Google AdSense), replace the inner `.ad-frame` markup with the network’s unit code. Keep the visible “Advertisement” label.
+The site does not display empty advertising placeholders. If an ad network is enabled later, add its units only where an ad will actually be served and keep each unit clearly labeled as an advertisement.
 
-The [Privacy Policy](privacy.html) and [Terms](terms.html) are written for a tools + display-ads site.
+The [Privacy Policy](privacy.html) and [Terms](terms.html) cover the current affiliate promotion and possible future display advertising.
 
 ## How calculations work
 

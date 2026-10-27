@@ -24,7 +24,6 @@
   --warn: #b45309;
   --danger: #b42318;
   --info: #1d4e89;
-  --ad-bg: #ece7dc;
   --focus: #1a6b4a;
   --shadow: 0 12px 32px rgba(28, 33, 24, 0.07);
   --shadow-sm: 0 2px 8px rgba(28, 33, 24, 0.05);
@@ -54,7 +53,6 @@
   --warn: #f0b45a;
   --danger: #f0a4a0;
   --info: #8bb4e0;
-  --ad-bg: #22281f;
   --focus: #5dca94;
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -1176,53 +1174,6 @@ th.num {
   color: var(--muted);
 }
 
-/* Ads */
-
-.ad-slot {
-  margin: 1.1rem 0;
-  background: var(--ad-bg);
-  border: 1px dashed var(--line-strong);
-  border-radius: 12px;
-  padding: 0.7rem;
-  text-align: center;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.ad-label {
-  display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.4rem;
-}
-
-.ad-frame {
-  margin: 0 auto;
-  background: color-mix(in srgb, var(--surface) 55%, transparent);
-  color: var(--muted);
-  display: grid;
-  place-items: center;
-  font-size: 0.88rem;
-  border-radius: 8px;
-}
-
-.ad-frame--leaderboard {
-  min-height: 90px;
-  max-width: min(728px, 100%);
-  width: 100%;
-}
-
-.ad-frame--rectangle {
-  min-height: 250px;
-  max-width: 300px;
-}
-
-.ad-frame--inline {
-  min-height: 100px;
-}
-
 .affiliate-recommendation {
   margin: 1.1rem 0 1.35rem;
 }
@@ -1562,7 +1513,6 @@ th.num {
 @media print {
   .site-header,
   .site-footer,
-  .ad-slot,
   .affiliate-recommendation,
   .theme-toggle,
   .nav-toggle,
