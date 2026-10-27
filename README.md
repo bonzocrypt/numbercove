@@ -61,6 +61,7 @@ All math runs in the browser (`js/calculators.js`, `js/converters.js`). Inputs a
 | Marketplace / ticket resale | Typical published seller fees (overridable) |
 | Mortgage / loan / refinance | Standard fixed-rate amortization |
 | Compound interest | Period-by-period compounding + contributions |
+| Options | Black-Scholes-Merton (European); Leisen-Reimer binomial tree with Richardson extrapolation (American); IV solved by bisection |
 | BMI | WHO formula (metric or 703 × lb / in²) |
 | Body fat | U.S. Navy circumference (estimate only) |
 | TDEE | Mifflin–St Jeor × activity factor |
@@ -77,6 +78,7 @@ NumberCove/
   about.html  privacy.html  terms.html  contact.html
   css/styles.css
   js/app.js  js/calculators.js  js/converters.js
+  js/options-engine.js  js/options.js   (options calculator)
   calculators/   (one HTML page per tool)
   robots.txt  sitemap.xml  favicon.svg  README.md
 ```

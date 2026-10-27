@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KVP79DLD');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="application-name" content="NumberCove">
+  <meta name="apple-mobile-web-app-title" content="NumberCove">
+  <title>Options Calculator: Price, Greeks, P&amp;L &amp; Spreads | NumberCove</title>
+  <meta name="description" content="Free options calculator for calls, puts, and up to 4-leg spreads. Slide the stock price, date, and implied volatility to see option value, P&amp;L, Greeks, breakeven, probability of profit, and a P&amp;L heat map. American and European pricing.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="alternate" type="text/plain" href="https://www.numbercove.com/llms.txt" title="LLM-readable site summary">
+  <link rel="alternate" type="application/json" href="https://www.numbercove.com/tools.json" title="Machine-readable tool catalog">
+  <link rel="canonical" href="https://www.numbercove.com/calculators/options.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Options Calculator: Price, Greeks, P&amp;L &amp; Spreads | NumberCove">
+  <meta property="og:description" content="See what a call, put, or spread is worth if the stock moves, time passes, or volatility changes.">
+  <script>
+    (function(){try{var t=localStorage.getItem("calculate-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");else if(t!=="light"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Sora:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=7">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","isAccessibleForFree":true,"url":"https://www.numbercove.com/calculators/options.html","name":"Options Price, Greeks and P&L Calculator","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body class="options-page">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVP79DLD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="../index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><rect x="8" y="7" width="16" height="5" rx="1.5" fill="#f3f0e8"/><rect x="8" y="15" width="4" height="4" rx="1" fill="#dceee4"/><rect x="14" y="15" width="4" height="4" rx="1" fill="#dceee4"/><rect x="20" y="15" width="4" height="4" rx="1" fill="#e8955a"/><rect x="8" y="21" width="4" height="4" rx="1" fill="#dceee4"/><rect x="14" y="21" width="4" height="4" rx="1" fill="#dceee4"/><rect x="20" y="21" width="4" height="4" rx="1" fill="#dceee4"/></svg>
+        <span>NumberCove</span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="../index.html">All tools</a>
+        <a href="../index.html#sell">Sell</a>
+        <a href="../index.html#finance">Finance</a>
+        <a href="../index.html#health">Health</a>
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#convert">Convert</a>
+        <a href="../about.html">About</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button type="button" class="icon-btn nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../index.html#finance">Finance</a> <span aria-hidden="true">/</span> Options calculator</nav>
+      <header class="page-header">
+        <p class="kicker">Finance</p>
+        <h1>Options calculator: price, Greeks &amp; P&amp;L</h1>
+        <p class="lede">Enter a call, put, or spread of up to 4 legs, then slide the stock price, date, and implied volatility to see what the position is worth, your profit or loss, and how the Greeks change.</p>
+      </header>
+      <aside class="ad-slot" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-frame ad-frame--leaderboard">Ad slot — 728×90</div></aside>
+      <div class="calc-layout">
+        <form class="panel" data-calc="options" id="calc-form" novalidate>
+          <h2>Underlying &amp; market</h2>
+          <div class="form-grid two">
+            <label class="field">Underlying price
+              <span class="hint">Current stock, ETF, or index price</span>
+              <span class="input-affix prefix"><span class="affix">$</span><input name="spot" inputmode="decimal" value="100" required></span>
+              <span class="field-error"></span>
+            </label>
+            <label class="field">Exercise style
+              <span class="hint">Stocks &amp; ETFs: American. SPX, NDX, RUT, XSP, VIX: European.</span>
+              <select name="style">
+                <option value="american" selected>American (binomial tree)</option>
+                <option value="european">European (Black-Scholes)</option>
+              </select>
+              <span class="field-error"></span>
+            </label>
+            <label class="field"><span>Risk-free rate <span class="optional-tag">optional</span></span>
+              <span class="hint">Blank uses 0%</span>
+              <span class="input-affix"><input name="rate" inputmode="decimal" placeholder="0"><span class="affix">%</span></span>
+              <span class="field-error"></span>
+            </label>
+            <label class="field"><span>Dividend yield <span class="optional-tag">optional</span></span>
+              <span class="hint">Annual, continuous. Blank uses 0%</span>
+              <span class="input-affix"><input name="divYield" inputmode="decimal" placeholder="0"><span class="affix">%</span></span>
+              <span class="field-error"></span>
+            </label>
+            <label class="field">Entry price basis
+              <span class="hint">Used as your cost when a leg has no custom entry price</span>
+              <select name="basis">
+                <option value="mid" selected>Mid (bid + ask) ÷ 2</option>
+                <option value="conservative">Conservative fill: buy at ask, sell at bid</option>
+                <option value="bid">Bid</option>
+                <option value="ask">Ask</option>
+              </select>
+              <span class="field-error"></span>
+            </label>
+            <label class="field">Contract multiplier
+              <span class="hint">Shares per contract, usually 100</span>
+              <input name="multiplier" inputmode="numeric" value="100">
+              <span class="field-error"></span>
+            </label>
+          </div>
+
+          <div class="strategy-bar">
+            <label class="field">Strategy preset
+              <span class="hint">Builds legs around the current price and leg 1's expiration and IV. Replaces your legs; then enter real bids and asks.</span>
+              <span class="preset-row">
+                <select id="preset" aria-label="Strategy preset">
+                  <option value="single">Single option (leg 1 only)</option>
+                  <option value="bullCall">Bull call spread</option>
+                  <option value="bearPut">Bear put spread</option>
+                  <option value="straddle">Long straddle</option>
+                  <option value="strangle">Long strangle</option>
+                  <option value="ironCondor">Short iron condor</option>
+                  <option value="butterfly">Long call butterfly</option>
+                  <option value="calendar">Call calendar spread</option>
+                  <option value="diagonal">Call diagonal spread</option>
+                </select>
+                <button class="btn btn-secondary" type="button" id="apply-preset">Apply</button>
+              </span>
+            </label>
+          </div>
+
+          <div id="legs"></div>
+          <button class="btn btn-ghost add-leg" type="button" id="add-leg">+ Add leg</button>
+
+          <p class="form-error" role="alert"></p>
+          <div class="actions">
+            <button class="btn btn-secondary" type="button" id="reset-calc">Reset all</button>
+            <button class="btn btn-ghost" type="button" id="copy-results">Copy results</button>
+            <button class="btn btn-ghost" type="button" id="copy-link">Copy share link</button>
+          </div>
+        </form>
+
+        <section class="panel results-panel options-results" aria-live="polite">
+          <h2>Scenario</h2>
+          <div class="scenario" id="scenario">
+            <div class="slider-field">
+              <div class="slider-head"><label for="sc-price">Underlying price</label>
+                <span class="input-affix prefix slider-num"><span class="affix">$</span><input id="sc-price-num" inputmode="decimal" aria-label="Scenario underlying price"></span></div>
+              <input type="range" id="sc-price" min="50" max="200" step="0.01">
+            </div>
+            <div class="slider-field">
+              <div class="slider-head"><label for="sc-pct">Move from current price</label>
+                <span class="input-affix slider-num"><input id="sc-pct-num" inputmode="decimal" aria-label="Scenario percent move"><span class="affix">%</span></span></div>
+              <input type="range" id="sc-pct" min="-50" max="100" step="0.1" value="0">
+            </div>
+            <div class="slider-field">
+              <div class="slider-head"><label for="sc-date">Target date</label>
+                <input type="date" id="sc-date-input" class="slider-date" aria-label="Scenario target date"></div>
+              <input type="range" id="sc-date" min="0" max="45" step="1" value="0">
+              <p class="hint" id="sc-date-note"></p>
+            </div>
+            <div class="slider-field">
+              <div class="slider-head"><label for="sc-iv">Implied volatility <span id="sc-iv-leg"></span></label>
+                <span class="input-affix slider-num"><input id="sc-iv-num" inputmode="decimal" aria-label="Scenario implied volatility"><span class="affix">%</span></span></div>
+              <input type="range" id="sc-iv" min="1" max="300" step="0.1">
+              <p class="hint" id="sc-iv-note"></p>
+            </div>
+            <div class="crush-row">
+              <label class="crush-field">IV crush
+                <span class="input-affix"><input id="crush-pct" inputmode="decimal" value="30" aria-label="IV crush percent"><span class="affix">%</span></span>
+              </label>
+              <button class="btn btn-secondary" type="button" id="apply-crush">Apply IV crush</button>
+              <button class="btn btn-ghost" type="button" id="reset-scenario">Reset scenario</button>
+            </div>
+          </div>
+          <div id="results"><p class="placeholder-result">Enter values to price the position.</p></div>
+        </section>
+      </div>
+
+      <section class="panel options-wide" id="chart-panel" aria-labelledby="chart-title">
+        <div class="wide-head">
+          <h2 id="chart-title">P&amp;L by underlying price</h2>
+          <div class="chart-legend" id="chart-legend"></div>
+        </div>
+        <div class="payoff-chart" id="payoff-chart"></div>
+        <p class="hint" id="chart-note"></p>
+      </section>
+
+      <section class="panel options-wide" id="heat-panel" aria-labelledby="heat-title">
+        <div class="wide-head">
+          <h2 id="heat-title">P&amp;L heat map: price vs date</h2>
+          <div class="heat-controls">
+            <div class="seg" role="radiogroup" aria-label="Heat map metric">
+              <label><input type="radio" name="heatMetric" value="pnl" checked> P&amp;L $</label>
+              <label><input type="radio" name="heatMetric" value="pnlPct"> P&amp;L %</label>
+              <label><input type="radio" name="heatMetric" value="value"> Value</label>
+            </div>
+            <label class="heat-range">Price range
+              <select id="heat-range">
+                <option value="10">±10%</option>
+                <option value="20" selected>±20%</option>
+                <option value="30">±30%</option>
+                <option value="50">±50%</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="table-wrap heat-wrap" id="heat-map"></div>
+        <p class="hint" id="heat-note"></p>
+      </section>
+
+      <section class="panel options-wide" id="greeks-panel" aria-labelledby="greeks-title">
+        <h2 id="greeks-title">Greeks &amp; leg detail</h2>
+        <div id="greeks"></div>
+      </section>
+
+      <aside class="ad-slot" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-frame ad-frame--rectangle">Ad slot — 300×250</div></aside>
+
+      <section class="how">
+        <details>
+          <summary>How the option prices and probabilities are calculated</summary>
+          <p><strong>European options</strong> (most index options such as SPX, NDX, and RUT) are priced with the Black-Scholes-Merton formula with a continuous dividend yield. <strong>American options</strong> (stocks and ETFs) can be exercised early, so they are priced with a Leisen-Reimer binomial tree, using Richardson extrapolation across 2 tree sizes. A call with no dividend is never worth exercising early, so it uses Black-Scholes, which is exact in that case. American Greeks are measured by small bumps to price, time, and volatility on the tree.</p>
+          <p><strong>Time</strong> runs in calendar days, with each option expiring at the 4:00 p.m. Eastern close. A target date of today values the position at the current moment; later dates value it at that day's close.</p>
+          <p><strong>Implied volatility</strong> drives the price. If you leave IV blank, it is solved from the leg's market price (mid, or the side you entered, or your custom entry price). The IV slider moves leg 1 to the value shown and shifts every other leg by the same number of points. The IV crush button lowers leg 1's IV by the percentage you enter and shifts the other legs by the same points. Broker Greeks you enter are for comparison only; the calculator re-derives Greeks from the model and flags large differences.</p>
+          <p><strong>Breakeven, maximum profit and loss, and probability of profit</strong> are measured at the first expiration in the position. On that date, expiring legs are worth their intrinsic value and any later legs keep their time value at the scenario IV. Probability of profit uses a lognormal price distribution at the expiring legs' entered IV, with drift equal to the risk-free rate minus the dividend yield. That is a model-implied (risk-neutral) estimate, not a forecast. For calendar and diagonal spreads, legs that expired before the target date are valued at their intrinsic value at the scenario price.</p>
+          <p>Entry cost uses the basis you choose: mid, a conservative fill (buy at the ask, sell at the bid), the bid, or the ask. A custom entry price overrides it. With no market price, the model's value today is used and labeled.</p>
+        </details>
+      </section>
+
+      <p class="disclaimer">Educational estimate only. Not investment advice or a recommendation to buy or sell any security. Model values assume constant volatility and rates between now and the target date and ignore discrete dividend dates, early assignment risk, commissions, and bid/ask spreads at exit. Real option prices can differ materially. Options involve risk and are not suitable for all investors.</p>
+      <nav class="related" aria-label="Related calculators">
+        <h2>Related calculators</h2>
+        <ul>
+          <li><a href="percentage.html">Percentage calculator</a></li>
+          <li><a href="compound-interest.html">Compound interest</a></li>
+          <li><a href="commercial-real-estate.html">Commercial real estate ROI</a></li>
+          <li><a href="loan.html">Loan amortization</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="../index.html">NumberCove</a>
+          <p class="hint">Free calculators and converters. Results are estimates for planning, not professional advice.</p>
+        </div>
+        <div>
+          <h2>Site</h2>
+          <ul>
+            <li><a href="../index.html">All tools</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">© <span data-year>2026</span> NumberCove. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="../js/app.js?v=4"></script>
+  <script src="../js/options-engine.js?v=1"></script>
+  <script src="../js/options.js?v=1"></script>
+</body>
+</html>

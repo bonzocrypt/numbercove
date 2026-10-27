@@ -1581,3 +1581,551 @@ th.num {
     break-inside: avoid;
   }
 }
+
+/* Options calculator */
+
+.options-page {
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --hm-pos: #86b6ef;
+  --hm-neg: #ef9a9a;
+  --hm-mid: #f0efec;
+  --hm-seq: #6da7ec;
+}
+
+[data-theme="dark"] .options-page {
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --hm-pos: #1c5cab;
+  --hm-neg: #9e3434;
+  --hm-mid: #383835;
+  --hm-seq: #256abf;
+}
+
+.optional-tag {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-left: 0.25rem;
+}
+
+.strategy-bar {
+  border-top: 1px solid var(--line);
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+}
+
+.preset-row {
+  display: flex;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.preset-row select {
+  flex: 1 1 auto;
+}
+
+.leg {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.85rem 0.85rem;
+  margin: 0.9rem 0 0;
+  min-width: 0;
+  background: var(--surface-2);
+}
+
+.leg legend {
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0 0.35rem;
+  max-width: calc(100% - 6rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leg-summary {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.leg-remove {
+  position: absolute;
+  top: -0.2rem;
+  right: 0.5rem;
+  min-height: 32px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.85rem;
+  background: var(--surface);
+}
+
+.leg-grid {
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.6rem 0.75rem;
+}
+
+.leg .field-error:empty {
+  min-height: 0;
+}
+
+.broker-greeks .hint {
+  margin: 0.5rem 0 0;
+}
+
+.add-leg {
+  margin-top: 0.75rem;
+  width: 100%;
+  border-style: dashed;
+}
+
+.add-leg:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+@media (min-width: 900px) {
+  .options-page .options-results {
+    max-height: calc(100vh - var(--header-h) - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+.scenario {
+  display: grid;
+  gap: 0.85rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.scenario.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.slider-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.slider-num {
+  width: 8.5rem;
+  flex: 0 0 auto;
+}
+
+.slider-num input,
+.slider-date {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  min-height: 38px;
+  padding: 0.3rem 0.55rem;
+  text-align: right;
+}
+
+.slider-date {
+  border-radius: 10px;
+  width: 10.5rem;
+  text-align: left;
+}
+
+.slider-num input:focus,
+.slider-date:focus,
+.crush-field input:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.slider-field input[type="range"] {
+  width: 100%;
+  margin: 0.45rem 0 0;
+  accent-color: var(--brand);
+  min-height: 28px;
+  cursor: pointer;
+}
+
+.slider-field .hint {
+  margin: 0.1rem 0 0;
+}
+
+.crush-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.crush-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  width: 7rem;
+}
+
+.crush-field input {
+  font: inherit;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  min-height: var(--tap);
+  padding: 0.3rem 0.6rem;
+  width: 100%;
+}
+
+.result-hero .sub strong {
+  color: var(--ink);
+}
+
+.stat-sub {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 0.1rem;
+}
+
+.notice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.notice-list .callout {
+  margin: 0.45rem 0;
+  padding: 0.55rem 0.8rem;
+}
+
+.options-wide {
+  margin-top: 1rem;
+}
+
+.wide-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.wide-head h2 {
+  margin: 0;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
+.chart-legend .lg,
+.tip-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sw {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.sw-1 {
+  background: var(--series-1);
+}
+
+.sw-2 {
+  background: var(--series-2);
+}
+
+.payoff-chart {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  touch-action: pan-y;
+}
+
+.payoff-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.payoff-chart .grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.payoff-chart .zero {
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+}
+
+.payoff-chart .now {
+  stroke: var(--muted);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.payoff-chart .axis,
+.payoff-chart .end-label {
+  fill: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.payoff-chart .end-label {
+  fill: var(--ink);
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+
+.payoff-chart .line {
+  fill: none;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.payoff-chart .line-1 {
+  stroke: var(--series-1);
+}
+
+.payoff-chart .line-2 {
+  stroke: var(--series-2);
+}
+
+.payoff-chart .scen-dot {
+  fill: var(--series-1);
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+
+.payoff-chart .be {
+  fill: var(--surface);
+  stroke: var(--series-2);
+  stroke-width: 2;
+}
+
+.payoff-chart .cross {
+  stroke: var(--muted);
+  stroke-width: 1;
+}
+
+.payoff-chart .hover-dot {
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+
+.payoff-chart .hover-1 {
+  fill: var(--series-1);
+}
+
+.payoff-chart .hover-2 {
+  fill: var(--series-2);
+}
+
+.payoff-chart .hit {
+  fill: transparent;
+  cursor: crosshair;
+}
+
+.chart-tip {
+  position: absolute;
+  z-index: 2;
+  width: 190px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 0.5rem 0.65rem;
+  font-size: 0.85rem;
+  pointer-events: none;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.chart-tip[hidden] {
+  display: none;
+}
+
+.chart-tip span {
+  color: var(--muted);
+}
+
+.chart-tip .tip-row {
+  color: var(--ink);
+}
+
+.chart-tip b {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.heat-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+}
+
+.heat-controls .seg label {
+  min-height: 38px;
+  padding: 0.3rem 0.7rem;
+}
+
+.heat-range {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.heat-range select {
+  font: inherit;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  min-height: 38px;
+  padding: 0.2rem 0.5rem;
+}
+
+.heat-wrap {
+  margin-top: 0.25rem;
+}
+
+table.heat {
+  font-size: 0.8rem;
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+
+table.heat th,
+table.heat td {
+  padding: 0.3rem 0.4rem;
+  border-bottom: 0;
+  white-space: nowrap;
+}
+
+table.heat td {
+  border-radius: 4px;
+  font-size: 0.78rem;
+  color: var(--ink);
+  min-width: 3.6rem;
+}
+
+table.heat thead th {
+  background: transparent;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.76rem;
+}
+
+table.heat tbody th {
+  background: transparent;
+  text-align: right;
+  font-size: 0.78rem;
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  z-index: 1;
+}
+
+.hm-sub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.hm-mid {
+  background: var(--hm-mid);
+}
+
+.hm-pos {
+  background: color-mix(in oklab, var(--hm-pos) var(--t), var(--hm-mid));
+}
+
+.hm-neg {
+  background: color-mix(in oklab, var(--hm-neg) var(--t), var(--hm-mid));
+}
+
+.hm-seq {
+  background: color-mix(in oklab, var(--hm-seq) var(--t), var(--hm-mid));
+}
+
+.hm-row th {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+thead th.hm-col {
+  color: var(--ink);
+}
+
+td.hm-hit {
+  outline: 2px solid var(--ink);
+  outline-offset: -2px;
+  font-weight: 700;
+}
+
+.greeks-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.greeks-grid > div {
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .greeks-grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+}
+
+.greeks-grid h3,
+#greeks > h3 {
+  margin-top: 0.4rem;
+}
+
+#greeks .table-wrap td .hm-sub {
+  display: block;
+}
+
+@media (max-width: 639px) {
+  .slider-num {
+    width: 7.25rem;
+  }
+
+  .slider-date {
+    width: 9.5rem;
+  }
+
+  .leg-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
