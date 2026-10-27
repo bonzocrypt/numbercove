@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KVP79DLD');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895732552619657" crossorigin="anonymous"></script>
+  <!-- End Google AdSense -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="application-name" content="NumberCove">
+  <meta name="apple-mobile-web-app-title" content="NumberCove">
+  <title>Options Roll &amp; Wheel Strategy Calculator | NumberCove</title>
+  <meta name="description" content="Track wheel-strategy credits and economic breakeven, or analyze an option roll's net credit, new strike, added time, assignment price, and expiration outcome.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="alternate" type="text/plain" href="https://www.numbercove.com/llms.txt" title="LLM-readable site summary">
+  <link rel="alternate" type="application/json" href="https://www.numbercove.com/tools.json" title="Machine-readable tool catalog">
+  <link rel="canonical" href="https://www.numbercove.com/calculators/options-roll-wheel.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NumberCove">
+  <meta property="og:title" content="Options Roll &amp; Wheel Strategy Calculator | NumberCove">
+  <meta property="og:description" content="Track wheel economics and compare an option position before and after a roll.">
+  <meta property="og:url" content="https://www.numbercove.com/calculators/options-roll-wheel.html">
+  <meta name="twitter:card" content="summary">
+  <script>(function(){try{var t=localStorage.getItem("calculate-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");else if(t!=="light"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=Sora:wght@500;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=7">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"WebApplication","name":"Options Roll and Wheel Strategy Calculator","url":"https://www.numbercove.com/calculators/options-roll-wheel.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,"description":"Track wheel campaign credits and economic breakeven or analyze a call or put roll before placing the trade.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.numbercove.com/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://www.numbercove.com/#finance"},{"@type":"ListItem","position":3,"name":"Options roll and wheel calculator","item":"https://www.numbercove.com/calculators/options-roll-wheel.html"}]},
+      {"@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is a net credit or debit when rolling an option?","acceptedAnswer":{"@type":"Answer","text":"Net roll credit or debit is the new option premium received minus the cost to close the old option and entered trading fees."}},
+        {"@type":"Question","name":"Does option premium reduce tax cost basis?","acceptedAnswer":{"@type":"Answer","text":"The calculator shows an economic breakeven for planning. Broker-reported tax basis can differ because assignment, closing transactions, holding periods, wash-sale rules, and other tax rules apply."}},
+        {"@type":"Question","name":"Does rolling prevent assignment?","acceptedAnswer":{"@type":"Answer","text":"No. A short American-style option can be assigned before expiration, and a roll consists of a closing trade followed by a new short option with its own assignment risk."}}
+      ]}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVP79DLD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="../index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><rect x="8" y="7" width="16" height="5" rx="1.5" fill="#f3f0e8"/><rect x="8" y="15" width="4" height="4" rx="1" fill="#dceee4"/><rect x="14" y="15" width="4" height="4" rx="1" fill="#dceee4"/><rect x="20" y="15" width="4" height="4" rx="1" fill="#e8955a"/><rect x="8" y="21" width="4" height="4" rx="1" fill="#dceee4"/><rect x="14" y="21" width="4" height="4" rx="1" fill="#dceee4"/><rect x="20" y="21" width="4" height="4" rx="1" fill="#dceee4"/></svg><span>NumberCove</span></a>
+      <nav class="nav" id="site-nav" aria-label="Primary"><a href="../index.html">All tools</a><a href="../index.html#sell">Sell</a><a href="../index.html#finance">Finance</a><a href="../index.html#health">Health</a><a href="../index.html#home">Home</a><a href="../index.html#convert">Convert</a><a href="../about.html">About</a></nav>
+      <div class="header-actions"><button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode" aria-pressed="false"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button type="button" class="icon-btn nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> <a href="../index.html#finance">Finance</a> <span aria-hidden="true">/</span> Options roll &amp; wheel</nav>
+      <header class="page-header">
+        <p class="kicker">Investing &amp; options</p>
+        <h1>Options roll &amp; wheel strategy calculator</h1>
+        <p class="lede">Track cumulative wheel income and economic breakeven, or compare the credit, strike, expiration, assignment economics, and scenario outcome of a proposed option roll.</p>
+      </header>
+
+      <div class="calc-layout">
+        <form class="panel" data-strategy-calc="wheel-roll" id="calc-form" novalidate>
+          <h2>Choose an analysis</h2>
+          <fieldset class="choice-group">
+            <legend>Calculator mode</legend>
+            <div class="seg"><label><input type="radio" name="mode" value="wheel" checked> Track wheel campaign</label><label><input type="radio" name="mode" value="roll"> Analyze a roll</label></div>
+          </fieldset>
+
+          <div data-campaign-mode="wheel">
+            <fieldset class="choice-group">
+              <legend>Current wheel phase</legend>
+              <div class="seg"><label><input type="radio" name="phase" value="put" checked> Cash-secured put</label><label><input type="radio" name="phase" value="call"> Covered call</label></div>
+            </fieldset>
+            <div class="form-grid two">
+              <label class="field">Contracts
+                <span class="hint">100 shares per standard contract</span><input name="contracts" inputmode="numeric" value="1" required><span class="field-error"></span>
+              </label>
+              <label class="field">Current stock price
+                <span class="input-affix prefix"><span class="affix">$</span><input name="stockPrice" inputmode="decimal" value="50" required></span><span class="field-error"></span>
+              </label>
+              <label class="field" data-wheel-phase="call">Share assignment / purchase basis
+                <span class="hint">Before allocating option credits</span><span class="input-affix prefix"><span class="affix">$</span><input name="stockBasis" inputmode="decimal" value="45" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Current option strike
+                <span class="input-affix prefix"><span class="affix">$</span><input name="strike" inputmode="decimal" value="48" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Current premium / share
+                <span class="input-affix prefix"><span class="affix">$</span><input name="premium" inputmode="decimal" value="1.50" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Previous net option credits
+                <span class="hint">Total dollars from earlier puts, calls, and rolls; enter a negative number for a net debit</span><span class="input-affix prefix"><span class="affix">$</span><input name="priorCredits" inputmode="decimal" value="200" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Current trade fees
+                <span class="input-affix prefix"><span class="affix">$</span><input name="fees" inputmode="decimal" value="1.30" required></span><span class="field-error"></span>
+              </label>
+              <label class="field" data-wheel-phase="call">Campaign dividends received
+                <span class="hint">Total dollars for the current share lot</span><span class="input-affix prefix"><span class="affix">$</span><input name="dividends" inputmode="decimal" value="0" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Days to expiration
+                <span class="input-affix"><input name="days" inputmode="numeric" value="30" required><span class="affix">days</span></span><span class="field-error"></span>
+              </label>
+              <label class="field">Stock price at expiration
+                <span class="input-affix prefix"><span class="affix">$</span><input name="scenarioPrice" inputmode="decimal" value="44" required></span><span class="field-error"></span>
+              </label>
+            </div>
+          </div>
+
+          <div data-campaign-mode="roll" class="mode-hidden">
+            <fieldset class="choice-group">
+              <legend>Short option being rolled</legend>
+              <div class="seg"><label><input type="radio" name="optionType" value="call" checked> Covered call</label><label><input type="radio" name="optionType" value="put"> Cash-secured put</label></div>
+            </fieldset>
+            <div class="form-grid two">
+              <label class="field">Contracts
+                <input name="rollContracts" inputmode="numeric" value="1" required><span class="field-error"></span>
+              </label>
+              <label class="field">Current stock price
+                <span class="input-affix prefix"><span class="affix">$</span><input name="rollStockPrice" inputmode="decimal" value="54" required></span><span class="field-error"></span>
+              </label>
+              <label class="field" data-roll-type="call">Share cost basis
+                <span class="input-affix prefix"><span class="affix">$</span><input name="rollStockBasis" inputmode="decimal" value="45" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Old strike
+                <span class="input-affix prefix"><span class="affix">$</span><input name="oldStrike" inputmode="decimal" value="52" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Buy old option to close
+                <span class="input-affix prefix"><span class="affix">$</span><input name="closePrice" inputmode="decimal" value="2.50" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Old option days remaining
+                <span class="input-affix"><input name="oldDays" inputmode="numeric" value="7" required><span class="affix">days</span></span><span class="field-error"></span>
+              </label>
+              <label class="field">New strike
+                <span class="input-affix prefix"><span class="affix">$</span><input name="newStrike" inputmode="decimal" value="55" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Sell new option to open
+                <span class="input-affix prefix"><span class="affix">$</span><input name="openPrice" inputmode="decimal" value="3.40" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">New option days to expiration
+                <span class="input-affix"><input name="newDays" inputmode="numeric" value="37" required><span class="affix">days</span></span><span class="field-error"></span>
+              </label>
+              <label class="field">Net credits before this roll
+                <span class="hint">Include the original premium and earlier rolls after fees; net debits may be negative</span><span class="input-affix prefix"><span class="affix">$</span><input name="rollPriorCredits" inputmode="decimal" value="400" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Total fees for both roll legs
+                <span class="input-affix prefix"><span class="affix">$</span><input name="rollFees" inputmode="decimal" value="2.60" required></span><span class="field-error"></span>
+              </label>
+              <label class="field">Stock price at new expiration
+                <span class="input-affix prefix"><span class="affix">$</span><input name="rollScenarioPrice" inputmode="decimal" value="58" required></span><span class="field-error"></span>
+              </label>
+            </div>
+          </div>
+
+          <p class="form-error" role="alert"></p>
+          <div class="actions"><button class="btn btn-primary" type="submit">Evaluate strategy</button><button class="btn btn-secondary" type="button" id="reset-calc">Reset</button><button class="btn btn-ghost" type="button" id="copy-results">Copy results</button></div>
+        </form>
+        <section class="panel results-panel" aria-live="polite">
+          <h2>Campaign snapshot</h2>
+          <div id="results"><p class="placeholder-result">Enter values to evaluate the wheel phase or proposed roll.</p></div>
+        </section>
+      </div>
+
+      <section class="how">
+        <details>
+          <summary>How the wheel campaign tracker works</summary>
+          <p>The wheel rotates between a cash-secured put and a covered call. During the put phase, the investor reserves enough cash to buy 100 shares per contract if assigned. After assignment, the investor may sell a call against those shares. If the call is assigned, the shares are sold and the cycle can begin again.</p>
+          <p>The tracker adds the current option’s net premium to previous campaign credits. During the put phase, economic assignment price is the strike minus total credits allocated per share. During the call phase, economic share breakeven is the original share purchase or assignment price minus all allocated option credits and entered dividends per share.</p>
+          <p><strong>Example:</strong> Earlier wheel trades produced $200. A new $48 put brings in $150 before $1 of fees. Total campaign credits become $349, or $3.49 per share. If assigned on 100 shares at $48, the campaign’s economic entry is $44.51. This does not change the contractual $48 assignment price or automatically become the broker’s tax basis.</p>
+          <p>Track one consistent share lot. If contracts, share count, or lots change, separate the campaigns or carefully allocate credits. Mixing realized gains from one lot with another can make the displayed breakeven look safer than the actual position.</p>
+        </details>
+      </section>
+      <section class="how">
+        <details>
+          <summary>How option roll calculations work</summary>
+          <p>An option roll is two transactions: buy the existing short option to close, then sell another option to open. Net roll credit equals the new premium received minus the close cost and entered fees. A negative number is a net debit. Credits after the roll equal prior net campaign credits plus the current roll credit or debit.</p>
+          <p>For a covered call, the comparison shows how the new strike and net roll amount change profit if the shares are called away. Raising the strike can improve the sale price even when the roll costs a debit; lowering it can reduce called-away profit despite a credit. For a cash-secured put, the new strike and total credits determine the premium-adjusted assignment price.</p>
+          <p><strong>Example:</strong> Buying back one call for $2.50 and selling the new call for $3.40 collects $90 before fees. If the roll also raises the strike from $52 to $55, the called-away outcome improves by the $300 strike difference plus the net roll credit. That arithmetic does not mean the roll has positive expected value or removes downside risk in the shares.</p>
+        </details>
+      </section>
+      <section class="how">
+        <details>
+          <summary>Risks, assignment, and recordkeeping limitations</summary>
+          <ul>
+            <li>Rolling realizes the gain or loss on the old option and opens a new obligation. It does not erase a loss.</li>
+            <li>American-style short options can be assigned before expiration. A multi-leg roll order may not execute at the displayed net price.</li>
+            <li>A covered call still carries nearly all downside risk of owning the shares and caps appreciation above its strike.</li>
+            <li>A cash-secured put can create a substantial loss if the assigned shares fall well below the strike.</li>
+            <li>Annualized roll returns can exaggerate small short-term credits and assume the result can be repeated.</li>
+            <li>“Economic breakeven” is a planning measure. Tax basis, holding periods, wash-sale treatment, qualified covered-call rules, straddle rules, and assignment reporting can differ.</li>
+          </ul>
+          <p>Reference: the Options Industry Council describes the <a href="https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy" rel="noopener noreferrer">wheel and rolling covered calls</a> and explains that <a href="https://www.optionseducation.org/referencelibrary/faq/options-assignment" rel="noopener noreferrer">assignment can occur on any business day</a> while an American-style short option remains open.</p>
+        </details>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Common questions</h2>
+        <h3>What is the net credit or debit on a roll?</h3>
+        <p>The new option premium received minus the cost to close the old option and all entered fees. A positive result is a credit; a negative result is a debit.</p>
+        <h3>Does premium reduce my tax cost basis?</h3>
+        <p>Not necessarily. NumberCove shows an economic campaign breakeven. Broker-reported tax treatment depends on whether options expire, close, or are assigned, along with holding-period and other tax rules.</p>
+        <h3>Does rolling prevent assignment?</h3>
+        <p>No. Closing the old short option ends that option’s future assignment exposure only after the close executes and no prior assignment has occurred. The new short option begins a new assignment risk.</p>
+      </section>
+
+      <p class="disclaimer">Educational planning estimate only. Options involve risk and are not suitable for every investor. Verify orders, contract deliverables, assignment status, tax records, and broker requirements. This calculator is not investment, tax, accounting, or legal advice.</p>
+      <nav class="related" aria-label="Related calculators"><h2>Related calculators</h2><ul><li><a href="covered-call-cash-secured-put.html">Covered call &amp; cash-secured put</a></li><li><a href="expected-move.html">Expected move</a></li><li><a href="options.html">Options price, Greeks &amp; P&amp;L</a></li><li><a href="percentage.html">Percentage calculator</a></li></ul></nav>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="wrap"><div class="footer-grid"><div><a class="logo" href="../index.html">NumberCove</a><p class="hint">Free calculators and converters. Results are estimates for planning, not professional advice.</p></div><div><h2>Site</h2><ul><li><a href="../index.html">All tools</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../terms.html">Terms of Use</a></li></ul></div></div><p class="copyright">&copy; <span data-year>2026</span> NumberCove. All rights reserved.</p></div></footer>
+  <script src="../js/app.js?v=4"></script>
+  <script src="../js/strategy-calculators.js?v=1"></script>
+</body>
+</html>

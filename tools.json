@@ -102,6 +102,57 @@
       "description": "Price calls, puts, and spreads of up to 4 legs. Slide the underlying price, target date, and implied volatility to see option value, P&L, Greeks, breakeven, probability of profit, a payoff chart, and a P&L heat map. American (binomial) and European (Black-Scholes) pricing."
     },
     {
+      "id": "covered-call-cash-secured-put",
+      "name": "Covered call and cash-secured put calculator",
+      "url": "https://www.numbercove.com/calculators/covered-call-cash-secured-put.html",
+      "category": "finance",
+      "keywords": [
+        "covered call",
+        "cash-secured put",
+        "premium income",
+        "return if assigned",
+        "annualized option yield",
+        "option breakeven",
+        "downside cushion",
+        "assignment probability"
+      ],
+      "description": "Calculate net premium, breakeven, maximum profit and loss, return if assigned, annualized return, scenario P&L, expiration payoff, and an IV-based estimate of finishing in the money."
+    },
+    {
+      "id": "expected-move",
+      "name": "Expected move calculator",
+      "url": "https://www.numbercove.com/calculators/expected-move.html",
+      "category": "finance",
+      "keywords": [
+        "expected move",
+        "implied volatility range",
+        "earnings move",
+        "ATM straddle",
+        "standard deviation",
+        "IV expected range",
+        "straddle breakeven"
+      ],
+      "description": "Estimate one- and two-standard-deviation price ranges from annualized IV, compare an ATM-straddle move, and measure a target or post-event move in standard deviations."
+    },
+    {
+      "id": "options-roll-wheel",
+      "name": "Options roll and wheel strategy calculator",
+      "url": "https://www.numbercove.com/calculators/options-roll-wheel.html",
+      "category": "finance",
+      "keywords": [
+        "option roll",
+        "roll up and out",
+        "wheel strategy",
+        "net roll credit",
+        "roll debit",
+        "economic breakeven",
+        "assignment price",
+        "covered call roll",
+        "cash-secured put roll"
+      ],
+      "description": "Track wheel campaign credits and economic breakeven or compare an option roll's close debit, new credit, strike, expiration, assignment economics, and scenario P&L."
+    },
+    {
       "id": "refinance",
       "name": "Refinance calculator",
       "url": "https://www.numbercove.com/calculators/refinance.html",

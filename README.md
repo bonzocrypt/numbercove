@@ -1,6 +1,6 @@
 # NumberCove
 
-A production-ready static website of free calculators and converters: secondary-market seller payouts, mortgage and refinance math, health estimates, DIY material takeoffs, unit conversion, and percentages.
+A production-ready static website of free calculators and converters: secondary-market seller payouts, mortgage and real-estate math, options analysis and income strategies, health estimates, DIY material takeoffs, unit conversion, and percentages.
 
 No build step, no npm, no framework. Open a file or drop the folder on any static host.
 
@@ -64,6 +64,9 @@ All math runs in the browser (`js/calculators.js`, `js/converters.js`). Inputs a
 | Mortgage / loan / refinance | Standard fixed-rate amortization |
 | Compound interest | Period-by-period compounding + contributions |
 | Options | Black-Scholes-Merton (European); Leisen-Reimer binomial tree with Richardson extrapolation (American); IV solved by bisection |
+| Covered call / cash-secured put | Expiration payoff, assignment economics, annualized return, and risk-neutral finish-ITM estimate |
+| Expected move | Spot × IV × √(calendar days / 365), plus editable ATM-straddle estimate |
+| Options roll / wheel | Campaign cash-flow ledger, economic breakeven, and before/after roll comparison |
 | BMI | WHO formula (metric or 703 × lb / in²) |
 | Body fat | U.S. Navy circumference (estimate only) |
 | TDEE | Mifflin–St Jeor × activity factor |
@@ -81,6 +84,7 @@ NumberCove/
   css/styles.css
   js/app.js  js/calculators.js  js/converters.js
   js/options-engine.js  js/options.js   (options calculator)
+  js/strategy-calculators.js             (income, expected-move, and roll/wheel calculators)
   calculators/   (one HTML page per tool)
   robots.txt  sitemap.xml  favicon.svg  README.md
 ```
