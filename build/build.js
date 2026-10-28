@@ -443,9 +443,12 @@ function authorPage() {
   var authored = live.filter(hasByline);
   var main = '    <div class="wrap author-page">' + breadcrumb(p, crumbs) +
     '<section class="author-hero"><span class="author-avatar" aria-hidden="true">DB</span><div><p class="kicker">' + esc(a.role) + "</p><h1>" + esc(a.name) + '</h1><p class="lede">' + esc(a.short) + "</p></div></section>" +
-    '<div class="author-grid"><section class="prose"><h2>Background</h2><p>' + esc(a.bio) + "</p><h2>How the calculators are built</h2><p>Every calculator states its formula, cites the public sources behind its default values, and lets you change each assumption. Core math is tested against published examples before release, and tools are reviewed when the underlying rules change, such as contribution limits, carrier pricing rules, or tax law.</p></section>" +
-    '<aside class="panel author-creds"><h2>Experience</h2><ul>' + a.credentials.map(function (c) { return "<li>" + svg(ICON.check) + "<span>" + esc(c) + "</span></li>"; }).join("") + "</ul></aside></div>" +
-    '<section class="hub-section"><div class="section-head"><div><h2>Calculators by ' + esc(a.name.split(" ")[0]) + "</h2><p>" + authored.length + " tools</p></div></div>" +
+    /* DOM order is Background, Experience, How: on phones Experience sits between them;
+       on desktop the grid places Experience in the right column beside both. */
+    '<div class="author-grid"><section class="prose author-bg"><h2>Background</h2><p>' + esc(a.bio) + "</p></section>" +
+    '<aside class="panel author-creds"><h2>Experience</h2><ul>' + a.credentials.map(function (c) { return "<li>" + svg(ICON.check) + "<span>" + esc(c) + "</span></li>"; }).join("") + "</ul></aside>" +
+    '<section class="prose author-how"><h2>How the calculators are built</h2><p>Every calculator states its formula, cites the public sources behind its default values, and lets you change each assumption. Core math is tested against published examples before release, and tools are reviewed when the underlying rules change, such as contribution limits, carrier pricing rules, or tax law.</p></section></div>' +
+    '<section class="hub-section"><div class="section-head"><div><h2>Calculators by ' + esc(a.name.split(" ")[0]) + "</h2></div></div>" +
     '<div class="card-grid">' + authored.map(function (t) { return toolCard(p, t); }).join("") + "</div></section></div>";
   write(a.url, versionAssets(shell({
     root: p, title: a.name + ", " + a.role + " | NumberCove", description: a.name + ": " + a.short + ". " + a.credentials[0] + ".", canonical: ORIGIN + "/" + a.url, main: main,
@@ -468,7 +471,7 @@ function homePage() {
   ];
   var cats = site.categories.filter(function (c) { return toolsInCat(c).length; });
   var main = '    <section class="home-hero"><div class="wrap home-hero-inner">' +
-    '<p class="kicker">' + live.length + " free calculators · No sign-up · Private by design</p>" +
+    '<p class="kicker">Dozens of free calculators · No sign-up · Private by design</p>' +
     "<h1>Calculators that answer the <span>real question</span>.</h1>" +
     '<p class="lede">Fees, options, loans, home projects, and everyday decisions. Every tool shows its math, cites its sources, and runs entirely in your browser.</p>' +
     '<button type="button" class="hero-search" data-search-open>' + svg(ICON.search) + '<span class="hero-search-text" data-typewriter="eBay fees|options profit|storage unit|mortgage payment|repair or replace|paint for a room">Search calculators…</span><kbd>/</kbd></button>' +
@@ -476,7 +479,7 @@ function homePage() {
     "</div></section>\n" +
     (collectionLive() ? '    <section class="home-decision"><div class="wrap"><div class="section-head"><div><p class="kicker">' + esc(collection.name) + "</p><h2>Stop guessing. Run the numbers.</h2><p>" + esc(collection.short) + '.</p></div><a class="section-link" href="' + collection.slug + '/">All ' + decision.length + " decision tools" + svg(ICON.arrow) + "</a></div>" +
       '<div class="question-grid">' + decision.slice(0, 6).map(function (t) { return questionCard(p, t); }).join("") + "</div></div></section>\n" : "") +
-    '    <section class="home-browse"><div class="wrap"><div class="section-head"><div><h2>Browse by topic</h2><p>' + cats.length + " categories, " + live.length + ' calculators</p></div></div><div class="cat-grid">' +
+    '    <section class="home-browse"><div class="wrap"><div class="section-head"><div><h2>Browse by topic</h2><p>' + cats.length + ' categories of free tools</p></div></div><div class="cat-grid">' +
     cats.map(function (c) {
       return '<article class="cat-card"><a class="cat-card-head" href="' + catPath(c) + '"><span class="mega-icon pill-' + c.pill + '">' + svg(c.icon) + "</span><span><strong>" + esc(c.name) + "</strong><small>" + toolsInCat(c).length + " calculators</small></span>" + svg(ICON.arrow, "cat-arrow") + "</a><p>" + esc(c.intro) + '</p><ul class="cat-subs">' +
         liveSubs(c).map(function (s) { return '<li><a href="' + subPath(s) + '">' + esc(s.name) + "<span>" + toolsIn(s).length + "</span></a></li>"; }).join("") + "</ul></article>";

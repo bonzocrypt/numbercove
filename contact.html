@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Sora:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=b86cb8fc">
+  <link rel="stylesheet" href="css/styles.css?v=78388a86">
 <!-- nc:head --><meta name="nc-root" content="./"><meta name="nc-search" content="js/search-index.js?v=6a663cce"><!-- /nc:head --></head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -58,10 +58,14 @@
       <header class="page-header">
         <p class="kicker">Contact</p>
         <h1>Report a number, ask a question</h1>
-        <p class="lede">This is a static site, so the form opens your email app with a prefilled message.</p>
+        <p class="lede">Email directly, or use the form to open a prefilled message in your email app.</p>
       </header>
 
       <div class="contact-grid contact-grid--single">
+        <div class="panel contact-direct">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <p>Email: <a href="mailto:bonzocrypt@gmail.com">bonzocrypt@gmail.com</a></p>
+        </div>
         <form class="panel" id="contact-form" novalidate>
           <h2>Message</h2>
           <div class="form-grid">
@@ -119,7 +123,7 @@
       if (!ok) return;
       var topic = this.elements.topic.value;
       var body = "Name: " + name + "\nEmail: " + email + "\nTopic: " + topic + "\n\n" + message;
-      var href = "mailto:hello@numbercove.com?subject=" + encodeURIComponent("NumberCove: " + topic) + "&body=" + encodeURIComponent(body);
+      var href = "mailto:bonzocrypt@gmail.com?subject=" + encodeURIComponent("NumberCove: " + topic) + "&body=" + encodeURIComponent(body);
       window.location.href = href;
       C.toast("Opening your email app…");
     });

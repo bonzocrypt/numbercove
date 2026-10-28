@@ -1553,6 +1553,29 @@ th.num {
   max-width: 760px;
 }
 
+.contact-direct {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.25rem;
+}
+
+.contact-direct svg {
+  width: 22px;
+  height: 22px;
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.contact-direct p {
+  margin: 0;
+}
+
+.contact-direct a {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
 @media (min-width: 800px) {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
@@ -3986,8 +4009,15 @@ kbd {
 @media (min-width: 900px) {
   .author-grid {
     grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    grid-template-areas: "bg creds" "how creds";
+    grid-template-rows: auto 1fr;
     align-items: start;
+    row-gap: 0;
   }
+
+  .author-bg { grid-area: bg; }
+  .author-how { grid-area: how; }
+  .author-creds { grid-area: creds; }
 }
 
 .author-creds ul {
