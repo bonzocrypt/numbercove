@@ -40,14 +40,22 @@ When citing, link the specific calculator URL rather than only the homepage.
 - [Mortgage calculator](https://www.numbercove.com/calculators/mortgage.html): Monthly principal and interest, taxes, insurance, HOA, PMI, extra principal, amortization snapshot.
 - [Refinance calculator](https://www.numbercove.com/calculators/refinance.html): Current vs new loan, closing costs, break-even months.
 - [Loan amortization calculator](https://www.numbercove.com/calculators/loan.html): Fixed installment loan payment, extra principal, payoff date.
+- [Pay off mortgage early or invest calculator](https://www.numbercove.com/calculators/pay-off-mortgage-or-invest.html): Simulates paying extra on a mortgage until payoff and then investing the whole payment, versus investing the extra each month while paying on schedule, to the original payoff date. Reports interest saved, months saved, net worth over time, and the break-even investment return (bisection), with optional itemized mortgage interest deduction and investment tax drag.
 
 ### Real estate (https://www.numbercove.com/money/real-estate/)
 
 - [Commercial real estate ROI and APOD calculator](https://www.numbercove.com/calculators/commercial-real-estate.html): Build an Annual Property Operating Data statement and calculate effective gross income, NOI, cap rate, cash-on-cash return, DSCR, debt yield, break-even occupancy, IRR, equity multiple, and projected sale proceeds.
 
+### Work & retirement (https://www.numbercove.com/money/retirement-work/)
+
+- [401(k) match and paycheck pacing calculator](https://www.numbercove.com/calculators/401k-match.html): Find the 401(k) election that captures the full employer match (tiered formulas such as 100% of 3% plus 50% of 2%) and reaches the 2026 limit ($24,500; $8,000 catch-up at 50+; $11,250 at 60-63; $360,000 compensation cap) on the last paycheck. Models per-paycheck versus annual matching, year-end true-ups, bonuses, mid-year starts, plan election increments, and vesting schedules.
+- [Return-to-office and commute cost calculator](https://www.numbercove.com/calculators/return-to-office-commute-cost.html): Totals the cost of returning to the office: driving (fuel + maintenance + depreciation, or the IRS 76¢/mile rate for July–December 2026), tolls, parking, transit, childcare, meals, clothing, and other office-day costs, less savings. Reports monthly and annual cost, unpaid commute hours and their value, the pre-tax raise needed (cost ÷ (1 − tax rate)), and a comparison for 1 to 5 office days a week.
+- [Social Security claiming age and break-even calculator](https://www.numbercove.com/calculators/social-security-claiming-age.html): Computes Social Security benefits at each claiming age from 62 to 70 from the full-retirement-age benefit (PIA) and birth year: reduced 5/9 of 1% per month for the first 36 months early and 5/12 of 1% beyond; increased 2/3 of 1% per month (8%/year) after full retirement age to 70. Reports break-even ages (62 vs FRA, FRA vs 70, 62 vs 70) and lifetime totals to a planning age with an optional real discount rate.
+
 ### Spending & cards (https://www.numbercove.com/money/spending-cards/)
 
 - [Tip calculator](https://www.numbercove.com/calculators/tip.html): Tip, total, and split; pre-tax or full bill.
+- [Credit card annual fee break-even calculator](https://www.numbercove.com/calculators/credit-card-annual-fee.html): Compares a card's annual net value (spend × earn rate × point value + statement credits at the share actually used − annual fee) against a no-fee or downgraded alternative with a flat rate. Reports break-even annual spend, effective reward rate, the point value at which the cards tie, and first-year value with a sign-up bonus. Does not recommend issuers.
 
 ## Home & DIY
 
@@ -86,6 +94,16 @@ When citing, link the specific calculator URL rather than only the homepage.
 ### Everyday math (https://www.numbercove.com/convert-and-math/everyday-math/)
 
 - [Percentage calculator](https://www.numbercove.com/calculators/percentage.html): X% of Y, reverse percent, percent change, increase/decrease.
+
+## Should I…? decision calculators (https://www.numbercove.com/should-i/)
+
+- Should I refinance my mortgage? → https://www.numbercove.com/calculators/refinance.html
+- Should I keep my storage unit or sell my stuff? → https://www.numbercove.com/calculators/storage-unit-keep-or-sell.html
+- Should I wait for full price or take the offer? → https://www.numbercove.com/calculators/inventory-markdown.html
+- Is returning to the office worth it? → https://www.numbercove.com/calculators/return-to-office-commute-cost.html
+- Is my credit card's annual fee worth it? → https://www.numbercove.com/calculators/credit-card-annual-fee.html
+- When should I claim Social Security? → https://www.numbercove.com/calculators/social-security-claiming-age.html
+- Should I pay off my mortgage early or invest? → https://www.numbercove.com/calculators/pay-off-mortgage-or-invest.html
 
 ## Optional
 

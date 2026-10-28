@@ -4495,14 +4495,13 @@ details.nc-group > .hint {
   background: var(--muted);
 }
 
-.ncv-sw.s1 { background: var(--nc-1); }
-.ncv-sw.s2 { background: var(--nc-2); }
-.ncv-sw.s3 { background: var(--nc-3); }
-.ncv-sw.s4 { background: var(--nc-4); }
+.ncv-sw.s1 { --sw: var(--nc-1); background: var(--nc-1); }
+.ncv-sw.s2 { --sw: var(--nc-2); background: var(--nc-2); }
+.ncv-sw.s3 { --sw: var(--nc-3); background: var(--nc-3); }
+.ncv-sw.s4 { --sw: var(--nc-4); background: var(--nc-4); }
 
 .ncv-sw.dashed {
-  background: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 7px);
-  color: var(--muted);
+  background: repeating-linear-gradient(90deg, var(--sw, var(--muted)) 0 4px, transparent 4px 7px);
 }
 
 .ncv-plot {

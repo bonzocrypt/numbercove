@@ -55,6 +55,11 @@
           "url": "https://www.numbercove.com/money/real-estate/"
         },
         {
+          "id": "retirement-work",
+          "name": "Work & retirement",
+          "url": "https://www.numbercove.com/money/retirement-work/"
+        },
+        {
           "id": "spending-cards",
           "name": "Spending & cards",
           "url": "https://www.numbercove.com/money/spending-cards/"
@@ -590,6 +595,96 @@
         "thrift"
       ],
       "description": "Work backward from the expected sale price on eBay, Poshmark, Mercari, Whatnot, Etsy, or Vinted to the maximum buy price that hits your ROI, margin, or dollar-profit target after fees, shipping, supplies, returns, sales tax, and time.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "401k-match",
+      "name": "401(k) match and paycheck pacing calculator",
+      "url": "https://www.numbercove.com/calculators/401k-match.html",
+      "category": "money",
+      "subcategory": "retirement-work",
+      "question": "How much should I put in my 401(k) to get the full match?",
+      "keywords": [
+        "401k match",
+        "401(k) contribution limit 2026",
+        "true-up",
+        "front-loading",
+        "catch-up",
+        "vesting",
+        "employer match"
+      ],
+      "description": "Find the 401(k) contribution percentage that captures the full employer match and reaches the 2026 limit on the last paycheck, with per-paycheck matching, true-ups, bonuses, catch-up contributions, and vesting.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "return-to-office",
+      "name": "Return-to-office and commute cost calculator",
+      "url": "https://www.numbercove.com/calculators/return-to-office-commute-cost.html",
+      "category": "money",
+      "subcategory": "retirement-work",
+      "question": "Is returning to the office worth it?",
+      "keywords": [
+        "return to office",
+        "commute cost",
+        "RTO",
+        "raise needed",
+        "commuting calculator",
+        "hybrid work"
+      ],
+      "description": "Add fuel, depreciation, tolls, parking, transit, childcare, meals, clothing, and unpaid commute time to see the monthly and annual cost of returning to the office and the pre-tax raise needed to offset it.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "credit-card-fee",
+      "name": "Credit card annual fee break-even calculator",
+      "url": "https://www.numbercove.com/calculators/credit-card-annual-fee.html",
+      "category": "money",
+      "subcategory": "spending-cards",
+      "question": "Is my credit card's annual fee worth it?",
+      "keywords": [
+        "annual fee",
+        "credit card worth it",
+        "points value",
+        "statement credits",
+        "downgrade",
+        "break-even spend"
+      ],
+      "description": "Decide whether a credit card's annual fee pays for itself by valuing points, cash back, statement credits, lounge visits, and transfer partners at what you'll really use, and compare with a no-fee or downgraded card. Shows the break-even spend and point value.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "social-security",
+      "name": "Social Security claiming age and break-even calculator",
+      "url": "https://www.numbercove.com/calculators/social-security-claiming-age.html",
+      "category": "money",
+      "subcategory": "retirement-work",
+      "question": "When should I claim Social Security?",
+      "keywords": [
+        "social security",
+        "claiming age",
+        "break-even age",
+        "62 vs 67 vs 70",
+        "full retirement age",
+        "delayed retirement credits"
+      ],
+      "description": "See your Social Security benefit at every claiming age from 62 to 70 using SSA reduction and delayed-credit rules, the break-even ages between them, and which age delivers the most lifetime benefits to your planning age.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "mortgage-vs-invest",
+      "name": "Pay off mortgage early or invest calculator",
+      "url": "https://www.numbercove.com/calculators/pay-off-mortgage-or-invest.html",
+      "category": "money",
+      "subcategory": "loans-mortgages",
+      "question": "Should I pay off my mortgage early or invest?",
+      "keywords": [
+        "pay off mortgage early",
+        "extra mortgage payments",
+        "invest or pay off mortgage",
+        "break-even return",
+        "prepay mortgage"
+      ],
+      "description": "Compare making extra mortgage payments with investing the same money: interest saved, years cut, net worth over time, and the break-even investment return, with optional mortgage interest deduction and tax drag.",
       "updated": "2026-10-27"
     }
   ]

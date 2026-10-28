@@ -7,9 +7,10 @@
   <url><loc>https://www.numbercove.com/sell-and-ship/inventory/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.numbercove.com/money/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.numbercove.com/money/investing-options/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.numbercove.com/money/loans-mortgages/</loc><lastmod>2026-08-24</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.numbercove.com/money/loans-mortgages/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.numbercove.com/money/real-estate/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.numbercove.com/money/spending-cards/</loc><lastmod>2026-08-24</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.numbercove.com/money/retirement-work/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.numbercove.com/money/spending-cards/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.numbercove.com/home-and-diy/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.numbercove.com/home-and-diy/project-materials/</loc><lastmod>2026-08-24</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.numbercove.com/home-and-diy/storage-moving/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -19,6 +20,7 @@
   <url><loc>https://www.numbercove.com/convert-and-math/</loc><lastmod>2026-08-24</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.numbercove.com/convert-and-math/unit-converters/</loc><lastmod>2026-08-24</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.numbercove.com/convert-and-math/everyday-math/</loc><lastmod>2026-08-24</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.numbercove.com/should-i/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.numbercove.com/calculators/marketplace.html</loc><lastmod>2026-10-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.numbercove.com/calculators/ticket-resale.html</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.numbercove.com/calculators/mortgage.html</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -48,6 +50,11 @@
   <url><loc>https://www.numbercove.com/calculators/storage-unit-keep-or-sell.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.numbercove.com/calculators/inventory-markdown.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.numbercove.com/calculators/max-buy-price.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.numbercove.com/calculators/401k-match.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.numbercove.com/calculators/return-to-office-commute-cost.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.numbercove.com/calculators/credit-card-annual-fee.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.numbercove.com/calculators/social-security-claiming-age.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.numbercove.com/calculators/pay-off-mortgage-or-invest.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.numbercove.com/authors/dan-belliveau.html</loc><lastmod>2026-10-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.numbercove.com/about.html</loc><lastmod>2026-10-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.numbercove.com/contact.html</loc><lastmod>2026-10-28</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>

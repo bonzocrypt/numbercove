@@ -894,5 +894,198 @@
     "method": "Max buy price: net = buyer pays − platform fees − promoted-listing fee − shipping label − supplies − returns allowance − time value. Max cost = net ÷ (1 + ROI) for a return target, net − margin × price for a margin target, or net − dollar target. Max price before tax = max cost ÷ (1 + sales tax).",
     "added": "2026-10-27",
     "updated": "2026-10-27"
+  },
+  {
+    "id": "401k-match",
+    "name": "401(k) match and paycheck pacing calculator",
+    "title": "401(k) match & paycheck pacing",
+    "question": "How much should I put in my 401(k) to get the full match?",
+    "url": "https://www.numbercove.com/calculators/401k-match.html",
+    "subcategory": "retirement-work",
+    "summary": "Capture your full employer match without hitting the 2026 limit too early.",
+    "description": "Find the 401(k) contribution percentage that captures the full employer match and reaches the 2026 limit on the last paycheck, with per-paycheck matching, true-ups, bonuses, catch-up contributions, and vesting.",
+    "keywords": [
+      "401k match",
+      "401(k) contribution limit 2026",
+      "true-up",
+      "front-loading",
+      "catch-up",
+      "vesting",
+      "employer match"
+    ],
+    "search": "401k 401(k) match employer contribution limit 24500 true up front load catch up vesting paycheck percent",
+    "icon": "<path d=\"M4 20h16\"/><path d=\"M6 16v-4M10 16V8M14 16v-6M18 16V5\"/>",
+    "related": [
+      "social-security",
+      "compound-interest",
+      "return-to-office"
+    ],
+    "collections": [],
+    "llms": "Find the 401(k) election that captures the full employer match (tiered formulas such as 100% of 3% plus 50% of 2%) and reaches the 2026 limit ($24,500; $8,000 catch-up at 50+; $11,250 at 60-63; $360,000 compensation cap) on the last paycheck. Models per-paycheck versus annual matching, year-end true-ups, bonuses, mid-year starts, plan election increments, and vesting schedules.",
+    "askedAs": [
+      "401k match calculator",
+      "how much to contribute to 401k to get match",
+      "will I lose my match if I max out early",
+      "401k true up",
+      "401k limit 2026"
+    ],
+    "method": "401(k) match: each paycheck contributes election × eligible pay until the annual deferral limit (2026: $24,500, +$8,000 at 50+, +$11,250 at 60–63) is reached; pay above $360,000 is ignored. Match per tier = rate × min(contribution above the tier start, tier width × pay), per paycheck or on annual totals, with an optional true-up to the annual amount. The max-out election is the smallest election in plan increments that reaches the limit by the last paycheck.",
+    "status": "live",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "return-to-office",
+    "name": "Return-to-office and commute cost calculator",
+    "title": "Return-to-office cost",
+    "question": "Is returning to the office worth it?",
+    "url": "https://www.numbercove.com/calculators/return-to-office-commute-cost.html",
+    "subcategory": "retirement-work",
+    "summary": "Total commuting costs and unpaid time, and the raise you'd need to break even.",
+    "description": "Add fuel, depreciation, tolls, parking, transit, childcare, meals, clothing, and unpaid commute time to see the monthly and annual cost of returning to the office and the pre-tax raise needed to offset it.",
+    "keywords": [
+      "return to office",
+      "commute cost",
+      "RTO",
+      "raise needed",
+      "commuting calculator",
+      "hybrid work"
+    ],
+    "search": "return to office rto commute cost raise hybrid parking gas tolls childcare lunch commuting time worth it",
+    "icon": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M9 7h1M14 7h1M9 11h1M14 11h1M10 21v-4h4v4\"/>",
+    "related": [
+      "401k-match",
+      "ev-vs-gas",
+      "social-security"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Totals the cost of returning to the office: driving (fuel + maintenance + depreciation, or the IRS 76¢/mile rate for July–December 2026), tolls, parking, transit, childcare, meals, clothing, and other office-day costs, less savings. Reports monthly and annual cost, unpaid commute hours and their value, the pre-tax raise needed (cost ÷ (1 − tax rate)), and a comparison for 1 to 5 office days a week.",
+    "askedAs": [
+      "return to office cost calculator",
+      "how much does commuting cost",
+      "raise needed to return to office",
+      "is going back to the office worth it"
+    ],
+    "method": "Return to office: annual cost = (daily driving or transit costs + tolls + parking + childcare + meals + other − daily savings) × office days per year + monthly clothing × 12. Driving is fuel (miles ÷ mpg × price) + maintenance and depreciation per mile, or the IRS business rate. Raise needed = cost ÷ (1 − combined tax rate). Unpaid hours = round-trip minutes × office days ÷ 60.",
+    "status": "live",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "credit-card-fee",
+    "name": "Credit card annual fee break-even calculator",
+    "title": "Credit card annual fee check",
+    "question": "Is my credit card's annual fee worth it?",
+    "url": "https://www.numbercove.com/calculators/credit-card-annual-fee.html",
+    "subcategory": "spending-cards",
+    "summary": "Value points and credits at what you'll really use, and compare keeping, downgrading, or replacing.",
+    "description": "Decide whether a credit card's annual fee pays for itself by valuing points, cash back, statement credits, lounge visits, and transfer partners at what you'll really use, and compare with a no-fee or downgraded card. Shows the break-even spend and point value.",
+    "keywords": [
+      "annual fee",
+      "credit card worth it",
+      "points value",
+      "statement credits",
+      "downgrade",
+      "break-even spend"
+    ],
+    "search": "credit card annual fee worth it points miles cash back credits lounge downgrade cancel keep break even spend premium card",
+    "icon": "<rect x=\"2\" y=\"5\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M2 10h20M6 15h4\"/>",
+    "related": [
+      "extended-warranty",
+      "tip",
+      "401k-match"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Compares a card's annual net value (spend × earn rate × point value + statement credits at the share actually used − annual fee) against a no-fee or downgraded alternative with a flat rate. Reports break-even annual spend, effective reward rate, the point value at which the cards tie, and first-year value with a sign-up bonus. Does not recommend issuers.",
+    "askedAs": [
+      "is my credit card annual fee worth it",
+      "should I keep or downgrade my credit card",
+      "credit card break-even spend",
+      "are premium credit cards worth it"
+    ],
+    "method": "Credit card annual fee: net value = Σ category spend × earn rate × cents per point + Σ credit face value × share used − annual fee. Alternative = spend × flat rate + credits − fee. Break-even spend = (alternative fixed value − card fixed value) ÷ (card reward rate − alternative rate), assuming the same spending mix.",
+    "status": "live",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "social-security",
+    "name": "Social Security claiming age and break-even calculator",
+    "title": "Social Security claiming age",
+    "question": "When should I claim Social Security?",
+    "url": "https://www.numbercove.com/calculators/social-security-claiming-age.html",
+    "subcategory": "retirement-work",
+    "summary": "Your benefit at every age from 62 to 70, the break-even ages, and the best age for you.",
+    "description": "See your Social Security benefit at every claiming age from 62 to 70 using SSA reduction and delayed-credit rules, the break-even ages between them, and which age delivers the most lifetime benefits to your planning age.",
+    "keywords": [
+      "social security",
+      "claiming age",
+      "break-even age",
+      "62 vs 67 vs 70",
+      "full retirement age",
+      "delayed retirement credits"
+    ],
+    "search": "social security claim age 62 67 70 break even full retirement age delayed credits when to claim benefits",
+    "icon": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/>",
+    "related": [
+      "401k-match",
+      "mortgage-vs-invest",
+      "compound-interest"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Computes Social Security benefits at each claiming age from 62 to 70 from the full-retirement-age benefit (PIA) and birth year: reduced 5/9 of 1% per month for the first 36 months early and 5/12 of 1% beyond; increased 2/3 of 1% per month (8%/year) after full retirement age to 70. Reports break-even ages (62 vs FRA, FRA vs 70, 62 vs 70) and lifetime totals to a planning age with an optional real discount rate.",
+    "askedAs": [
+      "when should I claim social security",
+      "social security break even age",
+      "62 vs 67 vs 70 social security",
+      "how much more if I wait until 70"
+    ],
+    "method": "Social Security: full retirement age 66 for 1943–1954 births, +2 months per year for 1955–1959, 67 for 1960+. Benefit factor = 1 − (5/9% × first 36 months early + 5/12% × additional months) or 1 + 2/3% × months delayed (to 70). Break-even is the age when cumulative (optionally discounted) benefits from the later claim equal the earlier claim.",
+    "status": "live",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "mortgage-vs-invest",
+    "name": "Pay off mortgage early or invest calculator",
+    "title": "Pay off mortgage or invest?",
+    "question": "Should I pay off my mortgage early or invest?",
+    "url": "https://www.numbercove.com/calculators/pay-off-mortgage-or-invest.html",
+    "subcategory": "loans-mortgages",
+    "summary": "Extra mortgage payments vs investing: net worth over time and the return you'd need.",
+    "description": "Compare making extra mortgage payments with investing the same money: interest saved, years cut, net worth over time, and the break-even investment return, with optional mortgage interest deduction and tax drag.",
+    "keywords": [
+      "pay off mortgage early",
+      "extra mortgage payments",
+      "invest or pay off mortgage",
+      "break-even return",
+      "prepay mortgage"
+    ],
+    "search": "pay off mortgage early extra payments prepay invest instead stocks break even return interest saved",
+    "icon": "<path d=\"M3 11l9-8 9 8\"/><path d=\"M5 10v10h14V10\"/><path d=\"M12 13v4M10 15h4\"/>",
+    "related": [
+      "mortgage",
+      "refinance",
+      "compound-interest"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Simulates paying extra on a mortgage until payoff and then investing the whole payment, versus investing the extra each month while paying on schedule, to the original payoff date. Reports interest saved, months saved, net worth over time, and the break-even investment return (bisection), with optional itemized mortgage interest deduction and investment tax drag.",
+    "askedAs": [
+      "should I pay off my mortgage early or invest",
+      "extra mortgage payment vs investing",
+      "break even return mortgage vs stocks"
+    ],
+    "method": "Mortgage vs invest: month by month, strategy A pays the regular payment plus the extra until the balance is zero, then invests payment + extra; strategy B pays the regular payment and invests the extra. Investments grow at (1 + annual return − tax drag)^(1/12) − 1 per month. Itemized-deduction tax savings are invested. The break-even return is found by bisection on the final net-worth difference.",
+    "status": "live",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
   }
 ]
