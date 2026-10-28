@@ -113,6 +113,12 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      var gap = r.e.withPlan - r.e.self;
+      if (!(gap > 0)) return null;
+      return { tone: "bad", label: "A typical " + fmt.money(v.planPrice, 0) + " protection plan", title: "On average it costs " + fmt.money(gap, 0) + " more than it pays back.", body: "Check the plan you're being offered before you say yes." };
+    },
     _test: { expected: expected, breakEvenChance: breakEvenChance },
   };
 });

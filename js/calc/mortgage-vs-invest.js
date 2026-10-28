@@ -145,6 +145,11 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      if (!(r.diff > 0) || !(r.s.finalB > r.s.finalA)) return null;
+      return { tone: "good", label: "A typical " + fmt.money(v.balance, 0) + " mortgage", title: "Investing " + fmt.money(v.extra, 0) + " a month beats prepaying by " + fmt.money(r.diff, 0) + ".", body: "At a " + fmt.pct(v.rate, 1) + " rate and a " + fmt.pct(v.returnPct, 0) + " return. Does it hold for your loan?" };
+    },
   };
   def._sim = function (v, r) { return simulate(v, r); };
   def._test = { payment: payment, simulate: simulate };

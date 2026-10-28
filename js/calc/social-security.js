@@ -164,6 +164,12 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      var gap = r.best.total - r.mine.total;
+      if (!(gap > 0) || r.best.age === v.claimAge) return null;
+      return { tone: "bad", label: "A typical " + fmt.money(v.pia, 0) + " benefit", title: "Claiming at " + fmt.num(v.claimAge, 0) + " instead of " + r.best.age + " could cost " + fmt.money(gap, 0) + ".", body: "That's if you live to " + v.planAge + ". Find the best age for you." };
+    },
     _test: { fraMonths: fraMonths, factorAt: factorAt, breakEven: breakEven },
   };
 });

@@ -224,6 +224,12 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      var gap = r.a.hp.total - r.a.alt.total;
+      if (!(gap > 0)) return null;
+      return { tone: "warn", label: "Surprise", title: "A new gas furnace is " + fmt.money(gap, 0) + " a year cheaper to run than a heat pump.", body: "At typical rates in a moderate climate. Your rates and winters decide it." };
+    },
     _test: { annual: annual, FUELS: FUELS, CLIMATE: CLIMATE },
   };
 });

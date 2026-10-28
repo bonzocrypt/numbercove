@@ -233,6 +233,11 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      if (!(r.current.missed > 0)) return null;
+      return { tone: "bad", label: "A typical " + fmt.money(v.salary, 0) + " salary", title: "Contributing " + v.election + "% could leave " + fmt.money(r.current.missed, 0) + " of free match on the table.", body: "Hitting the limit early can stop the match before year end. Check your plan." };
+    },
   };
   def._simulate = null;
   var origCompute = compute;

@@ -142,6 +142,11 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      if (!(v.repair > r.c.maxRepair)) return null;
+      return { tone: "warn", label: "A typical " + v.age + "-year-old " + r.preset.name.toLowerCase(), title: "A " + fmt.money(v.repair, 0) + " repair isn't worth it.", body: "Past about " + fmt.money(r.c.maxRepair, 0) + ", replacing costs less per year. Where's the line for yours?" };
+    },
     _test: { crf: crf, repairLife: repairLife, costs: costs, PRESETS: PRESETS },
   };
 });

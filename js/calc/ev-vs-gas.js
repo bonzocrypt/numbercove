@@ -214,6 +214,12 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      var gap = r.totalEv - r.totalGas;
+      if (!(gap > 0) || !(r.y.saving > 0)) return null;
+      return { tone: "warn", label: "Surprise", title: "The gas car still wins by " + fmt.money(gap, 0) + " over " + v.years + " years.", body: "Even though the EV saves " + fmt.money(r.y.saving, 0) + " a year to run. Your gas price and charging decide it." };
+    },
     _test: { chargePrice: chargePrice, perMile: perMile, yearly: yearly, GAS_CO2: GAS_CO2 },
   };
 });

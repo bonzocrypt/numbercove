@@ -341,7 +341,7 @@
       };
       var view = def.render(result, r.values, h);
       results.innerHTML = verdictHtml(view.verdict) + statsHtml(view.stats) + (view.side || []).join("");
-      updatePeek(view.verdict);
+      updatePeek(view, result, r.values);
       if (analysis) {
         analysis.innerHTML = (view.wide || []).map(function (s) {
           return '<section class="panel nc-wide"><div class="nc-wide-head"><h2>' + esc(s.title) + "</h2>" + (s.note ? "<p>" + s.note + "</p>" : "") + "</div>" + s.html + "</section>";
@@ -357,40 +357,127 @@
       timer = setTimeout(run, 60);
     }
 
-    /* Mobile: a sticky bar shows the answer while the form is on screen. */
-    /* It stays hidden until the visitor changes an input themselves, so the
-       default numbers never pop up an answer nobody asked for. */
+    /* Mobile answer balloon (phones only; on desktop the results sit beside the form).
+       teaser: calculators that define teaser() slide up the default case as a hook
+               about 1.5s after load, with a "Try your numbers" button.
+       live:   once the visitor changes an input, it shows their answer while the
+               results panel is off screen.
+       Calculators without a teaser show nothing until the visitor changes an input.
+       Closing it hides it for the rest of the visit to that calculator.
+       Each step is pushed to the GTM dataLayer so the hooks can be measured. */
     var peek = null;
+    var peekMode = "none";
     var resultsVisible = true;
     var touched = false;
-    function peekHidden() { return !touched || resultsVisible || root.innerWidth >= 900; }
+    var teaserTried = false;
+    var teaserReady = false;
+    var teaserLogged = false;
+    var dismissed = false;
+    var closeKey = "nc-balloon-closed:" + def.id;
+    var sharedLink = false;
+    try { dismissed = root.sessionStorage.getItem(closeKey) === "1"; } catch (e) { /* storage blocked */ }
+    try {
+      var qp = new URLSearchParams(location.search);
+      sharedLink = fields.some(function (f) { return qp.has(f.name); });
+    } catch (e) { /* ignore */ }
+
+    function track(name, extra) {
+      try {
+        root.dataLayer = root.dataLayer || [];
+        root.dataLayer.push(Object.assign({ event: name, nc_calc: def.id }, extra || {}));
+      } catch (e) { /* ignore */ }
+    }
+
+    function peekShouldShow() {
+      if (peekMode === "none" || dismissed || resultsVisible || root.innerWidth >= 900) return false;
+      return peekMode === "live" || teaserReady;
+    }
+
+    function refreshPeek() {
+      if (!peek) return;
+      var show = peekShouldShow();
+      peek.hidden = !show;
+      if (show && peekMode === "teaser" && !teaserLogged) {
+        teaserLogged = true;
+        track("nc_teaser_shown");
+      }
+    }
+
+    var CLOSE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+
+    function ensurePeek() {
+      if (peek) return;
+      peek = document.createElement("aside");
+      peek.className = "nc-peek";
+      peek.hidden = true;
+      peek.setAttribute("aria-label", "Quick answer");
+      peek.addEventListener("click", function (e) {
+        if (e.target.closest(".nc-peek-close")) {
+          track("nc_balloon_closed", { nc_mode: peekMode });
+          dismissed = true;
+          try { root.sessionStorage.setItem(closeKey, "1"); } catch (err) { /* storage blocked */ }
+          refreshPeek();
+        } else if (e.target.closest("[data-peek-try]")) {
+          tryYourNumbers();
+        } else if (e.target.closest("[data-peek-go]")) {
+          var panel = results.closest(".results-panel") || results;
+          panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+      document.body.appendChild(peek);
+      if ("IntersectionObserver" in root) {
+        new IntersectionObserver(function (entries) {
+          resultsVisible = entries[0].isIntersecting;
+          refreshPeek();
+        }).observe(results.closest(".results-panel") || results);
+      }
+    }
+
+    /* Put the cursor in the first visible field, ready to type over the default. */
+    function tryYourNumbers() {
+      track("nc_teaser_try");
+      teaserTried = true;
+      peekMode = "none";
+      refreshPeek();
+      var el = form.querySelector('[data-field]:not(.mode-hidden) input[inputmode], [data-field]:not(.mode-hidden) select, [data-field]:not(.mode-hidden) input[type="radio"]:checked');
+      if (!el) return;
+      try { el.focus({ preventScroll: true }); } catch (err) { el.focus(); }
+      if (el.select && el.tagName === "INPUT" && el.type !== "radio") el.select();
+      var wrap = el.closest("[data-field]") || el;
+      wrap.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
     function markTouched(e) {
       if (touched || !e || e.isTrusted === false) return;
       touched = true;
-      if (peek) peek.hidden = peekHidden();
+      track("nc_first_input", { nc_after_teaser: peekMode === "teaser" || teaserTried });
     }
-    function updatePeek(v) {
-      if (!v) return;
-      if (!peek) {
-        peek = document.createElement("button");
-        peek.type = "button";
-        peek.className = "nc-peek";
-        peek.hidden = true;
-        peek.addEventListener("click", function () {
-          var panel = results.closest(".results-panel") || results;
-          panel.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-        document.body.appendChild(peek);
-        if ("IntersectionObserver" in root) {
-          new IntersectionObserver(function (entries) {
-            resultsVisible = entries[0].isIntersecting;
-            peek.hidden = peekHidden();
-          }).observe(results.closest(".results-panel") || results);
-        }
+
+    function updatePeek(view, result, values) {
+      ensurePeek();
+      if (touched) {
+        var v = view.verdict;
+        if (!v) { peekMode = "none"; refreshPeek(); return; }
+        peekMode = "live";
+        peek.className = "nc-peek nc-peek--live nc-peek--" + (v.tone || "info");
+        peek.innerHTML = '<button type="button" class="nc-peek-main" data-peek-go><span class="nc-peek-text">' + v.title + '</span><span class="nc-peek-go">See details ↓</span></button>' +
+          '<button type="button" class="nc-peek-close" aria-label="Close">' + CLOSE_ICON + "</button>";
+      } else if (peekMode === "none" && !teaserTried && !sharedLink && !dismissed && typeof def.teaser === "function") {
+        var t = null;
+        try { t = def.teaser(result, values, fmt); } catch (err) { t = null; }
+        if (!t) return;
+        var tone = t.tone || "info";
+        peekMode = "teaser";
+        peek.className = "nc-peek nc-peek--teaser nc-peek--" + tone;
+        peek.innerHTML = '<span class="nc-peek-icon">' + svg(ICONS[tone] || ICONS.info) + '</span><div class="nc-peek-body">' +
+          (t.label ? '<p class="nc-peek-label">' + esc(t.label) + "</p>" : "") +
+          '<p class="nc-peek-text">' + esc(t.title) + "</p>" +
+          (t.body ? '<p class="nc-peek-sub">' + esc(t.body) + "</p>" : "") +
+          '<button type="button" class="nc-peek-try" data-peek-try>Try your numbers <span aria-hidden="true">→</span></button></div>' +
+          '<button type="button" class="nc-peek-close" aria-label="Close">' + CLOSE_ICON + "</button>";
+        setTimeout(function () { teaserReady = true; refreshPeek(); }, 1500);
       }
-      peek.className = "nc-peek nc-peek--" + (v.tone || "info");
-      peek.innerHTML = '<span class="nc-peek-text">' + v.title + '</span><span class="nc-peek-go">See details ↓</span>';
-      peek.hidden = peekHidden();
+      refreshPeek();
     }
 
     /* URL state: only values that differ from the defaults. */
@@ -487,6 +574,7 @@
     root.addEventListener("resize", function () {
       clearTimeout(boot.rt);
       boot.rt = setTimeout(function () {
+        refreshPeek();
         if (analysis && analysis.clientWidth !== lastWidth) run();
       }, 160);
     });

@@ -183,6 +183,12 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      var gap = r.endH.lease - r.endH.buy;
+      if (!(gap > 0)) return null;
+      return { tone: "bad", label: "A typical " + fmt.money(v.price, 0) + " car", title: "Leasing for " + r.horizon + " years costs " + fmt.money(gap, 0) + " more than buying.", body: "That's back-to-back leases vs. buying once and keeping it. Run your own deal." };
+    },
     _test: { leasePayment: leasePayment, loanPayment: loanPayment, balanceAfter: balanceAfter },
   };
 });

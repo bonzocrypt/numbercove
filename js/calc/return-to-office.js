@@ -137,6 +137,11 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      if (!(r.cash > 0)) return null;
+      return { tone: "bad", label: "A typical hybrid commute", title: "Going in " + v.days + " days a week costs " + fmt.money(r.cash, 0) + " a year.", body: "That's a " + fmt.pct(r.raiseCash / v.salary * 100, 1) + " raise just to break even. What's yours?" };
+    },
     _test: { IRS_RATE: IRS_RATE },
   };
 });

@@ -204,6 +204,11 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      if (!(r.net > 0) || !Number.isFinite(r.payback)) return null;
+      return { tone: "good", label: "A typical " + r.st[0] + " home", title: "Solar nets " + fmt.money(r.net, 0) + " over " + v.life + " years.", body: "It pays for itself in about " + fmt.num(r.payback, 1) + " years. Pick your state and check yours." };
+    },
     _test: { STATES: STATES, flows: flows, npv: npv, irr: irr },
   };
 });

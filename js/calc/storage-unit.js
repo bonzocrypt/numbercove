@@ -158,6 +158,12 @@
     ],
     compute: compute,
     render: render,
+    /* Mobile balloon on first load: the default case as a hook. */
+    teaser: function (r, v, fmt) {
+      var gap = r.at.keepCost - r.at.sellRebuy;
+      if (!(gap > 0)) return null;
+      return { tone: "bad", label: "A typical " + fmt.money(v.rent, 0) + "/month unit", title: "Storing for " + (v.months / 12) + " years costs " + fmt.money(gap, 0) + " more than selling and rebuying.", body: "Rent increases add up fast. What's in yours worth?" };
+    },
     _test: { series: series },
   };
 });
