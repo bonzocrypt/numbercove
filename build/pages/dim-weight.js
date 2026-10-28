@@ -1,0 +1,33 @@
+module.exports = {
+  id: "dim-weight",
+  seoTitle: "Dimensional Weight Calculator: UPS, FedEx & USPS Billable Weight (2026) | NumberCove",
+  description: "Compare actual weight with UPS daily and retail, FedEx, and USPS dimensional weight, see your billable weight, and find the smallest box or cut that drops you into a lower weight. Updated for the July 2026 USPS 139 divisor.",
+  h1: "Dimensional weight calculator & box optimizer",
+  lede: "Carriers bill large, light boxes by size. Enter your box and weight to see the pounds UPS, FedEx, and USPS will actually charge, then find the exact cut that drops you a pound or gets you billed on real weight.",
+  appCategory: "BusinessApplication",
+  formTitle: "Your package",
+  resultTitle: "Billable weight",
+  method: [
+    { h: "The formula", html: '<p>Each carrier multiplies length × width × height in inches, divides by its divisor, and rounds up to the next whole pound. You pay for whichever is greater: that dimensional weight or the actual weight, also rounded up.</p><p class="formula">Billable weight = max( ⌈L × W × H ÷ divisor⌉, ⌈actual weight⌉ )</p>' },
+    { h: "Divisors used", html: "<ul><li><strong>UPS Daily Rates:</strong> 139. <strong>UPS Retail Rates:</strong> 166 (counter and UPS Store pricing).</li><li><strong>FedEx:</strong> 139 for U.S. and international packages.</li><li><strong>USPS:</strong> 139 since July 12, 2026 (it was 166), applied only to parcels larger than 1 cubic foot (1,728 in³). Smaller parcels are billed on actual weight.</li></ul>" },
+    { h: "Rounding", html: "<p>UPS and FedEx round every fractional inch up to the next whole inch (since August 18, 2025), and USPS does the same from July 12, 2026. A 12.1-inch side counts as 13 inches, so trimming a fraction of an inch can save a full size step.</p>" },
+    { h: "How the optimizer works", html: "<p>The smallest box that fits is your item size plus the padding you set on every side, rounded up. To find the next pound down, the calculator works out the largest volume that still rounds to one pound less (divisor × target pounds) and checks which single side can be cut the least to get there without going below the item's size. For USPS it also checks the 1 cubic foot line, below which size no longer matters.</p>" },
+    { h: "What it does not include", html: "<p>Rates depend on zone, service, and your account, so the calculator reports billable pounds rather than prices. Enter an approximate cost per pound under “Your rates” to turn the extra pounds into dollars. Surcharge checks use published thresholds and are estimates.</p>" },
+  ],
+  sources: [
+    { name: "UPS: Shipping dimensions and weight (dimensional weight divisors 139 daily, 166 retail)", url: "https://www.ups.com/us/en/support/shipping-support/shipping-dimensions-weight" },
+    { name: "FedEx: General packaging guidelines (divisor 139 for U.S. and international)", url: "https://www.fedex.com/content/dam/fedex/us-united-states/services/GrlPkgGuidelines_fxcom.pdf" },
+    { name: "Pitney Bowes: USPS rate change July 12, 2026 (divisor 166 to 139, $3 dimension noncompliance, $200 oversize)", url: "https://docs.shipping360.pitneybowes.com/docs/others/usps-rate-change-2026" },
+    { name: "Pirate Ship: July 2026 USPS rate and rule changes (round-up rule, cubic tiers)", url: "https://support.pirateship.com/en/articles/15453569-july-2026-usps-rate-and-rule-changes" },
+    { name: "Pirate Ship: UPS surcharges (additional handling and large package thresholds)", url: "https://support.pirateship.com/en/articles/5604750-all-the-ups-surcharges" },
+    { name: "Atlantic Packaging: FedEx and UPS round dimensions up from August 18, 2025", url: "https://www.atlanticpkg.com/dimensional-weight-rule-changes-fedex-rounds-up-ups-matches/" },
+  ],
+  faqs: [
+    { q: "What is dimensional weight?", a: "Dimensional (DIM) weight is a billing weight based on package size: length × width × height divided by a carrier divisor. Carriers charge the greater of DIM weight and actual weight, so large, light boxes cost more than their scale weight suggests." },
+    { q: "What divisor does USPS use in 2026?", a: "USPS lowered its dimensional weight divisor from 166 to 139 on July 12, 2026. It still applies only to parcels larger than 1 cubic foot (1,728 cubic inches); smaller parcels are billed on actual weight." },
+    { q: "Why does UPS have two divisors?", a: "UPS uses 139 for Daily Rates (account and most online shipping) and 166 for Retail Rates (counter pricing). The same box bills fewer pounds at retail, but retail per-pound prices are usually higher." },
+    { q: "Do carriers round dimensions up?", a: "Yes. UPS and FedEx round each fractional inch up to the next whole inch, and USPS does the same from July 12, 2026. A box measuring 12.1 inches is billed as 13 inches." },
+    { q: "How do I lower my shipping cost on a light, bulky item?", a: "Use the smallest box that fits with adequate padding, trim the side that saves the most, get under 1 cubic foot for USPS, use a poly mailer for soft goods, and check USPS Cubic pricing for small, heavy items." },
+  ],
+  disclaimer: "Planning estimate only. Carrier rules, divisors, and surcharges change, and your contract may differ. Confirm billable weight and rates with your carrier or shipping platform before you ship.",
+};

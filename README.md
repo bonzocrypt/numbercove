@@ -2,7 +2,7 @@
 
 A production-ready static website of free calculators and converters: secondary-market seller payouts, mortgage and real-estate math, options analysis and income strategies, health estimates, DIY material takeoffs, unit conversion, and percentages.
 
-No build step, no npm, no framework. Open a file or drop the folder on any static host.
+No npm, no framework, no runtime dependencies. A small Node build script (below) generates shared navigation and indexes; the output is plain static HTML for any host.
 
 ## Open locally
 
@@ -26,6 +26,39 @@ Upload the entire folder (keep the same structure) to:
 - A traditional shared-hosting `public_html` directory
 
 Set the site root to this directory so `/css/styles.css` and `/calculators/mortgage.html` resolve.
+
+## Build (navigation, hubs, search, sitemap)
+
+The site is still plain static HTML, but shared parts are generated from one source of truth:
+
+- `data/site.json`: categories, subcategories, the "Should I…?" collection, and the author profile.
+- `data/tools.json`: every calculator (title, URL, subcategory, summary, icon, keywords, AI-index text, method, dates). Set `"status": "live"` to publish.
+
+Run the build after any change to those files or to a framework calculator:
+
+```bash
+node build/build.js
+```
+
+It rewrites the header (mega menu), mobile menu, footer, breadcrumbs, byline, and related links inside every page between `<!-- nc:NAME -->` markers, generates the category, subcategory, collection, author, and home pages, writes `js/search-index.js`, `tools.json`, `sitemap.xml`, `llms.txt`, `llms-full.txt`, and `.well-known/llms.txt`, and stamps content-hash versions on CSS and JS. It is idempotent: a second run reports "No changes."
+
+## Adding a calculator (framework)
+
+1. `js/calc/<id>.js`: inputs, `compute()`, and `render()` (verdict, stats, charts, tables). See `js/calc/storage-unit.js`.
+2. `build/pages/<id>.js`: SEO title, description, lede, method, sources, FAQs.
+3. Add an entry to `data/tools.json` with `"status": "live"`.
+4. `node build/build.js`, then run the tests in `tests/`.
+
+Shared runtime: `js/nc-calc.js` (form reading, validation, URL sharing, verdict and stats), `js/nc-charts.js` (line charts with hover readouts, bar charts). Hub URLs use folders, so preview with a local server (`python -m http.server 8080`) rather than opening files directly.
+
+## Tests
+
+```bash
+node tests/site-integrity.test.js
+node tests/options-engine.test.js
+node tests/strategy-calculators.test.js
+node tests/calc-batch1.test.js
+```
 
 ## Production domain
 

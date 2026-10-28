@@ -1,0 +1,122 @@
+{
+  "origin": "https://www.numbercove.com",
+  "name": "NumberCove",
+  "tagline": "Free calculators that answer the real question",
+  "author": {
+    "id": "dan-belliveau",
+    "name": "Dan Belliveau",
+    "url": "authors/dan-belliveau.html",
+    "role": "Founder and lead developer",
+    "short": "Former Fidelity Investments senior options and equities trader",
+    "bio": "Dan Belliveau spent 17 years at Fidelity Investments (1998–2015), moving from trading and service specialist to equities and options trader, then active-trader product development, and finally senior trader on the Active Trader Services desk, where he approved large equity and options orders, led a team of 13 representatives, and wrote specifications for trading platforms. He previously held FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations and is a licensed Florida real estate sales associate. He now builds software and financial tools.",
+    "credentials": [
+      "17 years at Fidelity Investments (1998–2015)",
+      "Senior Trader, Active Trader Services",
+      "Active Trader product development",
+      "Previously held FINRA Series 3, 4, 7, 9, 10, 55, and 63",
+      "Licensed Florida real estate sales associate"
+    ],
+    "bylineCategories": ["sell-and-ship", "money", "home-and-diy", "convert-and-math"]
+  },
+  "categories": [
+    {
+      "id": "sell-and-ship",
+      "name": "Sell & Ship",
+      "short": "Seller fees, shipping, and inventory",
+      "pill": "sell",
+      "icon": "<path d=\"M6 7h12l2 13H4L6 7z\"/><path d=\"M9 7V5a3 3 0 0 1 6 0v2\"/>",
+      "intro": "Tools for people who sell: what you keep after marketplace and ticket fees, the most you can pay for inventory, what a package will really cost to ship, and when to mark down stock that is not moving.",
+      "faqs": [
+        { "q": "Which seller fees do these calculators include?", "a": "The marketplace calculator applies published seller fees for eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal, and the ticket calculator covers StubHub, Ticketmaster Resale, and SeatGeek. Fees change, so every rate can be overridden." },
+        { "q": "Do the calculators connect to my seller accounts?", "a": "No. Everything runs in your browser from the numbers you type. Nothing is uploaded or linked to a marketplace account." }
+      ],
+      "subcategories": [
+        { "id": "fees-profit", "name": "Fees & profit", "short": "What you keep after platform fees", "intro": "Compare what you keep on each marketplace, back into the listing price needed to hit a target, and work out the most you can pay for an item and still make your margin." },
+        { "id": "shipping", "name": "Shipping & packaging", "short": "Billable weight and box size", "intro": "Carriers bill large, light boxes by size instead of weight. These tools show the weight you will actually be billed for and how to package to pay less." },
+        { "id": "inventory", "name": "Inventory", "short": "Aging stock and markdown timing", "intro": "Holding inventory costs money every month. Decide whether to wait for full price, take a lower offer now, or liquidate before storage and opportunity costs grow." }
+      ]
+    },
+    {
+      "id": "money",
+      "name": "Money",
+      "short": "Investing, loans, work, and spending",
+      "pill": "finance",
+      "icon": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"2.5\"/><path d=\"M6 9v.01M18 15v.01\"/>",
+      "intro": "Investing and options, loans and mortgages, real estate, retirement and paycheck decisions, everyday spending, and car costs. Each tool shows its formula and lets you change every assumption.",
+      "faqs": [
+        { "q": "Are these calculators financial advice?", "a": "No. They are planning and educational tools that show the math behind a decision. Your plan documents, lender, broker, and tax professional have the final word." },
+        { "q": "Who builds the finance calculators?", "a": "The finance tools are built by Dan Belliveau, a former senior options and equities trader with 17 years at Fidelity Investments. Methods and sources are listed on each page." }
+      ],
+      "subcategories": [
+        { "id": "investing-options", "name": "Investing & options", "short": "Options, income strategies, growth", "intro": "Price options and spreads, measure covered call and cash-secured put income, translate implied volatility into an expected move, track a wheel campaign, and project compound growth." },
+        { "id": "loans-mortgages", "name": "Loans & mortgages", "short": "Payments, refinancing, payoff", "intro": "Monthly payments, amortization, refinance break-even, and whether extra mortgage payments beat investing the same money." },
+        { "id": "real-estate", "name": "Real estate", "short": "Investment property returns", "intro": "Underwrite investment property income, expenses, financing, and exit assumptions." },
+        { "id": "retirement-work", "name": "Work & retirement", "short": "401(k), Social Security, commuting", "intro": "Capture your full 401(k) match, choose a Social Security claiming age, and see what returning to the office really costs." },
+        { "id": "spending-cards", "name": "Spending & cards", "short": "Cards, warranties, everyday math", "intro": "Decide whether a credit card's annual fee pays for itself, whether an extended warranty is worth it, and split a bill." },
+        { "id": "cars", "name": "Cars", "short": "Ownership cost per mile", "intro": "Compare the full cost of driving: electric versus gasoline, and leasing versus buying, including depreciation, insurance, financing, and maintenance." }
+      ]
+    },
+    {
+      "id": "home-and-diy",
+      "name": "Home & DIY",
+      "short": "Projects, appliances, energy, moving",
+      "pill": "home",
+      "icon": "<path d=\"M3 11l9-8 9 8\"/><path d=\"M5 10v10h14V10\"/><path d=\"M10 20v-5h4v5\"/>",
+      "intro": "Buy the right amount of material, decide whether to buy, rent, or hire, know when an appliance repair stops making sense, compare heating systems and solar payback, and plan a move or storage.",
+      "faqs": [
+        { "q": "How accurate are the material estimates?", "a": "They use standard geometric takeoffs plus a waste allowance you control. Check product coverage on the label and round up to whole boxes, bags, or gallons." },
+        { "q": "Where do the energy prices come from?", "a": "Defaults come from U.S. Energy Information Administration averages and are shown on each page. Replace them with the rates on your own bills for the most accurate result." }
+      ],
+      "subcategories": [
+        { "id": "project-materials", "name": "Project materials", "short": "Paint, flooring, tile, concrete", "intro": "Material takeoffs for paint, flooring, tile, and concrete, with waste and package counts." },
+        { "id": "tools-pros", "name": "Tools & pros", "short": "Buy, rent, or hire", "intro": "Compare buying tools, renting them, or hiring a professional, including consumables, your time, resale value, and the chance you will need to redo the work." },
+        { "id": "appliances-energy", "name": "Appliances & energy", "short": "Repairs, heating, solar", "intro": "Repair or replace an appliance, compare heat pump and furnace operating costs, and estimate when solar panels pay for themselves." },
+        { "id": "storage-moving", "name": "Storage & moving", "short": "Storage units and moving costs", "intro": "Find the month a storage unit costs more than its contents, and compare a rental truck, professional movers, and a portable container." }
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health",
+      "short": "Screening estimates, not diagnoses",
+      "pill": "health",
+      "icon": "<path d=\"M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z\"/>",
+      "intro": "Screening formulas for body mass index, body-fat percentage, and daily calorie needs. These are estimates for general information, not medical advice.",
+      "faqs": [
+        { "q": "Can these replace a doctor's assessment?", "a": "No. They use published screening formulas and cannot account for individual health conditions. Talk to a clinician about your results." }
+      ],
+      "subcategories": [
+        { "id": "body", "name": "Body measurements", "short": "BMI and body fat", "intro": "Body mass index with WHO categories and the U.S. Navy circumference body-fat estimate." },
+        { "id": "nutrition", "name": "Nutrition & energy", "short": "Daily calorie needs", "intro": "Estimate daily energy expenditure with the Mifflin–St Jeor equation and an activity factor." }
+      ]
+    },
+    {
+      "id": "convert-and-math",
+      "name": "Convert & Math",
+      "short": "Unit converters and percentages",
+      "pill": "convert",
+      "icon": "<path d=\"M4 7h13M13 3l4 4-4 4\"/><path d=\"M20 17H7M11 13l-4 4 4 4\"/>",
+      "intro": "Exact unit conversions using SI and NIST factors, plus everyday percentage math.",
+      "faqs": [
+        { "q": "Which conversion factors are used?", "a": "SI definitions and NIST customary-unit factors, so results are exact to the precision shown." }
+      ],
+      "subcategories": [
+        { "id": "unit-converters", "name": "Unit converters", "short": "Length, weight, volume, temperature, area", "intro": "Convert length, weight, volume, temperature, and area between metric and U.S. customary units." },
+        { "id": "everyday-math", "name": "Everyday math", "short": "Percentages", "intro": "What is X% of Y, percent change, and reverse percentages." }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "should-i",
+      "name": "Should I…?",
+      "slug": "should-i",
+      "title": "Should I…? Decision calculators",
+      "short": "Calculators that answer the real question",
+      "intro": "Most calculators give you a number. These give you an answer. Each one compares the options side by side, finds the break-even point, and tells you which choice comes out ahead with your numbers and how sensitive that answer is.",
+      "faqs": [
+        { "q": "How do the decision calculators reach an answer?", "a": "Each one totals the full cost or value of every option over time, including the costs people usually leave out, and shows where the options cross. You can change every assumption and the answer updates instantly." },
+        { "q": "Do they recommend specific products or companies?", "a": "No. They compare options using your numbers and never recommend a particular brand, issuer, or provider." }
+      ]
+    }
+  ]
+}

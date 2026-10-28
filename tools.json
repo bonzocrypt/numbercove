@@ -1,18 +1,125 @@
 {
   "name": "NumberCove",
-  "alternateName": "NumberCove",
+  "alternateName": "Number Cove",
   "url": "https://www.numbercove.com/",
-  "description": "Free private calculators for marketplace payouts, tickets, mortgages, health, DIY, and unit conversion. All math runs in the browser.",
+  "description": "Free private calculators: seller fees, shipping, inventory, options and investing, loans, work and retirement, home projects, energy, health estimates, and unit conversion. All math runs in the browser.",
   "llms": "https://www.numbercove.com/llms.txt",
   "llmsFull": "https://www.numbercove.com/llms-full.txt",
   "isAccessibleForFree": true,
   "inLanguage": "en",
+  "author": {
+    "name": "Dan Belliveau",
+    "url": "https://www.numbercove.com/authors/dan-belliveau.html"
+  },
+  "categories": [
+    {
+      "id": "sell-and-ship",
+      "name": "Sell & Ship",
+      "url": "https://www.numbercove.com/sell-and-ship/",
+      "subcategories": [
+        {
+          "id": "fees-profit",
+          "name": "Fees & profit",
+          "url": "https://www.numbercove.com/sell-and-ship/fees-profit/"
+        },
+        {
+          "id": "shipping",
+          "name": "Shipping & packaging",
+          "url": "https://www.numbercove.com/sell-and-ship/shipping/"
+        },
+        {
+          "id": "inventory",
+          "name": "Inventory",
+          "url": "https://www.numbercove.com/sell-and-ship/inventory/"
+        }
+      ]
+    },
+    {
+      "id": "money",
+      "name": "Money",
+      "url": "https://www.numbercove.com/money/",
+      "subcategories": [
+        {
+          "id": "investing-options",
+          "name": "Investing & options",
+          "url": "https://www.numbercove.com/money/investing-options/"
+        },
+        {
+          "id": "loans-mortgages",
+          "name": "Loans & mortgages",
+          "url": "https://www.numbercove.com/money/loans-mortgages/"
+        },
+        {
+          "id": "real-estate",
+          "name": "Real estate",
+          "url": "https://www.numbercove.com/money/real-estate/"
+        },
+        {
+          "id": "spending-cards",
+          "name": "Spending & cards",
+          "url": "https://www.numbercove.com/money/spending-cards/"
+        }
+      ]
+    },
+    {
+      "id": "home-and-diy",
+      "name": "Home & DIY",
+      "url": "https://www.numbercove.com/home-and-diy/",
+      "subcategories": [
+        {
+          "id": "project-materials",
+          "name": "Project materials",
+          "url": "https://www.numbercove.com/home-and-diy/project-materials/"
+        },
+        {
+          "id": "storage-moving",
+          "name": "Storage & moving",
+          "url": "https://www.numbercove.com/home-and-diy/storage-moving/"
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "name": "Health",
+      "url": "https://www.numbercove.com/health/",
+      "subcategories": [
+        {
+          "id": "body",
+          "name": "Body measurements",
+          "url": "https://www.numbercove.com/health/body/"
+        },
+        {
+          "id": "nutrition",
+          "name": "Nutrition & energy",
+          "url": "https://www.numbercove.com/health/nutrition/"
+        }
+      ]
+    },
+    {
+      "id": "convert-and-math",
+      "name": "Convert & Math",
+      "url": "https://www.numbercove.com/convert-and-math/",
+      "subcategories": [
+        {
+          "id": "unit-converters",
+          "name": "Unit converters",
+          "url": "https://www.numbercove.com/convert-and-math/unit-converters/"
+        },
+        {
+          "id": "everyday-math",
+          "name": "Everyday math",
+          "url": "https://www.numbercove.com/convert-and-math/everyday-math/"
+        }
+      ]
+    }
+  ],
   "tools": [
     {
       "id": "marketplace",
       "name": "Marketplace payout calculator",
       "url": "https://www.numbercove.com/calculators/marketplace.html",
-      "category": "sell",
+      "category": "sell-and-ship",
+      "subcategory": "fees-profit",
       "keywords": [
         "ebay",
         "poshmark",
@@ -27,13 +134,15 @@
         "vip",
         "list price"
       ],
-      "description": "Enter a listing price to compare what you keep after fees on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal, or enter what you want to make to calculate what to list it for. Choose clothing, handbags, jewelry, watches, sneakers, coins, or cards to load matching fee charts."
+      "description": "Enter a listing price to compare what you keep after fees on eBay, Poshmark, Vinted, Whatnot, Mercari, Fashionphile, and The RealReal, or enter what you want to make to calculate what to list it for. Choose clothing, handbags, jewelry, watches, sneakers, coins, or cards to load matching fee charts.",
+      "updated": "2026-10-26"
     },
     {
       "id": "ticket-resale",
       "name": "StubHub and Ticketmaster resale calculator",
       "url": "https://www.numbercove.com/calculators/ticket-resale.html",
-      "category": "sell",
+      "category": "sell-and-ship",
+      "subcategory": "fees-profit",
       "keywords": [
         "stubhub",
         "ticketmaster",
@@ -42,13 +151,15 @@
         "ticket fees",
         "seller payout"
       ],
-      "description": "Compare seller net on StubHub, Ticketmaster Resale, and SeatGeek, or back into the list price to hit a target net."
+      "description": "Compare seller net on StubHub, Ticketmaster Resale, and SeatGeek, or back into the list price to hit a target net.",
+      "updated": "2026-08-24"
     },
     {
       "id": "mortgage",
       "name": "Mortgage calculator",
       "url": "https://www.numbercove.com/calculators/mortgage.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "loans-mortgages",
       "keywords": [
         "mortgage",
         "monthly payment",
@@ -56,13 +167,15 @@
         "PITI",
         "PMI"
       ],
-      "description": "Monthly principal and interest, taxes, insurance, HOA, PMI, extra principal, and an amortization snapshot."
+      "description": "Monthly principal and interest, taxes, insurance, HOA, PMI, extra principal, and an amortization snapshot.",
+      "updated": "2026-08-24"
     },
     {
       "id": "commercial-real-estate",
       "name": "Commercial real estate ROI and APOD calculator",
       "url": "https://www.numbercove.com/calculators/commercial-real-estate.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "real-estate",
       "keywords": [
         "commercial real estate",
         "investment property",
@@ -76,13 +189,15 @@
         "IRR",
         "equity multiple"
       ],
-      "description": "Build an Annual Property Operating Data statement and evaluate NOI, cap rate, cash-on-cash return, lender coverage, financing, and a hold-and-resale projection."
+      "description": "Build an Annual Property Operating Data statement and evaluate NOI, cap rate, cash-on-cash return, lender coverage, financing, and a hold-and-resale projection.",
+      "updated": "2026-10-27"
     },
     {
       "id": "options",
       "name": "Options price, Greeks, and P&L calculator",
       "url": "https://www.numbercove.com/calculators/options.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "investing-options",
       "keywords": [
         "options calculator",
         "option price",
@@ -99,13 +214,15 @@
         "breakeven",
         "probability of profit"
       ],
-      "description": "Price calls, puts, and spreads of up to 4 legs. Slide the underlying price, target date, and implied volatility to see option value, P&L, Greeks, breakeven, probability of profit, a payoff chart, and a P&L heat map. American (binomial) and European (Black-Scholes) pricing."
+      "description": "Price calls, puts, and spreads of up to 4 legs. Slide the underlying price, target date, and implied volatility to see option value, P&L, Greeks, breakeven, probability of profit, a payoff chart, and a P&L heat map. American (binomial) and European (Black-Scholes) pricing.",
+      "updated": "2026-10-27"
     },
     {
       "id": "covered-call-cash-secured-put",
       "name": "Covered call and cash-secured put calculator",
       "url": "https://www.numbercove.com/calculators/covered-call-cash-secured-put.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "investing-options",
       "keywords": [
         "covered call",
         "cash-secured put",
@@ -116,13 +233,15 @@
         "downside cushion",
         "assignment probability"
       ],
-      "description": "Calculate net premium, breakeven, maximum profit and loss, return if assigned, annualized return, scenario P&L, expiration payoff, and an IV-based estimate of finishing in the money."
+      "description": "Calculate net premium, breakeven, maximum profit and loss, return if assigned, annualized return, scenario P&L, expiration payoff, and an IV-based estimate of finishing in the money.",
+      "updated": "2026-10-27"
     },
     {
       "id": "expected-move",
       "name": "Expected move calculator",
       "url": "https://www.numbercove.com/calculators/expected-move.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "investing-options",
       "keywords": [
         "expected move",
         "implied volatility range",
@@ -132,13 +251,15 @@
         "IV expected range",
         "straddle breakeven"
       ],
-      "description": "Estimate one- and two-standard-deviation price ranges from annualized IV, compare an ATM-straddle move, and measure a target or post-event move in standard deviations."
+      "description": "Estimate one- and two-standard-deviation price ranges from annualized IV, compare an ATM-straddle move, and measure a target or post-event move in standard deviations.",
+      "updated": "2026-10-27"
     },
     {
       "id": "options-roll-wheel",
       "name": "Options roll and wheel strategy calculator",
       "url": "https://www.numbercove.com/calculators/options-roll-wheel.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "investing-options",
       "keywords": [
         "option roll",
         "roll up and out",
@@ -150,213 +271,326 @@
         "covered call roll",
         "cash-secured put roll"
       ],
-      "description": "Track wheel campaign credits and economic breakeven or compare an option roll's close debit, new credit, strike, expiration, assignment economics, and scenario P&L."
+      "description": "Track wheel campaign credits and economic breakeven or compare an option roll's close debit, new credit, strike, expiration, assignment economics, and scenario P&L.",
+      "updated": "2026-10-27"
     },
     {
       "id": "refinance",
       "name": "Refinance calculator",
       "url": "https://www.numbercove.com/calculators/refinance.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "loans-mortgages",
+      "question": "Should I refinance my mortgage?",
       "keywords": [
         "refinance",
         "refi",
         "break even",
         "closing costs"
       ],
-      "description": "Compare current vs new loan payment, closing costs, and break-even months."
+      "description": "Compare current vs new loan payment, closing costs, and break-even months.",
+      "updated": "2026-08-24"
     },
     {
       "id": "loan",
       "name": "Loan amortization calculator",
       "url": "https://www.numbercove.com/calculators/loan.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "loans-mortgages",
       "keywords": [
         "loan",
         "auto loan",
         "personal loan",
         "amortization"
       ],
-      "description": "Fixed-rate installment payment, extra principal, total interest, and payoff date."
+      "description": "Fixed-rate installment payment, extra principal, total interest, and payoff date.",
+      "updated": "2026-08-24"
     },
     {
       "id": "compound-interest",
       "name": "Compound interest calculator",
       "url": "https://www.numbercove.com/calculators/compound-interest.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "investing-options",
       "keywords": [
         "compound interest",
         "savings",
         "investment",
         "future value"
       ],
-      "description": "Future value with compounding frequency and recurring contributions."
+      "description": "Future value with compounding frequency and recurring contributions.",
+      "updated": "2026-08-24"
     },
     {
       "id": "tip",
       "name": "Tip calculator",
       "url": "https://www.numbercove.com/calculators/tip.html",
-      "category": "finance",
+      "category": "money",
+      "subcategory": "spending-cards",
       "keywords": [
         "tip",
         "gratuity",
         "split bill"
       ],
-      "description": "Tip amount, total, and even split on the full bill or pre-tax amount."
+      "description": "Tip amount, total, and even split on the full bill or pre-tax amount.",
+      "updated": "2026-08-24"
     },
     {
       "id": "bmi",
       "name": "BMI calculator",
       "url": "https://www.numbercove.com/calculators/bmi.html",
       "category": "health",
+      "subcategory": "body",
       "keywords": [
         "bmi",
         "body mass index"
       ],
-      "description": "US and metric BMI, WHO category, and a healthy-weight range. Screening only."
+      "description": "US and metric BMI, WHO category, and a healthy-weight range. Screening only.",
+      "updated": "2026-08-24"
     },
     {
       "id": "body-fat",
       "name": "Body-fat estimate",
       "url": "https://www.numbercove.com/calculators/body-fat.html",
       "category": "health",
+      "subcategory": "body",
       "keywords": [
         "body fat",
         "navy method"
       ],
-      "description": "U.S. Navy circumference body-fat estimate. Not a clinical measurement."
+      "description": "U.S. Navy circumference body-fat estimate. Not a clinical measurement.",
+      "updated": "2026-08-24"
     },
     {
       "id": "tdee",
       "name": "TDEE calculator",
       "url": "https://www.numbercove.com/calculators/tdee.html",
       "category": "health",
+      "subcategory": "nutrition",
       "keywords": [
         "tdee",
         "bmr",
         "calories",
         "mifflin"
       ],
-      "description": "Mifflin–St Jeor BMR, activity multiplier, cut and gain calorie targets."
+      "description": "Mifflin–St Jeor BMR, activity multiplier, cut and gain calorie targets.",
+      "updated": "2026-08-24"
     },
     {
       "id": "paint",
       "name": "Paint coverage calculator",
       "url": "https://www.numbercove.com/calculators/paint.html",
-      "category": "home",
+      "category": "home-and-diy",
+      "subcategory": "project-materials",
       "keywords": [
         "paint",
         "gallons",
         "coverage"
       ],
-      "description": "Gallons of paint from room dimensions or square footage, including coats."
+      "description": "Gallons of paint from room dimensions or square footage, including coats.",
+      "updated": "2026-08-24"
     },
     {
       "id": "flooring",
       "name": "Flooring estimator",
       "url": "https://www.numbercove.com/calculators/flooring.html",
-      "category": "home",
+      "category": "home-and-diy",
+      "subcategory": "project-materials",
       "keywords": [
         "flooring",
         "square feet",
         "waste"
       ],
-      "description": "Flooring square footage with waste, box count, and material cost."
+      "description": "Flooring square footage with waste, box count, and material cost.",
+      "updated": "2026-08-24"
     },
     {
       "id": "concrete",
       "name": "Concrete volume calculator",
       "url": "https://www.numbercove.com/calculators/concrete.html",
-      "category": "home",
+      "category": "home-and-diy",
+      "subcategory": "project-materials",
       "keywords": [
         "concrete",
         "cubic yards",
         "bags"
       ],
-      "description": "Slab volume in cubic yards plus 40/60/80 lb bag estimates."
+      "description": "Slab volume in cubic yards plus 40/60/80 lb bag estimates.",
+      "updated": "2026-08-24"
     },
     {
       "id": "tile",
       "name": "Tile estimator",
       "url": "https://www.numbercove.com/calculators/tile.html",
-      "category": "home",
+      "category": "home-and-diy",
+      "subcategory": "project-materials",
       "keywords": [
         "tile",
         "grout",
         "waste"
       ],
-      "description": "Tile count from room size, grout gap, waste, and boxes."
+      "description": "Tile count from room size, grout gap, waste, and boxes.",
+      "updated": "2026-08-24"
     },
     {
       "id": "length",
       "name": "Length converter",
       "url": "https://www.numbercove.com/calculators/length.html",
-      "category": "convert",
+      "category": "convert-and-math",
+      "subcategory": "unit-converters",
       "keywords": [
         "length",
         "meters",
         "feet",
         "miles"
       ],
-      "description": "Convert metric and imperial length units using exact SI factors."
+      "description": "Convert metric and imperial length units using exact SI factors.",
+      "updated": "2026-08-24"
     },
     {
       "id": "weight",
       "name": "Weight converter",
       "url": "https://www.numbercove.com/calculators/weight.html",
-      "category": "convert",
+      "category": "convert-and-math",
+      "subcategory": "unit-converters",
       "keywords": [
         "weight",
         "kg",
         "lb"
       ],
-      "description": "Convert mass units including kilograms, pounds, ounces, and stone."
+      "description": "Convert mass units including kilograms, pounds, ounces, and stone.",
+      "updated": "2026-08-24"
     },
     {
       "id": "volume",
       "name": "Volume converter",
       "url": "https://www.numbercove.com/calculators/volume.html",
-      "category": "convert",
+      "category": "convert-and-math",
+      "subcategory": "unit-converters",
       "keywords": [
         "volume",
         "liters",
         "gallons"
       ],
-      "description": "Convert liters, US kitchen measures, UK gallons, and cubic units."
+      "description": "Convert liters, US kitchen measures, UK gallons, and cubic units.",
+      "updated": "2026-08-24"
     },
     {
       "id": "temperature",
       "name": "Temperature converter",
       "url": "https://www.numbercove.com/calculators/temperature.html",
-      "category": "convert",
+      "category": "convert-and-math",
+      "subcategory": "unit-converters",
       "keywords": [
         "celsius",
         "fahrenheit",
         "kelvin"
       ],
-      "description": "Convert Celsius, Fahrenheit, Kelvin, and Rankine."
+      "description": "Convert Celsius, Fahrenheit, Kelvin, and Rankine.",
+      "updated": "2026-08-24"
     },
     {
       "id": "area",
       "name": "Area converter",
       "url": "https://www.numbercove.com/calculators/area.html",
-      "category": "convert",
+      "category": "convert-and-math",
+      "subcategory": "unit-converters",
       "keywords": [
         "area",
         "acres",
         "square feet"
       ],
-      "description": "Convert square meters, feet, acres, hectares, and square miles."
+      "description": "Convert square meters, feet, acres, hectares, and square miles.",
+      "updated": "2026-08-24"
     },
     {
       "id": "percentage",
       "name": "Percentage calculator",
       "url": "https://www.numbercove.com/calculators/percentage.html",
-      "category": "math",
+      "category": "convert-and-math",
+      "subcategory": "everyday-math",
       "keywords": [
         "percentage",
         "percent change"
       ],
-      "description": "What is X% of Y, reverse percent, percent change, increase or decrease."
+      "description": "What is X% of Y, reverse percent, percent change, increase or decrease.",
+      "updated": "2026-08-24"
+    },
+    {
+      "id": "dim-weight",
+      "name": "Dimensional weight calculator and box optimizer",
+      "url": "https://www.numbercove.com/calculators/dimensional-weight.html",
+      "category": "sell-and-ship",
+      "subcategory": "shipping",
+      "keywords": [
+        "dimensional weight",
+        "dim weight",
+        "billable weight",
+        "UPS",
+        "FedEx",
+        "USPS",
+        "divisor 139",
+        "divisor 166",
+        "box size",
+        "shipping cost"
+      ],
+      "description": "Compare actual weight with UPS daily and retail, FedEx, and USPS dimensional weight using 2026 divisors, find the smallest box that fits, and see which cut drops the billable weight or gets you under the USPS 1 cubic foot line.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "storage-unit",
+      "name": "Storage unit calculator: keep, sell, or rebuy",
+      "url": "https://www.numbercove.com/calculators/storage-unit-keep-or-sell.html",
+      "category": "home-and-diy",
+      "subcategory": "storage-moving",
+      "question": "Should I keep my storage unit or sell my stuff?",
+      "keywords": [
+        "storage unit",
+        "is a storage unit worth it",
+        "self storage cost",
+        "sell or store",
+        "rent increase",
+        "replacement cost"
+      ],
+      "description": "Compare storage rent, annual rent increases, insurance, and move-out costs with selling your belongings now and rebuying what you need later, and find the month storage stops making sense.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "inventory-markdown",
+      "name": "Inventory aging and markdown timing calculator",
+      "url": "https://www.numbercove.com/calculators/inventory-markdown.html",
+      "category": "sell-and-ship",
+      "subcategory": "inventory",
+      "question": "Should I wait for full price or take the offer?",
+      "keywords": [
+        "markdown",
+        "inventory aging",
+        "sell-through",
+        "holding cost",
+        "liquidate",
+        "reseller",
+        "accept offer"
+      ],
+      "description": "For resellers: compare holding out for full price with taking an offer now or liquidating, using monthly sell-through odds, holding cost, price decline, fees, and the cost of tied-up cash. Shows the sell-through rate needed to justify waiting.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "max-buy-price",
+      "name": "Max buy price calculator for resellers",
+      "url": "https://www.numbercove.com/calculators/max-buy-price.html",
+      "category": "sell-and-ship",
+      "subcategory": "fees-profit",
+      "keywords": [
+        "max buy price",
+        "reseller",
+        "sourcing",
+        "ROI",
+        "flip",
+        "eBay fees",
+        "profit margin",
+        "thrift"
+      ],
+      "description": "Work backward from the expected sale price on eBay, Poshmark, Mercari, Whatnot, Etsy, or Vinted to the maximum buy price that hits your ROI, margin, or dollar-profit target after fees, shipping, supplies, returns, sales tax, and time.",
+      "updated": "2026-10-27"
     }
   ]
 }

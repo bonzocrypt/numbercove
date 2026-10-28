@@ -58,6 +58,11 @@ var sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 });
 
 var homepage = fs.readFileSync(path.join(root, "index.html"), "utf8");
-assert.ok(homepage.indexOf('"numberOfItems": 25') !== -1, "homepage tool count should be 25");
+assert.ok(homepage.indexOf('"numberOfItems": ' + tools.tools.length) !== -1, "homepage tool count should match tools.json (" + tools.tools.length + ")");
+tools.tools.forEach(function (tool) {
+  var rel = tool.url.replace("https://www.numbercove.com/", "");
+  assert.ok(fs.existsSync(path.join(root, rel)), "tools.json lists a missing page: " + rel);
+  assert.ok(sitemap.indexOf(tool.url) !== -1, "sitemap.xml is missing " + tool.url);
+});
 
 console.log("site integrity tests passed across " + htmlFiles.length + " HTML files");
