@@ -12,7 +12,7 @@
   var money0 = function (x) { return fmt.money(x, 0); };
 
   /* [name, residential ¢/kWh (EIA Electric Power Monthly, June 2026),
-     annual kWh per kW DC (NREL PVWatts v8, largest city, 20° tilt, south, 14% losses)] */
+     annual kWh per kW DC (PVWatts v8 from the National Laboratory of the Rockies, formerly NREL; largest city, 20° tilt, south, 14% losses)] */
   var STATES = {
     AL: ["Alabama", 16.4, 1367], AK: ["Alaska", 28.2, 922], AZ: ["Arizona", 15.2, 1755], AR: ["Arkansas", 14.1, 1373],
     CA: ["California", 34.7, 1677], CO: ["Colorado", 17.1, 1595], CT: ["Connecticut", 24.3, 1291], DE: ["Delaware", 19.3, 1364],
@@ -152,7 +152,7 @@
     var notes = [
       "The federal residential clean energy credit (25D) ended for systems paid for after December 31, 2025. Check your state, utility, and DSIRE for remaining incentives.",
       "Net metering rules matter as much as sunshine. If your utility credits exports below retail, size the system to your daytime use or consider a battery.",
-      "Get production estimates for your actual roof from NREL's PVWatts or your installer; shade and orientation can change output by 20% or more.",
+      "Get production estimates for your actual roof from PVWatts (pvwatts.nlr.gov) or your installer; shade and orientation can change output by 20% or more.",
       "Replace an old roof first if it has less than about 10 years left; removing and reinstalling panels later is costly.",
     ];
     return {

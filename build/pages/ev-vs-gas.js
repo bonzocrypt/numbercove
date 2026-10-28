@@ -16,7 +16,7 @@ module.exports = {
   ],
   sources: [
     { name: "U.S. DOE Alternative Fuels Data Center: Vehicle Cost Calculator", url: "https://afdc.energy.gov/calc/" },
-    { name: "U.S. DOE: FOTW #1190, battery-electric vehicles have lower scheduled maintenance costs", url: "https://www.energy.gov/eere/vehicles/articles/fotw-1190-june-14-2021-battery-electric-vehicles-have-lower-scheduled" },
+    { name: "U.S. DOE: FOTW #1190, battery-electric vehicles have lower scheduled maintenance costs", url: "https://www.energy.gov/cmei/vehicles/articles/fotw-1190-june-14-2021-battery-electric-vehicles-have-lower-scheduled" },
     { name: "FuelEconomy.gov: Compare EV and gas vehicle efficiency", url: "https://www.fueleconomy.gov/" },
     { name: "U.S. EIA: Gasoline and diesel fuel update", url: "https://www.eia.gov/petroleum/gasdiesel/" },
     { name: "U.S. EIA: Carbon dioxide emissions coefficients", url: "https://www.eia.gov/environment/emissions/CO2_vol_mass.php" },

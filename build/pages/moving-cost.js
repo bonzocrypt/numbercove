@@ -15,7 +15,7 @@ module.exports = {
   ],
   sources: [
     { name: "FMCSA: Protect Your Move (interstate mover registration and complaints)", url: "https://www.fmcsa.dot.gov/protect-your-move" },
-    { name: "FMCSA: Your Rights and Responsibilities When You Move", url: "https://www.fmcsa.dot.gov/protect-your-move/rights-and-responsibilities" },
+    { name: "FMCSA: Liability and protection (released value vs full value)", url: "https://www.fmcsa.dot.gov/consumer-protection/protect-your-move/are-you-moving/liability-protection" },
     { name: "U.S. EIA: Gasoline and diesel fuel update (default fuel price)", url: "https://www.eia.gov/petroleum/gasdiesel/" },
   ],
   faqs: [

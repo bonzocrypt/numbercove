@@ -19,7 +19,7 @@ module.exports = {
     { name: "U.S. EIA: CO2 per kWh of U.S. electricity generation", url: "https://www.eia.gov/tools/faqs/faq.php?id=74&t=1" },
     { name: "U.S. EIA: Heating oil and propane update", url: "https://www.eia.gov/petroleum/heatingoilpropane/" },
     { name: "U.S. EIA: Natural gas prices", url: "https://www.eia.gov/naturalgas/" },
-    { name: "U.S. Department of Energy: Heat pump systems", url: "https://www.energy.gov/energysaver/heat-pump-systems" },
+    { name: "ENERGY STAR: Air-source heat pumps", url: "https://www.energystar.gov/products/air_source_heat_pumps" },
     { name: "NEEP: Cold climate air source heat pump list", url: "https://ashp.neep.org/" },
     { name: "IRS: Energy efficient home improvement credit (25C)", url: "https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit" },
   ],

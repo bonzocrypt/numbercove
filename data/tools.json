@@ -1387,7 +1387,7 @@
     "collections": [
       "should-i"
     ],
-    "llms": "Solar payback by U.S. state: production = kW × state kWh/kW (NREL PVWatts v8, largest city, 20° tilt, south, 14% losses) unless the user enters their own; savings = offset kWh × rate (escalating) + exported kWh × export credit (net metering or reduced); subtracts upkeep and inverter replacement; reports payback, net savings, IRR, cost per kWh, and compares installing now with waiting 1–5 years for cheaper or better panels over the same window. State rates from EIA Electric Power Monthly (June 2026). Notes the federal 25D credit ended after 2025.",
+    "llms": "Solar payback by U.S. state: production = kW × state kWh/kW (PVWatts v8 from the National Laboratory of the Rockies, formerly NREL; largest city, 20° tilt, south, 14% losses) unless the user enters their own; savings = offset kWh × rate (escalating) + exported kWh × export credit (net metering or reduced); subtracts upkeep and inverter replacement; reports payback, net savings, IRR, cost per kWh, and compares installing now with waiting 1–5 years for cheaper or better panels over the same window. State rates from EIA Electric Power Monthly (June 2026). Notes the federal 25D credit ended after 2025.",
     "askedAs": [
       "how long do solar panels take to pay off",
       "is solar worth it in my state",

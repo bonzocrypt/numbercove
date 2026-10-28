@@ -139,7 +139,8 @@ p:last-child {
   width: 100%;
   max-width: var(--wrap);
   margin-inline: auto;
-  padding-inline: 0.75rem;
+  /* 16px on phones, growing to 32px on wide screens, so text never meets the window edge. */
+  padding-inline: clamp(1rem, 4vw, 2rem);
   box-sizing: border-box;
 }
 
@@ -3539,10 +3540,39 @@ kbd {
 }
 
 .hub-faq summary {
+  position: relative;
   cursor: pointer;
   font-weight: 700;
   font-family: var(--font-display);
-  list-style-position: outside;
+  list-style: none;
+  padding-left: 1.6rem;
+}
+
+.hub-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron drawn inside the text column instead of the browser marker, which hangs into the page gutter. */
+.hub-faq summary::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.45em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid var(--brand);
+  border-bottom: 2px solid var(--brand);
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+}
+
+.hub-faq details[open] > summary::before {
+  transform: rotate(45deg);
+  top: 0.3em;
+}
+
+.hub-faq details p {
+  padding-left: 1.6rem;
 }
 
 .hub-faq details p {

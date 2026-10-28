@@ -14,8 +14,7 @@ module.exports = {
     { h: "What to leave out", html: "<p>Irreplaceable and sentimental items don't belong in this math. Take them home or into a much smaller unit, and run the numbers on what's left. Many people find a smaller unit for the few things that matter changes the answer.</p>" },
   ],
   sources: [
-    { name: "U.S. Bureau of Labor Statistics: Consumer Price Index (default replacement inflation)", url: "https://www.bls.gov/cpi/" },
-    { name: "Federal Trade Commission: Moving and storage consumer guidance", url: "https://consumer.ftc.gov/articles/moving-checklist" },
+    { name: "U.S. Bureau of Labor Statistics: Consumer Price Index (default replacement inflation)", url: "https://www.bls.gov/cpi/" }
   ],
   faqs: [
     { q: "When is a storage unit not worth it?", a: "When the rent you'll pay before you need the items back is more than the cost to rebuy them, after counting what you'd get by selling now. For most household goods stored more than a year or two, that point comes sooner than people expect, especially with annual rent increases." },

@@ -13,7 +13,6 @@ module.exports = {
     { h: "Keeping it longer", html: "<p>Buying usually wins the longer you keep the car, because payments stop when the loan is paid off. The chart compares buying and keeping with leasing continuously at the same terms, with the car losing value at the same yearly rate and repairs added after the warranty ends.</p>" },
   ],
   sources: [
-    { name: "Federal Reserve: Keys to Vehicle Leasing", url: "https://www.federalreserve.gov/pubs/leasing/" },
     { name: "Federal Trade Commission: Financing or leasing a car", url: "https://consumer.ftc.gov/articles/financing-or-leasing-car" },
   ],
   faqs: [
