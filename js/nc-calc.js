@@ -299,7 +299,8 @@
         if (!f.suffixBy && !f.prefixBy) return;
         var by = f.suffixBy || f.prefixBy;
         var txt = by.map[raw[by.field]];
-        var affix = form.querySelector('[data-field="' + f.name + '"] .affix');
+        var all = form.querySelectorAll('[data-field="' + f.name + '"] .affix');
+        var affix = f.suffixBy ? all[all.length - 1] : all[0];
         if (affix && txt != null) affix.textContent = txt;
       });
     }
@@ -323,12 +324,17 @@
         return;
       }
       if (root.NCCharts) root.NCCharts.reset();
+      /* Measure the analysis column even before its first reveal, so charts are
+         drawn at the width they'll be shown (a hidden element reports 0). */
+      var wasHidden = analysis && analysis.hidden;
+      if (wasHidden) analysis.hidden = false;
       lastWidth = analysis ? analysis.clientWidth : 0;
+      if (wasHidden) analysis.hidden = true;
       var h = {
         fmt: fmt,
         esc: esc,
         sideWidth: Math.max(280, (results.clientWidth || 420) - 4),
-        wideWidth: Math.max(280, (analysis && analysis.clientWidth ? analysis.clientWidth - 48 : 760)),
+        wideWidth: Math.max(280, lastWidth ? lastWidth - 48 : 760),
         line: function (spec) { return root.NCCharts.line(spec); },
         bars: function (spec) { return root.NCCharts.bars(spec); },
         table: table,
@@ -440,6 +446,15 @@
         var target = control(range.getAttribute("data-range-for"));
         if (target) target.value = range.value;
       });
+    });
+    /* A select can preset other fields: { sets: { optionValue: { field: value } } }. */
+    form.addEventListener("change", function (e) {
+      var f = e.target && e.target.name ? byName[e.target.name] : null;
+      if (!f || !f.sets) return;
+      var preset = f.sets[e.target.value];
+      if (!preset) return;
+      Object.keys(preset).forEach(function (k) { if (byName[k]) setRaw(byName[k], preset[k]); });
+      syncRanges();
     });
     form.addEventListener("input", schedule);
     form.addEventListener("change", schedule);

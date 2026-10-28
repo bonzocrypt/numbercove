@@ -77,6 +77,16 @@
           "url": "https://www.numbercove.com/home-and-diy/project-materials/"
         },
         {
+          "id": "tools-pros",
+          "name": "Tools & pros",
+          "url": "https://www.numbercove.com/home-and-diy/tools-pros/"
+        },
+        {
+          "id": "appliances-energy",
+          "name": "Appliances & energy",
+          "url": "https://www.numbercove.com/home-and-diy/appliances-energy/"
+        },
+        {
           "id": "storage-moving",
           "name": "Storage & moving",
           "url": "https://www.numbercove.com/home-and-diy/storage-moving/"
@@ -685,6 +695,94 @@
         "prepay mortgage"
       ],
       "description": "Compare making extra mortgage payments with investing the same money: interest saved, years cut, net worth over time, and the break-even investment return, with optional mortgage interest deduction and tax drag.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "extended-warranty",
+      "name": "Extended warranty calculator: buy the plan or self-insure",
+      "url": "https://www.numbercove.com/calculators/extended-warranty.html",
+      "category": "money",
+      "subcategory": "spending-cards",
+      "question": "Should I buy the extended warranty?",
+      "keywords": [
+        "extended warranty",
+        "is an extended warranty worth it",
+        "protection plan",
+        "service contract",
+        "self-insure",
+        "appliance warranty"
+      ],
+      "description": "Compare an extended warranty or protection plan with self-insuring: expected repair costs, deductibles, exclusions, and free credit card coverage, plus the break-even chance of a repair.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "repair-or-replace",
+      "name": "Repair or replace appliance calculator",
+      "url": "https://www.numbercove.com/calculators/repair-or-replace-appliance.html",
+      "category": "home-and-diy",
+      "subcategory": "appliances-energy",
+      "question": "Should I repair or replace my appliance?",
+      "keywords": [
+        "repair or replace",
+        "appliance repair worth it",
+        "50% rule",
+        "refrigerator repair or replace",
+        "water heater replace",
+        "furnace repair or replace"
+      ],
+      "description": "Decide whether to repair or replace a refrigerator, washer, dryer, dishwasher, range, water heater, furnace, AC, or heat pump using lifespan, repair odds, energy use, and an interest rate.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "buy-rent-hire",
+      "name": "Buy, rent, or hire calculator",
+      "url": "https://www.numbercove.com/calculators/buy-rent-or-hire.html",
+      "category": "home-and-diy",
+      "subcategory": "tools-pros",
+      "question": "Should I buy the tool, rent it, or hire someone?",
+      "keywords": [
+        "buy or rent tool",
+        "diy vs hire",
+        "hire a contractor or diy",
+        "tool rental vs buy",
+        "is diy worth it"
+      ],
+      "description": "Compare the total cost of buying a tool, renting it, or hiring a professional, including materials, your time, the chance of redoing work, resale value, and future projects, and see how many uses make buying worth it.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "moving-cost",
+      "name": "Moving cost calculator: truck vs movers vs container",
+      "url": "https://www.numbercove.com/calculators/moving-cost.html",
+      "category": "home-and-diy",
+      "subcategory": "storage-moving",
+      "question": "Is it cheaper to rent a truck or hire movers?",
+      "keywords": [
+        "moving cost calculator",
+        "rent a truck or hire movers",
+        "moving container cost",
+        "cost to move",
+        "long distance moving cost"
+      ],
+      "description": "Compare the full cost of moving with a rental truck, full-service movers, or a portable moving container, including fuel, car trailer, helpers, tips, protection, lodging, storage, and the value of your time.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "heat-pump-vs-furnace",
+      "name": "Heat pump vs furnace calculator",
+      "url": "https://www.numbercove.com/calculators/heat-pump-vs-furnace.html",
+      "category": "home-and-diy",
+      "subcategory": "appliances-energy",
+      "question": "Will a heat pump save money over my furnace?",
+      "keywords": [
+        "heat pump vs furnace",
+        "heat pump vs gas furnace cost",
+        "heat pump savings calculator",
+        "is a heat pump worth it",
+        "heat pump payback",
+        "heat pump vs propane"
+      ],
+      "description": "Compare a heat pump with a natural gas, propane, heating oil, or electric furnace: yearly heating and cooling cost, installed price, payback, the break-even electricity price, and CO2, adjusted for climate.",
       "updated": "2026-10-27"
     }
   ]

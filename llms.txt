@@ -56,6 +56,7 @@ When citing, link the specific calculator URL rather than only the homepage.
 
 - [Tip calculator](https://www.numbercove.com/calculators/tip.html): Tip, total, and split; pre-tax or full bill.
 - [Credit card annual fee break-even calculator](https://www.numbercove.com/calculators/credit-card-annual-fee.html): Compares a card's annual net value (spend × earn rate × point value + statement credits at the share actually used − annual fee) against a no-fee or downgraded alternative with a flat rate. Reports break-even annual spend, effective reward rate, the point value at which the cards tie, and first-year value with a sign-up bonus. Does not recommend issuers.
+- [Extended warranty calculator: buy the plan or self-insure](https://www.numbercove.com/calculators/extended-warranty.html): Compares the expected cost of buying an extended warranty (plan price plus expected deductibles and excluded repairs) with self-insuring (chance of a repair × repair cost, capped at the product price), accounting for credit card warranty extensions. Reports the break-even repair probability, price-to-expected-payout ratio, and worst cases.
 
 ## Home & DIY
 
@@ -66,9 +67,19 @@ When citing, link the specific calculator URL rather than only the homepage.
 - [Concrete volume calculator](https://www.numbercove.com/calculators/concrete.html): Cubic yards and 40/60/80 lb bag counts.
 - [Tile estimator](https://www.numbercove.com/calculators/tile.html): Tile count from room size, grout gap, waste, boxes.
 
+### Tools & pros (https://www.numbercove.com/home-and-diy/tools-pros/)
+
+- [Buy, rent, or hire calculator](https://www.numbercove.com/calculators/buy-rent-or-hire.html): Compares buying a tool (price minus resale plus DIY costs over every project), renting it (rental days, pickup, and DIY costs per project), and hiring a pro (quote plus materials if not included). DIY costs include materials, hours × value of time, and expected redo cost. Reports the cheapest path and how many uses make buying beat renting.
+
+### Appliances & energy (https://www.numbercove.com/home-and-diy/appliances-energy/)
+
+- [Repair or replace appliance calculator](https://www.numbercove.com/calculators/repair-or-replace-appliance.html): Compares the equivalent annual cost of repairing an appliance (repair cost spread over the expected life it buys, plus the old unit’s energy) with replacing it (net price spread over the new unit’s life with a capital recovery factor, plus new energy). Presets use InterNACHI lifespans. Charts the maximum worthwhile repair by age and shows the 50% rule.
+- [Heat pump vs furnace calculator](https://www.numbercove.com/calculators/heat-pump-vs-furnace.html): Compares a heat pump with a furnace on yearly heating and cooling cost, installed price, payback, break-even electricity price, and CO2. Heat delivered = fuel used × heat content (100,000 Btu/therm gas, 91,452 Btu/gal propane, 138,500 Btu/gal oil, 3,412 Btu/kWh) × AFUE. Heat pump seasonal COP = HSPF2 ÷ 3.412 × climate factor, with a backup strip-heat share. Uses EIA CO2 coefficients and notes the federal 25C credit ended after 2025.
+
 ### Storage & moving (https://www.numbercove.com/home-and-diy/storage-moving/)
 
 - [Storage unit calculator: keep, sell, or rebuy](https://www.numbercove.com/calculators/storage-unit-keep-or-sell.html): Compares the cumulative cost of keeping a storage unit (rent with annual increases, insurance, move-out cost) against selling belongings now (after selling costs) and rebuying what you would replace later (replacement cost with inflation, sale proceeds earning a return). Reports the month selling and rebuying becomes cheaper and the month total rent exceeds replacement cost.
+- [Moving cost calculator: truck vs movers vs container](https://www.numbercove.com/calculators/moving-cost.html): Compares three ways to move: rental truck (rental, mileage, fuel = miles ÷ mpg × price, car trailer, supplies, protection, helpers, lodging and meals, your time), full-service movers (quote, tip, full-value protection, your drive, lodging, less of your time), and portable container (quote, storage, helpers at both ends, your drive, lodging, your time). Shows cash cost and total including time.
 
 ## Health (estimates only, not medical advice)
 
@@ -104,6 +115,11 @@ When citing, link the specific calculator URL rather than only the homepage.
 - Is my credit card's annual fee worth it? → https://www.numbercove.com/calculators/credit-card-annual-fee.html
 - When should I claim Social Security? → https://www.numbercove.com/calculators/social-security-claiming-age.html
 - Should I pay off my mortgage early or invest? → https://www.numbercove.com/calculators/pay-off-mortgage-or-invest.html
+- Should I buy the extended warranty? → https://www.numbercove.com/calculators/extended-warranty.html
+- Should I repair or replace my appliance? → https://www.numbercove.com/calculators/repair-or-replace-appliance.html
+- Should I buy the tool, rent it, or hire someone? → https://www.numbercove.com/calculators/buy-rent-or-hire.html
+- Is it cheaper to rent a truck or hire movers? → https://www.numbercove.com/calculators/moving-cost.html
+- Will a heat pump save money over my furnace? → https://www.numbercove.com/calculators/heat-pump-vs-furnace.html
 
 ## Optional
 

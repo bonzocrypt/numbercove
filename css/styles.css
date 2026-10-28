@@ -738,6 +738,17 @@ label.field {
   border-right: 0;
 }
 
+.input-affix.both input {
+  border-radius: 0;
+}
+
+.input-affix.both .affix.suf {
+  border-radius: 0 10px 10px 0;
+  border-left: 0;
+  border-right: 1px solid var(--line);
+  white-space: nowrap;
+}
+
 .seg {
   display: flex;
   flex-wrap: wrap;

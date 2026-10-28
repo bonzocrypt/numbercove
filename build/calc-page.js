@@ -40,7 +40,8 @@ function fieldHtml(f, x) {
       '<button type="button" class="btn btn-ghost nc-list-add" data-list-add>+ ' + esc(f.addLabel || "Add row") + "</button></div>";
   }
   var input = '<input name="' + f.name + '" inputmode="decimal" value="' + esc(f.value == null ? "" : f.value) + '"' + (f.placeholder ? ' placeholder="' + esc(f.placeholder) + '"' : "") + ">";
-  if (f.prefix) input = '<span class="input-affix prefix"><span class="affix">' + esc(f.prefix) + "</span>" + input + "</span>";
+  if (f.prefix && f.suffix) input = '<span class="input-affix prefix both"><span class="affix">' + esc(f.prefix) + "</span>" + input + '<span class="affix suf">' + esc(f.suffix) + "</span></span>";
+  else if (f.prefix) input = '<span class="input-affix prefix"><span class="affix">' + esc(f.prefix) + "</span>" + input + "</span>";
   else if (f.suffix) input = '<span class="input-affix">' + input + '<span class="affix">' + esc(f.suffix) + "</span></span>";
   var slider = f.slider ? '<input type="range" class="scenario-range" data-range-for="' + f.name + '" min="' + f.slider.min + '" max="' + f.slider.max + '" step="' + (f.slider.step || "any") + '" value="' + esc(f.value) + '" aria-label="' + esc(f.label) + ' slider">' : "";
   return "<label" + wrapAttrs + "><span>" + esc(f.label) + opt + "</span>" + hint + input + slider + '<span class="field-error"></span></label>';

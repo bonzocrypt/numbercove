@@ -1087,5 +1087,198 @@
     "status": "live",
     "added": "2026-10-27",
     "updated": "2026-10-27"
+  },
+  {
+    "id": "extended-warranty",
+    "name": "Extended warranty calculator: buy the plan or self-insure",
+    "title": "Extended warranty: worth it?",
+    "question": "Should I buy the extended warranty?",
+    "url": "https://www.numbercove.com/calculators/extended-warranty.html",
+    "subcategory": "spending-cards",
+    "status": "live",
+    "summary": "Compare a protection plan with the expected cost of repairs and find the repair odds where it breaks even.",
+    "description": "Compare an extended warranty or protection plan with self-insuring: expected repair costs, deductibles, exclusions, and free credit card coverage, plus the break-even chance of a repair.",
+    "keywords": [
+      "extended warranty",
+      "is an extended warranty worth it",
+      "protection plan",
+      "service contract",
+      "self-insure",
+      "appliance warranty"
+    ],
+    "search": "extended warranty protection plan service contract worth it self insure repair deductible best buy electronics appliance",
+    "icon": "<path d=\"M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z\"/><path d=\"M9 12l2 2 4-4\"/>",
+    "related": [
+      "credit-card-fee",
+      "repair-or-replace",
+      "buy-rent-hire"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Compares the expected cost of buying an extended warranty (plan price plus expected deductibles and excluded repairs) with self-insuring (chance of a repair × repair cost, capped at the product price), accounting for credit card warranty extensions. Reports the break-even repair probability, price-to-expected-payout ratio, and worst cases.",
+    "askedAs": [
+      "is the extended warranty worth it",
+      "should I buy a protection plan",
+      "extended warranty vs self insure",
+      "is Best Buy protection worth it"
+    ],
+    "method": "Extended warranty: self-insure expected cost = p × k × R (R = repair cost capped at product price). With plan = plan price + p × k × [c × x × R + (1 − c) × ((1 − x) × deductible + x × R)], where x = chance a failure is excluded and c = share of the term already covered by a credit card extension. Break-even p = plan price ÷ [k × (1 − c) × (1 − x) × (R − deductible)].",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "repair-or-replace",
+    "name": "Repair or replace appliance calculator",
+    "title": "Repair or replace?",
+    "question": "Should I repair or replace my appliance?",
+    "url": "https://www.numbercove.com/calculators/repair-or-replace-appliance.html",
+    "subcategory": "appliances-energy",
+    "status": "live",
+    "summary": "Compare the yearly cost of fixing versus replacing, with energy savings, and see the most a repair is worth.",
+    "description": "Decide whether to repair or replace a refrigerator, washer, dryer, dishwasher, range, water heater, furnace, AC, or heat pump using lifespan, repair odds, energy use, and an interest rate.",
+    "keywords": [
+      "repair or replace",
+      "appliance repair worth it",
+      "50% rule",
+      "refrigerator repair or replace",
+      "water heater replace",
+      "furnace repair or replace"
+    ],
+    "search": "repair or replace appliance fix refrigerator fridge washer dryer dishwasher oven range water heater furnace ac air conditioner heat pump 50 percent rule lifespan",
+    "icon": "<path d=\"M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5z\"/>",
+    "related": [
+      "heat-pump-vs-furnace",
+      "extended-warranty",
+      "buy-rent-hire"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Compares the equivalent annual cost of repairing an appliance (repair cost spread over the expected life it buys, plus the old unit’s energy) with replacing it (net price spread over the new unit’s life with a capital recovery factor, plus new energy). Presets use InterNACHI lifespans. Charts the maximum worthwhile repair by age and shows the 50% rule.",
+    "askedAs": [
+      "should I repair or replace my refrigerator",
+      "is it worth fixing my washer",
+      "repair or replace water heater",
+      "50 percent rule appliance repair"
+    ],
+    "method": "Repair or replace: replace per year = (price + install − rebates − scrap) × CRF(r, new life) + new kWh × price. Expected life after repair L = p × years left + (1 − p) × 0.5. Repair per year = repair × CRF(r, L) + old kWh × price + upkeep. Maximum worthwhile repair = (replace per year − old energy − upkeep) ÷ CRF(r, L). CRF(r, n) = r ÷ (1 − (1 + r)^−n).",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "buy-rent-hire",
+    "name": "Buy, rent, or hire calculator",
+    "title": "Buy, rent, or hire a pro?",
+    "question": "Should I buy the tool, rent it, or hire someone?",
+    "url": "https://www.numbercove.com/calculators/buy-rent-or-hire.html",
+    "subcategory": "tools-pros",
+    "status": "live",
+    "summary": "Compare buying a tool, renting it, or hiring a pro, counting your time, redo risk, resale, and future projects.",
+    "description": "Compare the total cost of buying a tool, renting it, or hiring a professional, including materials, your time, the chance of redoing work, resale value, and future projects, and see how many uses make buying worth it.",
+    "keywords": [
+      "buy or rent tool",
+      "diy vs hire",
+      "hire a contractor or diy",
+      "tool rental vs buy",
+      "is diy worth it"
+    ],
+    "search": "buy rent hire tool rental diy contractor pro handyman floor sander tile saw pressure washer worth it",
+    "icon": "<path d=\"M3 21l7-7\"/><path d=\"M14 4l6 6-3 3-6-6z\"/><path d=\"M10 14l-2-2 4-4 2 2\"/>",
+    "related": [
+      "repair-or-replace",
+      "extended-warranty",
+      "moving-cost"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Compares buying a tool (price minus resale plus DIY costs over every project), renting it (rental days, pickup, and DIY costs per project), and hiring a pro (quote plus materials if not included). DIY costs include materials, hours × value of time, and expected redo cost. Reports the cheapest path and how many uses make buying beat renting.",
+    "askedAs": [
+      "should I rent or buy a tool",
+      "is it cheaper to diy or hire",
+      "buy vs rent floor sander",
+      "when is it worth hiring a pro"
+    ],
+    "method": "Buy, rent, or hire over n projects: DIY = materials + hours × time value + redo chance × (redo cost + redo hours × time value). Buy = tool price − resale + n × (DIY + consumables) + (n − 1) × upkeep. Rent = n × (day rate × days + consumables + pickup + DIY). Hire = n × (quote + materials if not included). Buy beats rent after ⌈(net tool cost − upkeep) ÷ (rental per project − consumables − upkeep)⌉ uses.",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "moving-cost",
+    "name": "Moving cost calculator: truck vs movers vs container",
+    "title": "Truck, movers, or container?",
+    "question": "Is it cheaper to rent a truck or hire movers?",
+    "url": "https://www.numbercove.com/calculators/moving-cost.html",
+    "subcategory": "storage-moving",
+    "status": "live",
+    "summary": "Compare a rental truck, full-service movers, and a portable container with fuel, helpers, lodging, and your time.",
+    "description": "Compare the full cost of moving with a rental truck, full-service movers, or a portable moving container, including fuel, car trailer, helpers, tips, protection, lodging, storage, and the value of your time.",
+    "keywords": [
+      "moving cost calculator",
+      "rent a truck or hire movers",
+      "moving container cost",
+      "cost to move",
+      "long distance moving cost"
+    ],
+    "search": "moving cost truck rental movers moving company container pod pods long distance move relocation u-haul budget fuel helpers",
+    "icon": "<path d=\"M1 6h13v10H1z\"/><path d=\"M14 9h4l3 3v4h-7\"/><circle cx=\"5.5\" cy=\"17.5\" r=\"1.8\"/><circle cx=\"17.5\" cy=\"17.5\" r=\"1.8\"/>",
+    "related": [
+      "storage-unit",
+      "buy-rent-hire",
+      "return-to-office"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Compares three ways to move: rental truck (rental, mileage, fuel = miles ÷ mpg × price, car trailer, supplies, protection, helpers, lodging and meals, your time), full-service movers (quote, tip, full-value protection, your drive, lodging, less of your time), and portable container (quote, storage, helpers at both ends, your drive, lodging, your time). Shows cash cost and total including time.",
+    "askedAs": [
+      "is it cheaper to rent a truck or hire movers",
+      "how much does it cost to move 1000 miles",
+      "pods vs u-haul vs movers",
+      "moving truck fuel cost"
+    ],
+    "method": "Moving: driving days = ceil(miles ÷ miles per day); lodging = (days − 1) × nightly rate; meals per travel day. Truck = rental + per-mile + miles ÷ mpg × fuel + car trailer + supplies + protection + helpers × rate × hours + lodging/meals + (days + 2) × 8 × hourly value. Movers = quote × (1 + tip) + protection + boxes + miles × car cost + lodging/meals + (days + 1) × 8 × hourly × 0.6. Container = quote + storage + supplies + 2 × helper cost + car + lodging/meals + (days + 2) × 8 × hourly × 0.8.",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "heat-pump-vs-furnace",
+    "name": "Heat pump vs furnace calculator",
+    "title": "Heat pump vs furnace",
+    "question": "Will a heat pump save money over my furnace?",
+    "url": "https://www.numbercove.com/calculators/heat-pump-vs-furnace.html",
+    "subcategory": "appliances-energy",
+    "status": "live",
+    "summary": "Compare running cost, payback, and CO2 for a heat pump versus a gas, propane, oil, or electric furnace.",
+    "description": "Compare a heat pump with a natural gas, propane, heating oil, or electric furnace: yearly heating and cooling cost, installed price, payback, the break-even electricity price, and CO2, adjusted for climate.",
+    "keywords": [
+      "heat pump vs furnace",
+      "heat pump vs gas furnace cost",
+      "heat pump savings calculator",
+      "is a heat pump worth it",
+      "heat pump payback",
+      "heat pump vs propane"
+    ],
+    "search": "heat pump furnace gas propane oil electric heating cost savings payback hspf2 seer2 cop cold climate co2 hvac replace",
+    "icon": "<path d=\"M12 3v18M3 12h18\"/><path d=\"M7 7l10 10M17 7L7 17\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>",
+    "related": [
+      "repair-or-replace",
+      "ev-vs-gas",
+      "solar-payback"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Compares a heat pump with a furnace on yearly heating and cooling cost, installed price, payback, break-even electricity price, and CO2. Heat delivered = fuel used × heat content (100,000 Btu/therm gas, 91,452 Btu/gal propane, 138,500 Btu/gal oil, 3,412 Btu/kWh) × AFUE. Heat pump seasonal COP = HSPF2 ÷ 3.412 × climate factor, with a backup strip-heat share. Uses EIA CO2 coefficients and notes the federal 25C credit ended after 2025.",
+    "askedAs": [
+      "is a heat pump cheaper than a gas furnace",
+      "heat pump vs propane furnace cost",
+      "will a heat pump save me money",
+      "heat pump payback period"
+    ],
+    "method": "Heat pump vs furnace: delivered heat = fuel × Btu/unit × AFUE. Furnace path fuel = delivered ÷ (Btu/unit × new AFUE) (or current AFUE if keeping). Heat pump kWh = delivered × (1 − backup) ÷ (COP × 3,412) + delivered × backup ÷ 3,412, COP = HSPF2 ÷ 3.412 × climate factor (warm 1.15, moderate 1.0, cold 0.85, very cold 0.72). Cooling kWh scales by SEER2 ratio. Break-even electricity price = furnace fuel cost ÷ (heat pump kWh − furnace-path kWh). CO2: 11.7 lb/therm, 12.68 lb/gal propane, 22.45 lb/gal oil, 0.81 lb/kWh grid.",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
   }
 ]
