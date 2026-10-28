@@ -179,7 +179,7 @@
           <p>The one-standard-deviation approximation is <strong>stock price × implied volatility × √(calendar days ÷ 365)</strong>. Implied volatility must be entered as an annualized decimal in the formula, so 35% becomes 0.35. The calculator reports the result in dollars and as a percentage of the current stock price.</p>
           <p>Under a simplified normal interpretation, a one-standard-deviation range contains roughly 68% of outcomes and a two-standard-deviation range roughly 95%. Actual stock returns are not normally distributed: gaps, volatility changes, skew, earnings announcements, takeovers, and market stress can produce outcomes well outside those ranges. The range is an options-pricing translation, not a confidence guarantee.</p>
           <p><strong>Example:</strong> A $100 stock with 35% annualized IV and 30 calendar days has an estimated one-standard-deviation move of about $10.04, producing a straight-line range near $89.96 to $110.04. Doubling the move gives a rough two-standard-deviation range, not a maximum possible move.</p>
-          <p>Reference: Fidelity’s options education material presents the equivalent square-root-of-time expected-move formula using trading days when the input period is measured in trading days. This calculator consistently uses calendar days and 365.</p>
+          <p>Note: some references apply the same square-root-of-time formula with trading days, using √(trading days ÷ 252). This calculator consistently uses calendar days and 365.</p>
         </details>
       </section>
       <section class="how">
@@ -187,7 +187,7 @@
           <summary>How the straddle method differs</summary>
           <p>An at-the-money straddle is the price of a call plus the price of a put at the same strike and expiration. The full straddle cost gives the approximate up-or-down distance required for a long straddle to break even at expiration, before fees and assuming the strike is near spot. Traders sometimes multiply that cost by a factor such as 0.85 to create a separate expected-move shortcut.</p>
           <p>The calculator deliberately shows both numbers. The factor-based estimate is not identical to the IV one-standard-deviation range, and the full straddle cost is not a probability statement. Option prices contain supply and demand, volatility skew, event risk, rates, dividends, bid/ask spreads, and a volatility risk premium. Use mid-prices from a synchronized quote and verify that both options share the same expiration and strike.</p>
-          <p>Fidelity notes that call and put prices in a straddle reflect the options market’s consensus about movement before expiration. Cboe likewise describes comparing short-dated option prices around earnings, while warning that the options indicate magnitude rather than direction.</p>
+          <p>Call and put prices in a straddle reflect the options market’s consensus about how far the stock may move before expiration. Cboe describes comparing short-dated option prices around earnings, while warning that the options indicate magnitude rather than direction.</p>
         </details>
       </section>
       <section class="how">
