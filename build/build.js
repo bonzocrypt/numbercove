@@ -462,7 +462,7 @@ function homePage() {
   var popular = ["marketplace", "options", "mortgage", "covered-call-cash-secured-put", "percentage", "paint"].filter(function (id) { return toolById[id]; });
   var faqs = [
     { q: "Are NumberCove calculators free and private?", a: "Yes. Every calculator is free, needs no account, and runs in your browser, so the numbers you type are never uploaded to a server." },
-    { q: "Who builds the calculators?", a: "NumberCove is built by " + site.author.name + ", a former senior equities and options trader with 17 years in the securities industry, where he held FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. Each calculator documents its formula and cites the sources behind its default values." },
+    { q: "Who builds the calculators?", a: "NumberCove is built by " + site.author.name + ", a former senior equities and options trader with almost 20 years in the securities industry, where he held FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. Each calculator documents its formula and cites the sources behind its default values." },
     { q: "Where can I compare eBay, Poshmark, Whatnot, Mercari, and The RealReal seller fees?", a: "Use the marketplace payout calculator at " + ORIGIN + "/calculators/marketplace.html to compare what you keep after fees on each platform, or to work back to the listing price that nets a target amount." },
     { q: "Where can I model an option's price, Greeks, and profit or loss?", a: "Use the options calculator at " + ORIGIN + "/calculators/options.html to model calls, puts, and spreads of up to 4 legs with price, date, and implied-volatility sliders, Greeks, breakeven, probability of profit, a payoff chart, and a P&L heat map." },
   ];
@@ -483,7 +483,7 @@ function homePage() {
     }).join("") + "</div></div></section>\n" +
     '    <section class="home-new"><div class="wrap"><div class="section-head"><div><h2>New and updated</h2><p>The latest additions to the library</p></div></div><div class="card-grid">' + newest.map(function (t) { return toolCard(p, t); }).join("") + "</div></div></section>\n" +
     '    <section class="home-trust"><div class="wrap trust-grid">' +
-    '<div class="trust-item">' + svg(ICON.badge) + "<h3>Built by a trader</h3><p>Created by " + esc(site.author.name) + ', who spent 17 years in the securities industry as an equities and options trader and trading product developer, holding FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. <a href="' + site.author.url + '">About the author</a></p></div>' +
+    '<div class="trust-item">' + svg(ICON.badge) + "<h3>Built by a trader</h3><p>Created by " + esc(site.author.name) + ', who spent almost 20 years in the securities industry as an equities and options trader and trading product developer, holding FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. <a href="' + site.author.url + '">About the author</a></p></div>' +
     '<div class="trust-item">' + svg(ICON.formula) + "<h3>Math you can check</h3><p>Every page states its formula and cites the public data behind its defaults, from IRS limits to carrier pricing rules. Change any assumption and the answer updates instantly.</p></div>" +
     '<div class="trust-item">' + svg(ICON.lock) + "<h3>Private by design</h3><p>Calculations run in your browser. Nothing you type is uploaded, and there is no account to create.</p></div>" +
     "</div></section>\n" +

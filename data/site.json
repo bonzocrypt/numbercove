@@ -8,9 +8,9 @@
     "url": "authors/dan-belliveau.html",
     "role": "Founder and lead developer",
     "short": "Former senior equities and options trader turned product builder",
-    "bio": "Dan Belliveau spent 17 years in the securities industry, holding FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. He moved from trading and service specialist to equities and options trader, then active-trader product development, and finally senior trader on an active trader services desk, where he approved large equity and options orders, led a large team of active trader support representatives, and wrote specifications for trading platforms. He is also a licensed Florida real estate sales associate. He now builds software and financial tools.",
+    "bio": "Dan Belliveau spent almost 20 years in the securities industry working in equities and options trading, active-trader product development, and trading-platform design. He formerly held Series 3, 4, 7, 9, 10, 55, and 63 registrations. As a senior trader, he reviewed large equity and options orders, led a large team of active trader support representatives, and helped define requirements for active trading platforms. He is also a licensed Florida real estate sales associate and now builds software and financial tools.",
     "credentials": [
-      "17 years in the securities industry",
+      "Almost 20 years in the securities industry",
       "Senior Trader, Active Trader Services",
       "Active Trader product development",
       "Previously held FINRA Series 3, 4, 7, 9, 10, 55, and 63",
@@ -45,7 +45,7 @@
       "intro": "Investing and options, loans and mortgages, real estate, retirement and paycheck decisions, everyday spending, and car costs. Each tool shows its formula and lets you change every assumption.",
       "faqs": [
         { "q": "Are these calculators financial advice?", "a": "No. They are planning and educational tools that show the math behind a decision. Your plan documents, lender, broker, and tax professional have the final word." },
-        { "q": "Who builds the finance calculators?", "a": "The finance tools are built by Dan Belliveau, a former senior equities and options trader with 17 years in the securities industry, where he held FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. Methods and sources are listed on each page." }
+        { "q": "Who builds the finance calculators?", "a": "The finance tools are built by Dan Belliveau, a former senior equities and options trader with almost 20 years in the securities industry, where he held FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. Methods and sources are listed on each page." }
       ],
       "subcategories": [
         { "id": "investing-options", "name": "Investing & options", "short": "Options, income strategies, growth", "intro": "Price options and spreads, measure covered call and cash-secured put income, translate implied volatility into an expected move, track a wheel campaign, and project compound growth." },
