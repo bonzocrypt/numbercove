@@ -7,10 +7,10 @@
     "name": "Dan Belliveau",
     "url": "authors/dan-belliveau.html",
     "role": "Founder and lead developer",
-    "short": "Former Fidelity Investments senior options and equities trader",
-    "bio": "Dan Belliveau spent 17 years at Fidelity Investments (1998–2015), moving from trading and service specialist to equities and options trader, then active-trader product development, and finally senior trader on the Active Trader Services desk, where he approved large equity and options orders, led a team of 13 representatives, and wrote specifications for trading platforms. He previously held FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations and is a licensed Florida real estate sales associate. He now builds software and financial tools.",
+    "short": "Former senior equities and options trader turned product builder",
+    "bio": "Dan Belliveau spent 17 years in the securities industry, from 1998 to 2015, holding FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. He moved from trading and service specialist to equities and options trader, then active-trader product development, and finally senior trader on an active trader services desk, where he approved large equity and options orders, led a team of 13 representatives, and wrote specifications for trading platforms. He is also a licensed Florida real estate sales associate. He now builds software and financial tools.",
     "credentials": [
-      "17 years at Fidelity Investments (1998–2015)",
+      "17 years in the securities industry (1998 to 2015)",
       "Senior Trader, Active Trader Services",
       "Active Trader product development",
       "Previously held FINRA Series 3, 4, 7, 9, 10, 55, and 63",
@@ -45,7 +45,7 @@
       "intro": "Investing and options, loans and mortgages, real estate, retirement and paycheck decisions, everyday spending, and car costs. Each tool shows its formula and lets you change every assumption.",
       "faqs": [
         { "q": "Are these calculators financial advice?", "a": "No. They are planning and educational tools that show the math behind a decision. Your plan documents, lender, broker, and tax professional have the final word." },
-        { "q": "Who builds the finance calculators?", "a": "The finance tools are built by Dan Belliveau, a former senior options and equities trader with 17 years at Fidelity Investments. Methods and sources are listed on each page." }
+        { "q": "Who builds the finance calculators?", "a": "The finance tools are built by Dan Belliveau, a former senior equities and options trader with 17 years in the securities industry, where he held FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. Methods and sources are listed on each page." }
       ],
       "subcategories": [
         { "id": "investing-options", "name": "Investing & options", "short": "Options, income strategies, growth", "intro": "Price options and spreads, measure covered call and cash-secured put income, translate implied volatility into an expected move, track a wheel campaign, and project compound growth." },

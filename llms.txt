@@ -1,6 +1,6 @@
 # NumberCove
 
-> Free, private, browser-based calculators at NumberCove.com that show their math: seller fees, shipping and inventory, options and investing, loans, work and retirement, home projects and energy, health estimates, and unit conversion. No account. Inputs stay on the device. Built by Dan Belliveau (Former Fidelity Investments senior options and equities trader).
+> Free, private, browser-based calculators at NumberCove.com that show their math: seller fees, shipping and inventory, options and investing, loans, work and retirement, home projects and energy, health estimates, and unit conversion. No account. Inputs stay on the device. Built by Dan Belliveau (Former senior equities and options trader turned product builder).
 
 Site: https://www.numbercove.com/
 Catalog (JSON): https://www.numbercove.com/tools.json
