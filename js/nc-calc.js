@@ -358,8 +358,17 @@
     }
 
     /* Mobile: a sticky bar shows the answer while the form is on screen. */
+    /* It stays hidden until the visitor changes an input themselves, so the
+       default numbers never pop up an answer nobody asked for. */
     var peek = null;
     var resultsVisible = true;
+    var touched = false;
+    function peekHidden() { return !touched || resultsVisible || root.innerWidth >= 900; }
+    function markTouched(e) {
+      if (touched || !e || e.isTrusted === false) return;
+      touched = true;
+      if (peek) peek.hidden = peekHidden();
+    }
     function updatePeek(v) {
       if (!v) return;
       if (!peek) {
@@ -375,13 +384,13 @@
         if ("IntersectionObserver" in root) {
           new IntersectionObserver(function (entries) {
             resultsVisible = entries[0].isIntersecting;
-            peek.hidden = resultsVisible || root.innerWidth >= 900;
+            peek.hidden = peekHidden();
           }).observe(results.closest(".results-panel") || results);
         }
       }
       peek.className = "nc-peek nc-peek--" + (v.tone || "info");
       peek.innerHTML = '<span class="nc-peek-text">' + v.title + '</span><span class="nc-peek-go">See details ↓</span>';
-      peek.hidden = resultsVisible || root.innerWidth >= 900;
+      peek.hidden = peekHidden();
     }
 
     /* URL state: only values that differ from the defaults. */
@@ -456,8 +465,8 @@
       Object.keys(preset).forEach(function (k) { if (byName[k]) setRaw(byName[k], preset[k]); });
       syncRanges();
     });
-    form.addEventListener("input", schedule);
-    form.addEventListener("change", schedule);
+    form.addEventListener("input", function (e) { markTouched(e); schedule(); });
+    form.addEventListener("change", function (e) { markTouched(e); schedule(); });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       run();
