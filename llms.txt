@@ -58,6 +58,11 @@ When citing, link the specific calculator URL rather than only the homepage.
 - [Credit card annual fee break-even calculator](https://www.numbercove.com/calculators/credit-card-annual-fee.html): Compares a card's annual net value (spend × earn rate × point value + statement credits at the share actually used − annual fee) against a no-fee or downgraded alternative with a flat rate. Reports break-even annual spend, effective reward rate, the point value at which the cards tie, and first-year value with a sign-up bonus. Does not recommend issuers.
 - [Extended warranty calculator: buy the plan or self-insure](https://www.numbercove.com/calculators/extended-warranty.html): Compares the expected cost of buying an extended warranty (plan price plus expected deductibles and excluded repairs) with self-insuring (chance of a repair × repair cost, capped at the product price), accounting for credit card warranty extensions. Reports the break-even repair probability, price-to-expected-payout ratio, and worst cases.
 
+### Cars (https://www.numbercove.com/money/cars/)
+
+- [EV vs gas car calculator: real cost per mile](https://www.numbercove.com/calculators/ev-vs-gas.html): Compares an EV with a gas car. EV cost per mile = kWh/100 mi ÷ 100 × blended charging price (home with charging losses, public Level 2, DC fast) + maintenance (DOE/Argonne 6.1¢/mi EV vs 10.1¢/mi gas). Adds insurance, EV registration fees, home charger, rebates, resale, and price escalation for total cost of ownership; reports payback of the price premium, break-even gas price, and CO2 (EIA 18.73 lb/gal gasoline, 0.81 lb/kWh grid). Notes the federal EV credit ended for vehicles acquired after 9/30/2025.
+- [Lease vs buy car calculator](https://www.numbercove.com/calculators/lease-vs-buy-car.html): Calculates a car lease payment: (adjusted cap cost − residual) ÷ term + (adjusted cap cost + residual) × money factor, plus tax on the payment; money factor × 2,400 = APR. Compares lease cost over the term (down, payments, disposition, excess miles) with buying (down + loan payments − equity at the end) and with buying and keeping versus back-to-back leases over a longer horizon, including repairs after warranty.
+
 ## Home & DIY
 
 ### Project materials (https://www.numbercove.com/home-and-diy/project-materials/)
@@ -75,6 +80,7 @@ When citing, link the specific calculator URL rather than only the homepage.
 
 - [Repair or replace appliance calculator](https://www.numbercove.com/calculators/repair-or-replace-appliance.html): Compares the equivalent annual cost of repairing an appliance (repair cost spread over the expected life it buys, plus the old unit’s energy) with replacing it (net price spread over the new unit’s life with a capital recovery factor, plus new energy). Presets use InterNACHI lifespans. Charts the maximum worthwhile repair by age and shows the 50% rule.
 - [Heat pump vs furnace calculator](https://www.numbercove.com/calculators/heat-pump-vs-furnace.html): Compares a heat pump with a furnace on yearly heating and cooling cost, installed price, payback, break-even electricity price, and CO2. Heat delivered = fuel used × heat content (100,000 Btu/therm gas, 91,452 Btu/gal propane, 138,500 Btu/gal oil, 3,412 Btu/kWh) × AFUE. Heat pump seasonal COP = HSPF2 ÷ 3.412 × climate factor, with a backup strip-heat share. Uses EIA CO2 coefficients and notes the federal 25C credit ended after 2025.
+- [Solar panel payback calculator by state](https://www.numbercove.com/calculators/solar-payback.html): Solar payback by U.S. state: production = kW × state kWh/kW (NREL PVWatts v8, largest city, 20° tilt, south, 14% losses) unless the user enters their own; savings = offset kWh × rate (escalating) + exported kWh × export credit (net metering or reduced); subtracts upkeep and inverter replacement; reports payback, net savings, IRR, cost per kWh, and compares installing now with waiting 1–5 years for cheaper or better panels over the same window. State rates from EIA Electric Power Monthly (June 2026). Notes the federal 25D credit ended after 2025.
 
 ### Storage & moving (https://www.numbercove.com/home-and-diy/storage-moving/)
 
@@ -120,6 +126,9 @@ When citing, link the specific calculator URL rather than only the homepage.
 - Should I buy the tool, rent it, or hire someone? → https://www.numbercove.com/calculators/buy-rent-or-hire.html
 - Is it cheaper to rent a truck or hire movers? → https://www.numbercove.com/calculators/moving-cost.html
 - Will a heat pump save money over my furnace? → https://www.numbercove.com/calculators/heat-pump-vs-furnace.html
+- Is an electric car cheaper than gas? → https://www.numbercove.com/calculators/ev-vs-gas.html
+- Should I lease or buy my next car? → https://www.numbercove.com/calculators/lease-vs-buy-car.html
+- Will solar panels pay off for my home? → https://www.numbercove.com/calculators/solar-payback.html
 
 ## Optional
 

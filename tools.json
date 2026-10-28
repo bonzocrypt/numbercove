@@ -63,6 +63,11 @@
           "id": "spending-cards",
           "name": "Spending & cards",
           "url": "https://www.numbercove.com/money/spending-cards/"
+        },
+        {
+          "id": "cars",
+          "name": "Cars",
+          "url": "https://www.numbercove.com/money/cars/"
         }
       ]
     },
@@ -783,6 +788,60 @@
         "heat pump vs propane"
       ],
       "description": "Compare a heat pump with a natural gas, propane, heating oil, or electric furnace: yearly heating and cooling cost, installed price, payback, the break-even electricity price, and CO2, adjusted for climate.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "ev-vs-gas",
+      "name": "EV vs gas car calculator: real cost per mile",
+      "url": "https://www.numbercove.com/calculators/ev-vs-gas.html",
+      "category": "money",
+      "subcategory": "cars",
+      "question": "Is an electric car cheaper than gas?",
+      "keywords": [
+        "ev vs gas",
+        "electric car cost per mile",
+        "ev charging cost",
+        "is an ev worth it",
+        "ev total cost of ownership",
+        "ev break even"
+      ],
+      "description": "Compare an electric vehicle with a gas car: cost per mile by charging location, maintenance, insurance, EV fees, resale, payback of the price premium, break-even gas price, and CO2.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "lease-vs-buy",
+      "name": "Lease vs buy car calculator",
+      "url": "https://www.numbercove.com/calculators/lease-vs-buy-car.html",
+      "category": "money",
+      "subcategory": "cars",
+      "question": "Should I lease or buy my next car?",
+      "keywords": [
+        "lease vs buy",
+        "car lease calculator",
+        "money factor to apr",
+        "lease payment calculator",
+        "should I lease or buy a car",
+        "residual value"
+      ],
+      "description": "Calculate a car lease payment from MSRP, negotiated price, residual, and money factor, compare it with financing, and see the net cost over the lease term and over the years you would keep the car.",
+      "updated": "2026-10-27"
+    },
+    {
+      "id": "solar-payback",
+      "name": "Solar panel payback calculator by state",
+      "url": "https://www.numbercove.com/calculators/solar-payback.html",
+      "category": "home-and-diy",
+      "subcategory": "appliances-energy",
+      "question": "Will solar panels pay off for my home?",
+      "keywords": [
+        "solar payback",
+        "solar panel calculator",
+        "is solar worth it",
+        "solar roi",
+        "solar savings by state",
+        "net metering"
+      ],
+      "description": "Estimate solar panel payback, 25-year savings, IRR, and cost per kWh using state-average electricity rates and production, your quote, net metering or export credits, and whether waiting for cheaper or better panels pays.",
       "updated": "2026-10-27"
     }
   ]

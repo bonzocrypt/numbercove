@@ -1280,5 +1280,122 @@
     "method": "Heat pump vs furnace: delivered heat = fuel × Btu/unit × AFUE. Furnace path fuel = delivered ÷ (Btu/unit × new AFUE) (or current AFUE if keeping). Heat pump kWh = delivered × (1 − backup) ÷ (COP × 3,412) + delivered × backup ÷ 3,412, COP = HSPF2 ÷ 3.412 × climate factor (warm 1.15, moderate 1.0, cold 0.85, very cold 0.72). Cooling kWh scales by SEER2 ratio. Break-even electricity price = furnace fuel cost ÷ (heat pump kWh − furnace-path kWh). CO2: 11.7 lb/therm, 12.68 lb/gal propane, 22.45 lb/gal oil, 0.81 lb/kWh grid.",
     "added": "2026-10-27",
     "updated": "2026-10-27"
+  },
+  {
+    "id": "ev-vs-gas",
+    "name": "EV vs gas car calculator: real cost per mile",
+    "title": "EV vs gas: real cost",
+    "question": "Is an electric car cheaper than gas?",
+    "url": "https://www.numbercove.com/calculators/ev-vs-gas.html",
+    "subcategory": "cars",
+    "status": "live",
+    "summary": "Compare cost per mile by where you charge, total cost of ownership, and the gas price where an EV wins.",
+    "description": "Compare an electric vehicle with a gas car: cost per mile by charging location, maintenance, insurance, EV fees, resale, payback of the price premium, break-even gas price, and CO2.",
+    "keywords": [
+      "ev vs gas",
+      "electric car cost per mile",
+      "ev charging cost",
+      "is an ev worth it",
+      "ev total cost of ownership",
+      "ev break even"
+    ],
+    "search": "ev electric vehicle car gas gasoline cost per mile charging home public dc fast supercharger tesla total cost ownership tco break even savings co2",
+    "icon": "<path d=\"M5 17h14v-5l-2-5H7l-2 5v5z\"/><path d=\"M5 12h14\"/><circle cx=\"8\" cy=\"17\" r=\"1.6\"/><circle cx=\"16\" cy=\"17\" r=\"1.6\"/>",
+    "related": [
+      "lease-vs-buy",
+      "return-to-office",
+      "heat-pump-vs-furnace"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Compares an EV with a gas car. EV cost per mile = kWh/100 mi ÷ 100 × blended charging price (home with charging losses, public Level 2, DC fast) + maintenance (DOE/Argonne 6.1¢/mi EV vs 10.1¢/mi gas). Adds insurance, EV registration fees, home charger, rebates, resale, and price escalation for total cost of ownership; reports payback of the price premium, break-even gas price, and CO2 (EIA 18.73 lb/gal gasoline, 0.81 lb/kWh grid). Notes the federal EV credit ended for vehicles acquired after 9/30/2025.",
+    "askedAs": [
+      "is an electric car cheaper than gas",
+      "how much does it cost to charge an ev per mile",
+      "ev vs gas cost calculator",
+      "what gas price makes an ev worth it"
+    ],
+    "method": "EV vs gas: blended $/kWh = home% × home rate × (1 + losses) + L2% × public rate + DC% × fast rate. EV $/mi = kWh/100mi ÷ 100 × blended + EV maintenance; gas $/mi = price ÷ mpg + gas maintenance. Yearly = $/mi × miles + insurance + fees. Total = net price + Σ yearly (energy escalated) − resale. Break-even gas = (EV $/mi + fixed-cost difference ÷ miles − gas maintenance) × mpg.",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "lease-vs-buy",
+    "name": "Lease vs buy car calculator",
+    "title": "Lease or buy a car?",
+    "question": "Should I lease or buy my next car?",
+    "url": "https://www.numbercove.com/calculators/lease-vs-buy-car.html",
+    "subcategory": "cars",
+    "status": "live",
+    "summary": "Calculate the lease payment from residual and money factor, compare it with a loan, and see the true cost.",
+    "description": "Calculate a car lease payment from MSRP, negotiated price, residual, and money factor, compare it with financing, and see the net cost over the lease term and over the years you would keep the car.",
+    "keywords": [
+      "lease vs buy",
+      "car lease calculator",
+      "money factor to apr",
+      "lease payment calculator",
+      "should I lease or buy a car",
+      "residual value"
+    ],
+    "search": "lease buy car auto vehicle lease payment money factor residual apr loan finance dealer msrp cap cost",
+    "icon": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 8h8M8 12h8M8 16h4\"/>",
+    "related": [
+      "ev-vs-gas",
+      "loan",
+      "return-to-office"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Calculates a car lease payment: (adjusted cap cost − residual) ÷ term + (adjusted cap cost + residual) × money factor, plus tax on the payment; money factor × 2,400 = APR. Compares lease cost over the term (down, payments, disposition, excess miles) with buying (down + loan payments − equity at the end) and with buying and keeping versus back-to-back leases over a longer horizon, including repairs after warranty.",
+    "askedAs": [
+      "should I lease or buy a car",
+      "how to calculate a car lease payment",
+      "convert money factor to apr",
+      "is leasing a car worth it"
+    ],
+    "method": "Lease vs buy: adjusted cap = price + acquisition fee − down; residual = MSRP × residual%; payment = (cap − residual) ÷ n + (cap + residual) × MF, × (1 + tax). Lease cost = down × (1 + tax) + n × payment + disposition + excess miles × rate. Buy cost over n = down + loan payments − (value at n − loan balance). Long horizon: value declines geometrically at the rate implied by value at n; repairs added after warranty; leasing repeats at the same monthly cost.",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
+  },
+  {
+    "id": "solar-payback",
+    "name": "Solar panel payback calculator by state",
+    "title": "Solar payback",
+    "question": "Will solar panels pay off for my home?",
+    "url": "https://www.numbercove.com/calculators/solar-payback.html",
+    "subcategory": "appliances-energy",
+    "status": "live",
+    "summary": "See solar payback, return, and 25-year savings with your state's rate and sun, and whether waiting pays.",
+    "description": "Estimate solar panel payback, 25-year savings, IRR, and cost per kWh using state-average electricity rates and production, your quote, net metering or export credits, and whether waiting for cheaper or better panels pays.",
+    "keywords": [
+      "solar payback",
+      "solar panel calculator",
+      "is solar worth it",
+      "solar roi",
+      "solar savings by state",
+      "net metering"
+    ],
+    "search": "solar panels pv payback roi savings worth it state net metering export credit kw cost per watt install wait cheaper better irr",
+    "icon": "<circle cx=\"12\" cy=\"6\" r=\"2.5\"/><path d=\"M12 1v1.5M17 6h1.5M5.5 6H7\"/><path d=\"M4 21l2-9h12l2 9z\"/><path d=\"M5 16.5h14M12 12v9\"/>",
+    "related": [
+      "heat-pump-vs-furnace",
+      "ev-vs-gas",
+      "repair-or-replace"
+    ],
+    "collections": [
+      "should-i"
+    ],
+    "llms": "Solar payback by U.S. state: production = kW × state kWh/kW (NREL PVWatts v8, largest city, 20° tilt, south, 14% losses) unless the user enters their own; savings = offset kWh × rate (escalating) + exported kWh × export credit (net metering or reduced); subtracts upkeep and inverter replacement; reports payback, net savings, IRR, cost per kWh, and compares installing now with waiting 1–5 years for cheaper or better panels over the same window. State rates from EIA Electric Power Monthly (June 2026). Notes the federal 25D credit ended after 2025.",
+    "askedAs": [
+      "how long do solar panels take to pay off",
+      "is solar worth it in my state",
+      "should I wait to buy solar panels",
+      "solar panel roi calculator"
+    ],
+    "method": "Solar: year-1 kWh = kW × state kWh/kW (or user estimate); year y kWh = year-1 × (1 − degradation)^(y−1). Savings = min(kWh, usage) × self-use share × rate × (1 + escalation)^(y−1) + remaining kWh × export credit. Net cash flows = −cost at install + savings − upkeep − inverter replacement. Payback = first crossing of cumulative cash flow; IRR by bisection; LCOE = (cost + upkeep) ÷ lifetime kWh. Waiting w years: cost × (1 − price drop)^w, output × (1 + gain)^w, valued over the same window at the discount rate.",
+    "added": "2026-10-27",
+    "updated": "2026-10-27"
   }
 ]

@@ -1,0 +1,32 @@
+module.exports = {
+  id: "solar-payback",
+  seoTitle: "Solar Panel Payback Calculator by State: Savings, ROI, and Whether to Wait | NumberCove",
+  description: "Will solar pay off for your home? Use your state's electricity rate and sun, your quote, and net metering rules to see payback, 25-year savings, return, cost per kWh, and whether waiting for cheaper panels pays.",
+  h1: "Solar panel payback calculator",
+  lede: "Pick your state for its average electricity rate and sunshine, enter your quote, and see when solar pays for itself, what it returns, and whether waiting for cheaper or better panels would come out ahead.",
+  appCategory: "FinanceApplication",
+  formTitle: "Your home and quote",
+  resultTitle: "Is solar worth it?",
+  method: [
+    { h: "Production", html: "<p>Without your own estimate, production is system size times your state's typical output per kW, from NREL PVWatts v8 for the state's largest city: a south-facing roof at a 20° tilt with 14% system losses. Output falls by the degradation rate each year.</p><p class=\"formula\">Year-1 kWh = kW × state kWh per kW</p>" },
+    { h: "Bill savings", html: "<p>Solar that offsets your own use saves your full rate. With net metering, all of it does. Below-retail export credits apply to the share sent to the grid and to anything produced beyond your yearly use.</p><p class=\"formula\">Savings = used kWh × your rate + exported kWh × export credit</p><p>Your rate rises by the escalation you set each year.</p>" },
+    { h: "Payback, return, and cost per kWh", html: "<p>Payback is when cumulative savings, less upkeep and an inverter replacement, pass the system's cost. The return (IRR) is the yearly rate that makes those cash flows worth zero today. Cost per kWh is total cost and upkeep divided by lifetime production.</p>" },
+    { h: "Should you wait for better options?", html: "<p>Installed prices tend to fall and panels improve, so waiting gets a cheaper, slightly better system. But each year you wait you give up that year's savings. We value installing now and waiting one to five years over the same window from today, discounted at the return you'd earn elsewhere. Waiting wins only when solar's return is below your alternative return plus the yearly price drop.</p>" },
+    { h: "State data", html: "<p>Average residential electricity prices by state are from the U.S. EIA's Electric Power Monthly (June 2026). Your own bill is better: divide the total by the kWh used, and enter that rate.</p>" },
+  ],
+  sources: [
+    { name: "NREL PVWatts calculator", url: "https://pvwatts.nrel.gov/" },
+    { name: "U.S. EIA: Electric Power Monthly, average residential price by state", url: "https://www.eia.gov/electricity/monthly/" },
+    { name: "Lawrence Berkeley National Laboratory: Tracking the Sun (installed prices)", url: "https://emp.lbl.gov/tracking-the-sun" },
+    { name: "IRS: Residential clean energy credit (25D)", url: "https://www.irs.gov/credits-deductions/residential-clean-energy-credit" },
+    { name: "DSIRE: State and utility incentives for renewables", url: "https://www.dsireusa.org/" },
+  ],
+  faqs: [
+    { q: "How long does it take for solar panels to pay for themselves?", a: "Often 6 to 15 years, depending mostly on your electricity rate, your sunshine, the installed price, and how your utility credits exports. High-rate states like California, Massachusetts, and Hawaii pay back fastest." },
+    { q: "Is there still a federal tax credit for solar?", a: "The federal residential clean energy credit (25D) ended for systems paid for after December 31, 2025. Leased systems and power purchase agreements may still reflect business credits in their pricing, and some states and utilities offer incentives." },
+    { q: "Should I wait for better solar panels?", a: "Usually only if solar's return in your situation is low. Panels improve slowly, and every year you wait you give up a year of savings. The calculator compares installing now with waiting up to five years using your assumptions." },
+    { q: "What is net metering?", a: "Net metering credits power you send to the grid at the retail rate, so every kWh your panels make is worth your full rate. Many utilities now credit exports at a lower rate, which makes using solar as it's produced, or adding a battery, more valuable." },
+    { q: "How much electricity will my solar panels produce?", a: "Roughly 1,100 to 1,800 kWh per kW per year across the U.S., less with shade or a poor roof angle. Use your installer's estimate or NREL's PVWatts for your address." },
+  ],
+  disclaimer: "Estimates for planning only. Rate structures, export credits, and incentives vary by utility.",
+};

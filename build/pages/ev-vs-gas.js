@@ -1,0 +1,33 @@
+module.exports = {
+  id: "ev-vs-gas",
+  seoTitle: "EV vs Gas Car Calculator: Real Cost per Mile and Total Cost of Ownership | NumberCove",
+  description: "Compare an electric car with a gas car: real cost per mile by where you charge (home, public, DC fast), maintenance, insurance, EV fees, resale, payback, break-even gas price, and CO2.",
+  h1: "EV vs gas car calculator: real cost per mile",
+  lede: "An EV's cost per mile depends mostly on where you charge. Put in your gas price, electricity rate, and charging mix, and see cost per mile, total cost over the years you'll own it, and the gas price where the EV wins.",
+  appCategory: "FinanceApplication",
+  formTitle: "Your driving and the two cars",
+  resultTitle: "Which costs less?",
+  method: [
+    { h: "Charging cost per kWh", html: "<p>Your blended charging price weights each location by its share. Home charging also pays for charging losses on your meter; public chargers bill the energy delivered.</p><p class=\"formula\">Blended $/kWh = home% × home rate × (1 + losses) + Level 2% × public rate + DC fast% × fast rate</p>" },
+    { h: "Cost per mile", html: "<p class=\"formula\">EV ¢/mile = kWh per 100 miles ÷ 100 × blended $/kWh + EV maintenance</p><p class=\"formula\">Gas ¢/mile = gas price ÷ mpg + gas car maintenance</p><p>Maintenance defaults come from DOE and Argonne National Laboratory's estimate of scheduled maintenance: 6.1¢ per mile for battery-electric vehicles and 10.1¢ for gas vehicles.</p>" },
+    { h: "Total cost of ownership", html: "<p>Each car's net purchase price (the EV includes a home charger, less rebates), plus yearly energy, maintenance, insurance, and fees, with gas and electricity prices rising at your rates, minus resale value at the end.</p>" },
+    { h: "Break-even gas price", html: "<p>The gas price where both cars cost the same to run each year, counting maintenance, insurance, and fees:</p><p class=\"formula\">Break-even gas = (EV ¢/mile + yearly fixed-cost difference ÷ miles − gas maintenance) × mpg</p>" },
+    { h: "CO2", html: "<p>Uses EIA's 18.73 lb CO2 per gallon of finished motor gasoline and 0.81 lb per kWh for the average U.S. grid, including charging losses.</p>" },
+  ],
+  sources: [
+    { name: "U.S. DOE Alternative Fuels Data Center: Vehicle Cost Calculator", url: "https://afdc.energy.gov/calc/" },
+    { name: "U.S. DOE: FOTW #1190, battery-electric vehicles have lower scheduled maintenance costs", url: "https://www.energy.gov/eere/vehicles/articles/fotw-1190-june-14-2021-battery-electric-vehicles-have-lower-scheduled" },
+    { name: "FuelEconomy.gov: Compare EV and gas vehicle efficiency", url: "https://www.fueleconomy.gov/" },
+    { name: "U.S. EIA: Gasoline and diesel fuel update", url: "https://www.eia.gov/petroleum/gasdiesel/" },
+    { name: "U.S. EIA: Carbon dioxide emissions coefficients", url: "https://www.eia.gov/environment/emissions/CO2_vol_mass.php" },
+    { name: "IRS: Clean vehicle credits", url: "https://www.irs.gov/credits-deductions/credits-for-new-clean-vehicles-purchased-in-2023-or-after" },
+  ],
+  faqs: [
+    { q: "How much does it cost to charge an EV per mile?", a: "At home, an EV using 30 kWh per 100 miles costs about 6 cents a mile at 18 cents per kWh including charging losses. At DC fast chargers around 48 cents per kWh, the same car costs about 14 cents a mile, close to a 30 mpg gas car at $4.25." },
+    { q: "Is an EV cheaper than a gas car overall?", a: "Usually to drive, not always to own. EVs save on fuel and maintenance, but can cost more to buy and insure and may lose value faster. The more you drive and the more you charge at home, the more likely the EV wins." },
+    { q: "Is there still a federal tax credit for EVs?", a: "No. The federal clean vehicle credit ended for vehicles acquired after September 30, 2025. Some states and utilities still offer rebates; enter them under Ownership costs." },
+    { q: "Do EVs cost less to maintain?", a: "Yes, on average. With no oil changes, fewer moving parts, and regenerative braking, DOE and Argonne estimate scheduled maintenance at about 6.1 cents per mile for EVs versus 10.1 cents for gas cars." },
+    { q: "What's the break-even gas price?", a: "It's the gas price where the gas car costs the same per year to run as the EV, after maintenance, insurance, and fees. Above it the EV is cheaper to drive. The calculator shows yours and charts savings across gas prices." },
+  ],
+  disclaimer: "Estimates for planning only. Insurance, resale, and energy prices vary widely by model and location.",
+};
