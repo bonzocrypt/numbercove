@@ -74,6 +74,175 @@
     return m ? m.getAttribute("content") : null;
   }
 
+  /* ---------- Installable web app ---------- */
+
+  function initPwa() {
+    var DISMISS_KEY = "numbercove-install-dismissed";
+    var DISMISS_DAYS = 30;
+    var deferredPrompt = null;
+    var promo = null;
+    var uiReady = false;
+    var autoTimer = 0;
+
+    function track(name, details) {
+      window.dataLayer = window.dataLayer || [];
+      var payload = details || {};
+      payload.event = name;
+      window.dataLayer.push(payload);
+    }
+
+    function installed() {
+      return (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true;
+    }
+
+    function isIos() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    }
+
+    function recentlyDismissed() {
+      try {
+        var value = Number(localStorage.getItem(DISMISS_KEY));
+        return value && Date.now() - value < DISMISS_DAYS * 86400000;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function rememberDismissal() {
+      try {
+        localStorage.setItem(DISMISS_KEY, String(Date.now()));
+      } catch (e) {
+        /* ignore */
+      }
+    }
+
+    function showOpeners() {
+      if (!uiReady || installed()) return;
+      if (!deferredPrompt && !isIos()) return;
+      $$('[data-install-open]').forEach(function (button) { button.hidden = false; });
+    }
+
+    function hideOpeners() {
+      $$('[data-install-open]').forEach(function (button) { button.hidden = true; });
+    }
+
+    function pageIsBusy() {
+      return !!$(".nc-peek:not([hidden]), .search-dialog:not([hidden]), .nc-drawer:not([hidden])");
+    }
+
+    function closePromo(reason) {
+      if (!promo || promo.hidden) return;
+      promo.hidden = true;
+      if (reason === "dismissed") {
+        rememberDismissal();
+        track("nc_pwa_install_dismissed", { nc_platform: isIos() ? "ios" : "browser" });
+      }
+    }
+
+    function makePromo() {
+      if (promo) return promo;
+      promo = document.createElement("aside");
+      promo.className = "install-promo";
+      promo.hidden = true;
+      promo.setAttribute("role", "dialog");
+      promo.setAttribute("aria-modal", "false");
+      promo.setAttribute("aria-labelledby", "install-promo-title");
+      promo.innerHTML =
+        '<button type="button" class="install-promo-close" data-install-close aria-label="Not now">&times;</button>' +
+        '<img class="install-promo-icon" src="/icons/icon-192.png" width="56" height="56" alt="">' +
+        '<div class="install-promo-copy"><p class="install-promo-kicker">Free web app</p>' +
+        '<h2 id="install-promo-title">Keep NumberCove handy</h2>' +
+        '<p data-install-message>Install it for one-tap access to every calculator—no app store or account.</p></div>' +
+        '<div class="install-promo-actions"><button type="button" class="btn btn-primary" data-install-confirm>Install app</button>' +
+        '<button type="button" class="btn btn-ghost" data-install-close>Not now</button></div>';
+      document.body.appendChild(promo);
+
+      $$('[data-install-close]', promo).forEach(function (button) {
+        button.addEventListener("click", function () { closePromo("dismissed"); });
+      });
+      $("[data-install-confirm]", promo).addEventListener("click", function () {
+        if (isIos() && !deferredPrompt) {
+          track("nc_pwa_ios_instructions", { nc_platform: "ios" });
+          closePromo();
+          return;
+        }
+        if (!deferredPrompt) return;
+        track("nc_pwa_install_clicked", { nc_platform: "browser" });
+        var prompt = deferredPrompt;
+        deferredPrompt = null;
+        prompt.prompt();
+        prompt.userChoice.then(function (choice) {
+          track(choice.outcome === "accepted" ? "nc_pwa_install_accepted" : "nc_pwa_install_dismissed", { nc_platform: "browser" });
+          if (choice.outcome === "dismissed") rememberDismissal();
+          closePromo();
+          showOpeners();
+        });
+      });
+      return promo;
+    }
+
+    function openPromo(source) {
+      if (installed() || (!deferredPrompt && !isIos())) return;
+      var card = makePromo();
+      var ios = isIos() && !deferredPrompt;
+      $("#install-promo-title", card).textContent = ios ? "Add NumberCove to your Home Screen" : "Keep NumberCove handy";
+      $("[data-install-message]", card).textContent = ios
+        ? "In Safari, tap the Share button, then choose Add to Home Screen. NumberCove will open like an app."
+        : "Install it for one-tap access to every calculator—no app store or account.";
+      $("[data-install-confirm]", card).textContent = ios ? "Got it" : "Install app";
+      card.hidden = false;
+      track("nc_pwa_promo_shown", { nc_platform: ios ? "ios" : "browser", nc_source: source || "automatic" });
+    }
+
+    function schedulePromo(delay) {
+      clearTimeout(autoTimer);
+      if (installed() || recentlyDismissed() || !window.matchMedia("(max-width: 899px)").matches) return;
+      autoTimer = window.setTimeout(function tryShow() {
+        if (pageIsBusy()) {
+          autoTimer = window.setTimeout(tryShow, 5000);
+          return;
+        }
+        openPromo("automatic");
+      }, delay);
+    }
+
+    function prepareUi() {
+      uiReady = true;
+      showOpeners();
+      $$('[data-install-open]').forEach(function (button) {
+        button.addEventListener("click", function () {
+          var drawerClose = $("[data-drawer-close]");
+          if (drawerClose) drawerClose.click();
+          window.setTimeout(function () { openPromo("menu"); }, 100);
+        });
+      });
+      if (isIos() && !installed()) schedulePromo(30000);
+    }
+
+    window.addEventListener("beforeinstallprompt", function (event) {
+      event.preventDefault();
+      deferredPrompt = event;
+      showOpeners();
+      schedulePromo(8000);
+    });
+
+    window.addEventListener("appinstalled", function () {
+      deferredPrompt = null;
+      closePromo();
+      hideOpeners();
+      track("nc_pwa_installed", { nc_platform: isIos() ? "ios" : "browser" });
+    });
+
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", prepareUi, { once: true });
+    else prepareUi();
+
+    if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch(function () { /* progressive enhancement */ });
+      });
+    }
+  }
+
   function samePage(href) {
     try {
       var a = new URL(href, window.location.href);
@@ -738,6 +907,7 @@
     });
   }
 
+  initPwa();
   initTheme();
   document.addEventListener("DOMContentLoaded", function () {
     initNav();

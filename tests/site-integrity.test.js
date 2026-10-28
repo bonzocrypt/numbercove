@@ -22,6 +22,9 @@ walk(root);
 
 htmlFiles.forEach(function (file) {
   var html = fs.readFileSync(file, "utf8");
+  var relFile = path.relative(root, file);
+  assert.ok(/<link rel=["']manifest["']/.test(html), relFile + " is missing the web app manifest");
+  assert.ok(/<link rel=["']apple-touch-icon["']/.test(html), relFile + " is missing the Apple touch icon");
   var ids = {};
   var idPattern = /\sid=["']([^"']+)["']/gi;
   var match;
@@ -45,6 +48,19 @@ htmlFiles.forEach(function (file) {
     assert.ok(fs.existsSync(resolved), path.relative(root, file) + " links to missing file " + target);
   }
 });
+
+var manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.webmanifest"), "utf8"));
+assert.strictEqual(manifest.name, "NumberCove", "web app manifest has the wrong name");
+assert.strictEqual(manifest.start_url, "/", "web app manifest should start at the homepage");
+assert.strictEqual(manifest.display, "standalone", "web app manifest should open as an app");
+["192x192", "512x512"].forEach(function (size) {
+  assert.ok(manifest.icons.some(function (icon) { return icon.sizes === size && icon.purpose === "any"; }), "manifest is missing the " + size + " app icon");
+});
+assert.ok(manifest.icons.some(function (icon) { return icon.sizes === "512x512" && icon.purpose === "maskable"; }), "manifest is missing a maskable icon");
+
+var serviceWorker = fs.readFileSync(path.join(root, "sw.js"), "utf8");
+assert.ok(serviceWorker.indexOf('request.mode === "navigate"') !== -1, "service worker should handle page navigation separately");
+assert.ok(serviceWorker.indexOf("fetch(request)") !== -1, "service worker should prefer fresh calculator pages");
 
 var tools = JSON.parse(fs.readFileSync(path.join(root, "tools.json"), "utf8"));
 var toolIds = tools.tools.map(function (tool) { return tool.id; });

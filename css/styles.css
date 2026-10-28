@@ -4813,6 +4813,168 @@ tr.row-hl td {
   animation: nc-peek-in 0.42s cubic-bezier(0.2, 0.9, 0.25, 1.15) both;
 }
 
+/* ---------- Installable web app ---------- */
+
+.drawer-install {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.85rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--brand) 35%, var(--line));
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--brand) 9%, var(--surface));
+  color: var(--ink);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.drawer-install[hidden] {
+  display: none;
+}
+
+.drawer-install > svg {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  color: var(--brand);
+}
+
+.drawer-install span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.drawer-install strong {
+  font-family: var(--font-display);
+}
+
+.drawer-install small {
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.install-promo {
+  position: fixed;
+  right: max(1.25rem, env(safe-area-inset-right));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  z-index: 180;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 0.85rem 1rem;
+  width: min(400px, calc(100vw - 2rem));
+  padding: 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 18px 52px rgba(15, 34, 25, 0.22);
+  color: var(--ink);
+  animation: install-promo-in 0.3s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+.install-promo[hidden] {
+  display: none;
+}
+
+.install-promo-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(15, 34, 25, 0.14);
+}
+
+.install-promo-copy {
+  min-width: 0;
+  padding-right: 1.5rem;
+}
+
+.install-promo-kicker {
+  margin: 0 0 0.15rem;
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.install-promo h2 {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.install-promo-copy > p:last-child {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.install-promo-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.install-promo-actions .btn {
+  min-height: 42px;
+}
+
+.install-promo-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.55rem;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font: 500 1.6rem/1 var(--font-body);
+  cursor: pointer;
+}
+
+.install-promo-close:hover,
+.install-promo-close:focus-visible {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+@keyframes install-promo-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .install-promo {
+    right: max(0.75rem, env(safe-area-inset-right));
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    left: max(0.75rem, env(safe-area-inset-left));
+    width: auto;
+  }
+
+  .install-promo-actions .btn-primary {
+    flex: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .install-promo { animation: none; }
+}
+
+@media print {
+  .install-promo,
+  .drawer-install { display: none !important; }
+}
+
 .nc-peek[hidden] {
   display: none;
 }

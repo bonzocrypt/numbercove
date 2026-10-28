@@ -1,0 +1,55 @@
+{
+  "id": "/",
+  "name": "NumberCove",
+  "short_name": "NumberCove",
+  "description": "Private, practical calculators for money, selling, health, home projects, and everyday decisions.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f3f0e8",
+  "theme_color": "#1a6b4a",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["finance", "utilities", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Selling calculators",
+      "short_name": "Sell",
+      "url": "/sell/",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Finance calculators",
+      "short_name": "Finance",
+      "url": "/finance/",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Should I? calculators",
+      "short_name": "Should I?",
+      "url": "/should-i/",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}
