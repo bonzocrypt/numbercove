@@ -516,6 +516,8 @@ function frameworkPages() {
       site: site, shell: shell, breadcrumb: breadcrumb, breadcrumbLd: breadcrumbLd, toolCrumbs: toolCrumbs, byline: byline,
       hasByline: hasByline, related: related, authorLd: authorLd, faqLd: faqLd, esc: esc, svg: svg, ICON: ICON, ORIGIN: ORIGIN, root: ROOT,
     });
+    var guide = guideHtml(toolById[def.id].path.split("/").pop().replace(/\.html$/, ""));
+    if (guide) html = setRegion(html, "guide", "\n      " + guide + "\n      ", null, '<p class="disclaimer">');
     write(toolById[def.id].path, versionAssets(html));
   });
 }

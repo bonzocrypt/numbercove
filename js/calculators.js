@@ -569,32 +569,34 @@
       hip = C.requireFinite(form, "hip", "Hip", { gt: 0 });
       if (hip == null) return null;
     }
-    var hIn = unit === "metric" ? height / 2.54 : height;
-    var nIn = unit === "metric" ? neck / 2.54 : neck;
-    var wIn = unit === "metric" ? waist / 2.54 : waist;
-    var hipIn = unit === "metric" ? hip / 2.54 : hip;
+    /* The Hodgdon-Beckett (U.S. Navy) constants below are the metric form of the
+       equations, so every circumference must be in centimeters. */
+    var hCm = unit === "metric" ? height : height * 2.54;
+    var nCm = unit === "metric" ? neck : neck * 2.54;
+    var wCm = unit === "metric" ? waist : waist * 2.54;
+    var hipCm = unit === "metric" ? hip : hip * 2.54;
     var bf;
     if (sex === "male") {
-      if (wIn - nIn <= 0) {
+      if (wCm - nCm <= 0) {
         C.setFieldError(form.elements.waist, "Waist must be larger than neck for this formula.");
         return null;
       }
       bf =
         495 /
           (1.0324 -
-            0.19077 * Math.log(wIn - nIn) / Math.LN10 +
-            0.15456 * Math.log(hIn) / Math.LN10) -
+            0.19077 * Math.log(wCm - nCm) / Math.LN10 +
+            0.15456 * Math.log(hCm) / Math.LN10) -
         450;
     } else {
-      if (wIn + hipIn - nIn <= 0) {
+      if (wCm + hipCm - nCm <= 0) {
         C.setFieldError(form.elements.waist, "Waist + hip must be larger than neck.");
         return null;
       }
       bf =
         495 /
           (1.29579 -
-            0.35004 * Math.log(wIn + hipIn - nIn) / Math.LN10 +
-            0.221 * Math.log(hIn) / Math.LN10) -
+            0.35004 * Math.log(wCm + hipCm - nCm) / Math.LN10 +
+            0.221 * Math.log(hCm) / Math.LN10) -
         450;
     }
     if (!Number.isFinite(bf) || bf < 2 || bf > 75) {
