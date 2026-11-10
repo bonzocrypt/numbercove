@@ -2,22 +2,6 @@
   "origin": "https://www.numbercove.com",
   "name": "NumberCove",
   "tagline": "Free calculators that answer the real question",
-  "author": {
-    "id": "dan-belliveau",
-    "name": "Dan Belliveau",
-    "url": "authors/dan-belliveau.html",
-    "role": "Founder and lead developer",
-    "short": "Former senior equities and options trader turned product builder",
-    "bio": "Dan Belliveau spent almost 20 years in the securities industry working in equities and options trading, active-trader product development, and trading-platform design. He formerly held Series 3, 4, 7, 9, 10, 55, and 63 registrations. As a senior trader, he reviewed large equity and options orders, led a large team of active trader support representatives, and helped define requirements for active trading platforms. He is also a licensed Florida real estate sales associate and now builds software and financial tools.",
-    "credentials": [
-      "Almost 20 years in the securities industry",
-      "Senior Trader, Options & Equities",
-      "Active Trader product development",
-      "Previously held FINRA Series 3, 4, 7, 9, 10, 55, and 63",
-      "Licensed Florida real estate sales associate"
-    ],
-    "bylineCategories": ["sell-and-ship", "money", "home-and-diy", "convert-and-math"]
-  },
   "categories": [
     {
       "id": "sell-and-ship",
@@ -45,7 +29,7 @@
       "intro": "Investing and options, loans and mortgages, real estate, retirement and paycheck decisions, everyday spending, and car costs. Each tool shows its formula and lets you change every assumption.",
       "faqs": [
         { "q": "Are these calculators financial advice?", "a": "No. They are planning and educational tools that show the math behind a decision. Your plan documents, lender, broker, and tax professional have the final word." },
-        { "q": "Who builds the finance calculators?", "a": "The finance tools are built by Dan Belliveau, a former senior equities and options trader with almost 20 years in the securities industry, where he held FINRA Series 3, 4, 7, 9, 10, 55, and 63 registrations. Methods and sources are listed on each page." }
+        { "q": "How current are the numbers?", "a": "Each page lists the sources behind its defaults, such as IRS limits, Social Security rules, and lender conventions, and every assumption can be changed. If a rule changed recently, check the sources section and enter the current figure." }
       ],
       "subcategories": [
         { "id": "investing-options", "name": "Investing & options", "short": "Options, income strategies, growth", "intro": "Price options and spreads, measure covered call and cash-secured put income, translate implied volatility into an expected move, track a wheel campaign, and project compound growth." },

@@ -5125,3 +5125,34 @@ tr.row-hl td {
     display: none !important;
   }
 }
+
+/* Long-form guides below calculators and on hub pages (build/guides/). */
+.nc-guide {
+  margin-top: 2rem;
+}
+
+.nc-guide > .prose:first-child > h2:first-child {
+  margin-top: 0;
+}
+
+.nc-guide .table-wrap {
+  max-width: 44rem;
+  margin: 0.6rem 0 1.25rem;
+}
+
+.nc-guide .hub-faq {
+  max-width: 44rem;
+}
+
+.hub-guide {
+  margin-top: 2.5rem;
+}
+
+.nc-guide td.num,
+.nc-guide th.num {
+  white-space: nowrap;
+}
+
+.nc-guide td:first-child {
+  min-width: 8.5rem;
+}

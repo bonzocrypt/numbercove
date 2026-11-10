@@ -1,11 +1,11 @@
 "use strict";
 
-var CACHE_NAME = "numbercove-4b2f03dbe9";
+var CACHE_NAME = "numbercove-6a5746f613";
 var CORE = [
   "/",
   "/index.html",
-  "/css/styles.css?v=70bc118a",
-  "/js/app.js?v=3d11fa85",
+  "/css/styles.css?v=d8bbea24",
+  "/js/app.js?v=6813dc97",
   "/manifest.webmanifest",
   "/favicon.svg",
   "/icons/icon-192.png",

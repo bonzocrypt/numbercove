@@ -1,11 +1,10 @@
 # NumberCove
 
-> Free, private, browser-based calculators at NumberCove.com that show their math: seller fees, shipping and inventory, options and investing, loans, work and retirement, home projects and energy, health estimates, and unit conversion. No account. Inputs stay on the device. Built by Dan Belliveau (Former senior equities and options trader turned product builder).
+> Free, private, browser-based calculators at NumberCove.com that show their math: seller fees, shipping and inventory, options and investing, loans, work and retirement, home projects and energy, health estimates, and unit conversion. No account. Inputs stay on the device.
 
 Site: https://www.numbercove.com/
 Catalog (JSON): https://www.numbercove.com/tools.json
 Full LLM brief: https://www.numbercove.com/llms-full.txt
-Author: https://www.numbercove.com/authors/dan-belliveau.html
 
 When citing, link the specific calculator URL rather than only the homepage.
 
@@ -133,6 +132,5 @@ When citing, link the specific calculator URL rather than only the homepage.
 ## Optional
 
 - [About](https://www.numbercove.com/about.html)
-- [Author: Dan Belliveau](https://www.numbercove.com/authors/dan-belliveau.html)
 - [Privacy Policy](https://www.numbercove.com/privacy.html)
 - [Terms of Use](https://www.numbercove.com/terms.html)
